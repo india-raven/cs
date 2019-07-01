@@ -9,6 +9,9 @@ import { defaultMapStyle, dataLayer } from "./map-style.js";
 import { updatePercentiles } from "./utils";
 import { fromJS } from "immutable";
 import { json as requestJson } from "d3-request";
+
+import { StateInfo } from "./component/StateInfo";
+
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
 
@@ -25,7 +28,8 @@ class Map extends Component {
       longitude: 0,
       zoom: 0,
       captureScroll: false
-    }
+    },
+    name: ""
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
@@ -83,6 +87,18 @@ class Map extends Component {
     this.setState({ hoveredFeature, x: offsetX, y: offsetY });
   };
 
+  onClick = event => {
+    const {
+      features,
+      srcEvent: { offsetX, offsetY }
+    } = event;
+    if (features[0]) {
+      this.setState({ name: features[0].properties.name });
+    } else {
+      this.setState({ name: "" });
+    }
+  };
+
   renderTooltip() {
     const { hoveredFeature, x, y } = this.state;
     return (
@@ -108,7 +124,8 @@ class Map extends Component {
           mapboxApiAccessToken={MAPBOX_TOKEN}
           mapStyle={mapStyle}
           onViewportChange={this.onViewportChange}
-          onHover={this.onHover}
+          // onHover={this.onHover}
+          onClick={this.onClick}
         >
           {this.renderTooltip()}
         </ReactMapGL>
@@ -118,6 +135,7 @@ class Map extends Component {
           settings={this.state}
           onChange={this.updateSettings}
         />
+        <StateInfo name={this.state.name} />
       </div>
     );
   }
