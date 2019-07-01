@@ -24,9 +24,9 @@ class Map extends Component {
     viewport: {
       width: "100vw",
       height: "100vh",
-      latitude: 0,
-      longitude: 0,
-      zoom: 0,
+      latitude: 39.82,
+      longitude: -98.5795,
+      zoom: 3,
       captureScroll: false
     },
     name: ""
@@ -92,8 +92,20 @@ class Map extends Component {
       features,
       srcEvent: { offsetX, offsetY }
     } = event;
+    console.log("COORDS:", event.lngLat);
     if (features[0]) {
-      this.setState({ name: features[0].properties.name });
+      this.setState({
+        name: features[0].properties.name,
+
+        viewport: {
+          width: "100vw",
+          height: "100vh",
+          longitude: event.lngLat[0],
+          latitude: event.lngLat[1],
+          zoom: 5,
+          captureScroll: false
+        }
+      });
     } else {
       this.setState({ name: "" });
     }
@@ -124,7 +136,7 @@ class Map extends Component {
           mapboxApiAccessToken={MAPBOX_TOKEN}
           mapStyle={mapStyle}
           onViewportChange={this.onViewportChange}
-          // onHover={this.onHover}
+          onHover={this.onHover}
           onClick={this.onClick}
         >
           {this.renderTooltip()}
