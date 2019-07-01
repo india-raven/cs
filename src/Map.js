@@ -9,6 +9,9 @@ import { defaultMapStyle, dataLayer } from "./map-style.js";
 import { updatePercentiles } from "./utils";
 import { fromJS } from "immutable";
 import { json as requestJson } from "d3-request";
+
+import { StateInfo } from "./component/StateInfo";
+
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
 
@@ -21,11 +24,12 @@ class Map extends Component {
     viewport: {
       width: "100vw",
       height: "100vh",
-      latitude: 0,
-      longitude: 0,
-      zoom: 0,
+      latitude: 39.82,
+      longitude: -98.5795,
+      zoom: 3,
       captureScroll: false
-    }
+    },
+    name: ""
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
@@ -83,6 +87,30 @@ class Map extends Component {
     this.setState({ hoveredFeature, x: offsetX, y: offsetY });
   };
 
+  onClick = event => {
+    const {
+      features,
+      srcEvent: { offsetX, offsetY }
+    } = event;
+    console.log("COORDS:", event.lngLat);
+    if (features[0]) {
+      this.setState({
+        name: features[0].properties.name,
+
+        viewport: {
+          width: "100vw",
+          height: "100vh",
+          longitude: event.lngLat[0],
+          latitude: event.lngLat[1],
+          zoom: 5,
+          captureScroll: false
+        }
+      });
+    } else {
+      this.setState({ name: "" });
+    }
+  };
+
   renderTooltip() {
     const { hoveredFeature, x, y } = this.state;
     return (
@@ -109,6 +137,7 @@ class Map extends Component {
           mapStyle={mapStyle}
           onViewportChange={this.onViewportChange}
           onHover={this.onHover}
+          onClick={this.onClick}
         >
           {this.renderTooltip()}
         </ReactMapGL>
@@ -118,6 +147,7 @@ class Map extends Component {
           settings={this.state}
           onChange={this.updateSettings}
         />
+        <StateInfo name={this.state.name} />
       </div>
     );
   }
