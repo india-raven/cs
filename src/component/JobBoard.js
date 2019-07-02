@@ -9,12 +9,15 @@ export default class JobBoard extends Component {
     //   handleClose, show, children;
     // }
     super(props);
-    this.state = {};
+    this.state = {
+      job: {}
+    };
   }
   render(props) {
     const showHideClassName = this.props.show
       ? "modal display-block"
       : "modal display-none";
+    console.log("HERE:", this.state.job);
     return (
       <div className={showHideClassName}>
         <div className="job-board">
@@ -27,7 +30,7 @@ export default class JobBoard extends Component {
             <div className="job-board-info">
               {jobs.map(job => {
                 return (
-                  <div>
+                  <div onClick={() => this.setState({ job: job })} key={job.id}>
                     <h1>{job.title}</h1>
                     <hr />
                   </div>
