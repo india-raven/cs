@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import JobBoard from "./component/JobBoard";
 
 const defaultContainer = ({ children }) => (
   <div className="control-panel">{children}</div>
@@ -24,7 +23,6 @@ export default class ControlPanel extends PureComponent {
         <hr />
 
         <div key={"year"} className="input">
-          <JobBoard />
           <label>Year</label>
           <input
             type="range"

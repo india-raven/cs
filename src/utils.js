@@ -8,6 +8,7 @@ export function updatePercentiles(featureCollection, accessor) {
     .range(range(9));
   features.forEach(f => {
     const value = accessor(f);
+    console.log("VALUE:", value);
     f.properties.value = value;
     f.properties.percentile = scale(value);
   });
