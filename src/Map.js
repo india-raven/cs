@@ -11,6 +11,7 @@ import { fromJS } from "immutable";
 import { json as requestJson } from "d3-request";
 
 import { StateInfo } from "./component/StateInfo";
+import JobBoard from './component/JobBoard'
 
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
@@ -146,6 +147,7 @@ class Map extends Component {
           settings={this.state}
           onChange={this.updateSettings}
         />
+        <JobBoard />
         <StateInfo name={this.state.name} />
       </div>
     );

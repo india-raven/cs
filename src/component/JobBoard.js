@@ -5,17 +5,21 @@ const jobs = require("../jobs");
 export default class JobBoard extends Component {
   constructor({ handleClose, show, children }) {
     super();
-    const showHideClassName = show
+  }
+  
+  render() {
+    const showHideClassName = this.show
       ? "modal display-block"
       : "modal display-none";
-  }
-
-  render() {
     return (
-      <div>
+      <div className="job-board">
+        <h1>Jobs Near You: </h1>
+        <hr/>
+        <section>
         {jobs.map(job => {
           return <h1>{job.title}</h1>;
         })}
+        </section>
       </div>
     );
   }

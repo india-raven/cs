@@ -24,7 +24,7 @@ export default class ControlPanel extends PureComponent {
         <hr />
 
         <div key={"year"} className="input">
-          <JobBoard />
+          {/* <JobBoard /> */}
           <label>Year</label>
           <input
             type="range"
