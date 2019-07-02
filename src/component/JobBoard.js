@@ -10,7 +10,7 @@ export default class JobBoard extends Component {
     // }
     super(props);
     this.state = {
-      job: {}
+      job: jobs[0]
     };
   }
   render(props) {
@@ -39,7 +39,7 @@ export default class JobBoard extends Component {
             </div>
             <hr />
             <div className="job-description">
-              <JobDescription />
+              <JobDescription job={this.state.job} />
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default class ControlPanel extends PureComponent {
   //     show: false
   //   };
   // }
-  state = { show: false };
+  state = { show: true };
 
   showModal = () => {
     this.setState({ show: true });
