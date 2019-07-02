@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Fire from "../Fire";
+import firebase from "firebase";
 import { JobDescription } from "../component/JobDescription";
 
 const jobs = require("../jobs");
@@ -13,11 +15,23 @@ export default class JobBoard extends Component {
       job: jobs[0]
     };
   }
+
+  componentDidMount() {
+    firebase
+      .database()
+      .ref("/")
+      .once("value")
+      .then(snapshot => {
+        // this.setState(snapshot.val());
+        console.log("HIHIHIH", snapshot.val());
+        // console.log(this.state.Client.Client1.firstName);
+      });
+  }
+
   render(props) {
     const showHideClassName = this.props.show
       ? "modal display-block"
       : "modal display-none";
-    console.log("HERE:", this.state.job);
     return (
       <div className={showHideClassName}>
         <div className="job-board">
