@@ -2,18 +2,15 @@ import React, { Component } from "react";
 
 const jobs = require("../jobs");
 
-export default class JobBoard extends Component {
-  constructor({ handleClose, show, children }) {
-    super();
-  }
-
-  render() {
-    const showHideClassName = this.show
-      ? "modal display-block"
-      : "modal display-none";
-    return (
+export const JobBoard = ({ handleClose, show, children }) => {
+  const showHideClassName = show ? "modal display-block" : "modal display-none";
+  return (
+    <div className={showHideClassName}>
       <div className="job-board">
         <h1>Jobs Near You: </h1>
+        <button type="button" onClick={handleClose}>
+          close
+        </button>
         <hr />
         <div className="job-list-and-description">
           <div className="job-board-info">
@@ -21,7 +18,7 @@ export default class JobBoard extends Component {
               return (
                 <div>
                   <h1>{job.title}</h1>
-                  <hr/>
+                  <hr />
                 </div>
               );
             })}
@@ -34,6 +31,6 @@ export default class JobBoard extends Component {
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
