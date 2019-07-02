@@ -128,7 +128,6 @@ class Map extends Component {
 
   render() {
     const { viewport, mapStyle } = this.state;
-    console.log(this);
     return (
       <div style={{ height: "100%" }}>
         <ReactMapGL
