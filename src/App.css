@@ -89,6 +89,30 @@ input {
   color: #6b6b76;
   outline: none;
   text-transform: uppercase;
+  flex: 1;
+}
+
+.job-board-info {
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: auto;
+}
+
+.job-description {
   scroll-behavior: smooth;
   overflow-y: scroll;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 1%;
+}
+
+.job-list-and-description {
+  display: flex;
+  height: 100%;
+  position: relative;
 }
