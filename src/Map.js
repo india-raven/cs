@@ -148,7 +148,7 @@ class Map extends Component {
           onChange={this.updateSettings}
         />
         <JobBoard />
-        <StateInfo name={this.state.name} />
+        {/* <StateInfo name={this.state.name} /> */}
       </div>
     );
   }

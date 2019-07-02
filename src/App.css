@@ -73,20 +73,22 @@ input {
 }
 
 .job-board {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  max-width: 320px;
-  max-height: 320px;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  left: 5%;
+  bottom: 5%;
+  /* max-width: 320px; */
+  /* max-height: 320px; */
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   padding: 12px 24px;
-  margin: 20px;
+  margin: auto;
   font-size: 13px;
   line-height: 2;
   color: #6b6b76;
   outline: none;
   text-transform: uppercase;
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
   overflow-y: scroll;
 }
