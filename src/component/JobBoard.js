@@ -13,12 +13,11 @@ export default class JobBoard extends Component {
     super(props);
     this.state = {
       jobs: [],
-      currJob: {}
+      currJob: jobs[0]
     };
   }
 
   convertJobs(obj) {
-    console.log("THIS OBJECT:", obj);
     let result = [];
     for (let i in obj) {
       result.push(obj[i]);
@@ -37,8 +36,6 @@ export default class JobBoard extends Component {
       .then(snapshot => {
         const newObj = snapshot.val();
         this.setState({ jobs: this.convertJobs(newObj.Jobs) });
-        console.log("HIHIHIH", snapshot.val());
-        // console.log(this.state.Client.Client1.firstName);
       });
   }
 
@@ -46,7 +43,6 @@ export default class JobBoard extends Component {
     const showHideClassName = this.props.show
       ? "modal display-block"
       : "modal display-none";
-    console.log("STATE:", this.state);
     return (
       <div className={showHideClassName}>
         <div className="job-board">
