@@ -1,5 +1,5 @@
-import firebase from "firebase";
-
+import firebase from 'firebase';
+// import env from '../.env';
 class Fire {
   constructor() {
     this.init();
@@ -9,13 +9,13 @@ class Fire {
   init = () => {
     if (!firebase.apps.length) {
       firebase.initializeApp({
-        apiKey: "AIzaSyAmBNrwmBFVnA1fbey5MqrW83Qzkb6m-b8",
-        authDomain: "india-raven.firebaseapp.com",
-        databaseURL: "https://india-raven.firebaseio.com",
-        projectId: "india-raven",
-        storageBucket: "india-raven.appspot.com",
-        messagingSenderId: "209562546417",
-        appId: "1:209562546417:web:57f61f5f94205733"
+        apiKey: process.env.REACT_APP_API_KEY,
+        authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+        databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+        projectId: process.env.REACT_APP_PROJECT_ID,
+        storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+        messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+        appId: process.env.REACT_APP_APP_ID,
       });
     }
   };
@@ -23,7 +23,7 @@ class Fire {
   observeAuth = user => {
     if (!user) {
       try {
-        console.log("IM HERE NOW");
+        console.log('IM HERE NOW');
         firebase.auth().signInAnonymously();
       } catch ({ message }) {
         alert(message);
@@ -38,7 +38,7 @@ class Fire {
   on = callback =>
     this.ref
       .limitToLast(20)
-      .on("child_added", snapshot => callback(this.parse(snapshot)));
+      .on('child_added', snapshot => callback(this.parse(snapshot)));
 
   get timestamp() {
     return firebase.database.ServerValue.TIMESTAMP;
