@@ -1,7 +1,7 @@
-import React from "react";
-import "./App.css";
-import Map from "./Map";
-import Fire from "./Fire";
+import React from 'react';
+import './App.css';
+import Map from './Map';
+import Fire from './Fire';
 
 function App() {
   return (
