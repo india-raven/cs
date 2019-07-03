@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Fire from "../Fire";
+// import Fire from "../Fire";
 import firebase from "firebase";
 import { JobDescription } from "../component/JobDescription";
 
@@ -7,25 +7,11 @@ const jobs = require("../jobs");
 
 export default class JobBoard extends Component {
   constructor(props) {
-    // {
-    //   handleClose, show, children;
-    // }
     super(props);
     this.state = {
       jobs: [],
       currJob: jobs[0]
     };
-  }
-
-  convertJobs(obj) {
-    let result = [];
-    for (let i in obj) {
-      result.push(obj[i]);
-    }
-    return result;
-
-    // const objArray = Object.values(obj)
-    // return objArray
   }
 
   componentDidMount() {
@@ -34,8 +20,7 @@ export default class JobBoard extends Component {
       .ref("/")
       .once("value")
       .then(snapshot => {
-        const newObj = snapshot.val();
-        this.setState({ jobs: this.convertJobs(newObj.Jobs) });
+        this.setState({ jobs: snapshot.val() });
       });
   }
 
