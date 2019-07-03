@@ -12,8 +12,21 @@ export default class JobBoard extends Component {
     // }
     super(props);
     this.state = {
-      job: jobs[0]
+      jobs: [],
+      currJob: {}
     };
+  }
+
+  convertJobs(obj) {
+    console.log("THIS OBJECT:", obj);
+    let result = [];
+    for (let i in obj) {
+      result.push(obj[i]);
+    }
+    return result;
+
+    // const objArray = Object.values(obj)
+    // return objArray
   }
 
   componentDidMount() {
@@ -22,7 +35,8 @@ export default class JobBoard extends Component {
       .ref("/")
       .once("value")
       .then(snapshot => {
-        // this.setState(snapshot.val());
+        const newObj = snapshot.val();
+        this.setState({ jobs: this.convertJobs(newObj.Jobs) });
         console.log("HIHIHIH", snapshot.val());
         // console.log(this.state.Client.Client1.firstName);
       });
@@ -32,6 +46,7 @@ export default class JobBoard extends Component {
     const showHideClassName = this.props.show
       ? "modal display-block"
       : "modal display-none";
+    console.log("STATE:", this.state);
     return (
       <div className={showHideClassName}>
         <div className="job-board">
@@ -42,9 +57,13 @@ export default class JobBoard extends Component {
           <hr />
           <div className="job-list-and-description">
             <div className="job-board-info">
-              {jobs.map(job => {
+              {this.state.jobs.map(job => {
+                // "Job1"
                 return (
-                  <div onClick={() => this.setState({ job: job })} key={job.id}>
+                  <div
+                    onClick={() => this.setState({ currJob: job })}
+                    key={job.id}
+                  >
                     <h1>{job.title}</h1>
                     <hr />
                   </div>
@@ -53,7 +72,7 @@ export default class JobBoard extends Component {
             </div>
             <hr />
             <div className="job-description">
-              <JobDescription job={this.state.job} />
+              <JobDescription job={this.state.currJob} />
             </div>
           </div>
         </div>
