@@ -1,0 +1,28 @@
+set -e
+
+echo "MSG starting"
+function cleanup_at_exit {
+    git checkout development
+    git branch -D deploy
+}
+
+echo "MSG cleanup"
+trap cleanup_at_exit EXIT
+
+echo "MSG deploy-branch"
+git checkout -b deploy
+
+echo "MSG creating optimized build"
+npm run build
+
+echo "MSG adding env file"
+git add -f ./.env
+
+echo "MSG make a commit"
+git commit --allow-empty -m 'deploying!'
+
+echo "MSG pushing to heroku"
+git push --force heroku deploy:master
+
+echo "MSG open browser"
+heroku open
