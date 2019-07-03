@@ -14,8 +14,16 @@ export default class StateInfo extends PureComponent {
     this.state={
       barChart: <Chart />,
       donutChart: <ChartLine />,
-      bubbleChart: <ChartBubble />
+      bubbleChart: <ChartBubble />,
+      currentChart: <Chart />
+
     }
+     this.changeChart=this.changeChart.bind(this)
+  }
+  changeChart(){
+     this.setState({
+       currentChart: <ChartBubble/>
+      })
   }
   render() {
     const { show, name, onClick } = this.props;
@@ -26,12 +34,17 @@ export default class StateInfo extends PureComponent {
     const Container = this.props.containerComponent || defaultContainer;
 
     return (
+     
       <Container classInStateInfo={showHideClassName}>
+         <div style={{position:'absolute', width:'10%'}}>
         <i className="fas fa-times fa-2x" onClick={onClick} />
         <h3>STATE {this.props.name}</h3>
         <h3>STATE DESCRIPTION</h3>
-        <div>
-          {this.state.barChart}
+        <button type='button' onClick={this.changeChart}>Change Chart1</button>
+        <div style={{position:'relative', width:'10%'}}>
+        <div style={{position:'absolute', width:'10%'}}>
+        {this.state.currentChart}
+        </div> 
         </div>
         <p>chart 1 </p>
         <p>chart 2</p>
@@ -40,7 +53,9 @@ export default class StateInfo extends PureComponent {
 
         <p>chart 5</p>
         {/* <ChartApp className={showHideClassName}/> */}
+        </div>
       </Container>
+      
     );
   }
 }

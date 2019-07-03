@@ -20,7 +20,7 @@ export default class Chart extends Component {
   render() {
     console.log(this)
     const margins = { top: 10, right: 20, bottom: 50, left: 60 }
-    const svgDimensions = { width: 600, height: 400}
+    const svgDimensions = { width: 400, height: 300}
 
     const maxValue = Math.max(...data.map(d => d.value))
     const minValue = Math.min(...data.map(d => d.value))
@@ -35,7 +35,7 @@ export default class Chart extends Component {
 
     return (
       
-      <div>
+      <div style={{position:'fixed'}}>
       <svg width={svgDimensions.width} height={svgDimensions.height}>
         <Axes
           scales={{ xScale, yScale }}
