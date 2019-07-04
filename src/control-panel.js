@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import JobBoard from './component/JobBoard';
+import React, { PureComponent } from "react";
+import JobBoard from "./component/JobBoard";
 
 const defaultContainer = ({ children }) => (
   <div className="control-panel">{children}</div>
@@ -39,7 +39,7 @@ export default class ControlPanel extends PureComponent {
 
         <hr />
 
-        <div key={'year'} className="input">
+        <div key={"year"} className="input">
           <JobBoard show={this.state.show} handleClose={this.hideModal} />
           <button type="button" onClick={this.showModal}>
             See nearby jobs
@@ -49,10 +49,10 @@ export default class ControlPanel extends PureComponent {
           <input
             type="range"
             value={settings.year}
-            min={1995}
+            min={1900}
             max={2018}
             step={1}
-            onChange={evt => this.props.onChange('year', evt.target.value)}
+            onChange={evt => this.props.onChange("year", evt.target.value)}
           />
         </div>
       </Container>
