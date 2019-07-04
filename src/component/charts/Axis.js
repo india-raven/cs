@@ -15,23 +15,31 @@ export default class Axis extends Component {
   
     renderAxis() {
       const axisType = `axis${this.props.orient}`
-      const axis = d3Axis[axisType]()
+      console.log('axisType',axisType)
+      console.log('')
+      const axisl = d3Axis.axisLeft()
         .scale(this.props.scale)
         // .tickSize(-this.props.tickSize)
-        .tickPadding([5])
+        .tickPadding([3])
         .ticks([3])
-  
-      d3Select(this.axisElement).call(axis)
+        // .text()
+      const axisb = d3Axis.axisBottom()
+         .scale(this.props.scale)
+         .ticks([3])
+      d3Select(this.axisElement).call(axisl)
+      // d3Select(this.axisElement).call(axisb)
     }
   
     render() {
+      
       return (
         <g
           className={`Axis Axis-${this.props.orient}`}
           ref={(el) => { this.axisElement = el; }}
           transform={this.props.translate}
-        //   text={'Temperature'}
-        />
+        >
+      
+</g>
       )
     }
   }

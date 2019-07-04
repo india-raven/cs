@@ -16,9 +16,10 @@ class Slice extends React.Component {
         this.setState({isHovered: false});
       }
     render() {
+      console.log(this.props)
       let {value,label, fill, innerRadius = 0, outerRadius, cornerRadius, padAngle, ...props} = this.props;
       if (this.state.isHovered) {
-        outerRadius *= 1.1;
+        outerRadius *= 1.05;
       }
       let arc = d3.arc()
         .innerRadius(innerRadius)
@@ -29,13 +30,16 @@ class Slice extends React.Component {
           <g onMouseOver={this.onMouseOver}
           onMouseOut={this.onMouseOut}
           {...props}>
-        <path d={arc(value)} fill={fill} />
-        {/* <text transform={`translate(${arc.centroid(value)})`}
+        <path d={arc(this.props.value)} fill={fill} />
+        <text transform={`translate(${arc.centroid(this.props.value)})`}
               dy=".35em"
               textAnchor="middle"
-              fill="white">
-          {label}
-        </text> */}
+              fill="black"
+              font-size='10px'
+      
+              >
+          {this.props.label}
+        </text>
 
         </g>
       );

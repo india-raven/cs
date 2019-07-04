@@ -16,9 +16,11 @@ export default ({ scales, margins, svgDimensions }) => {
       scale: scales.yScale,
       translate: `translate(${margins.left}, 0)`,
       tickSize: width - margins.left - margins.right,
+     
     }
-  
+    console.log(scales)
     return (
+
       <g>
         <Axis {...xProps} />
         <Axis {...yProps} />

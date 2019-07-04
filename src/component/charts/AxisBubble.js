@@ -14,12 +14,12 @@ export default class AxisBubble extends Component {
     }
   
     renderAxis() {
+      console.log('TIK',this.props)
       const axisType = `axis${this.props.orient}`
-      const axis = d3Axis[axisType]()
+      const axis = d3Axis.axisLeft()
         .scale(this.props.scale)
-        // .tickSize(-this.props.tickSize)
-        .tickPadding([5])
-        .ticks([3])
+        .tickSize(-this.props.tickSize)
+        .ticks([1])
   
       d3Select(this.axisElement).call(axis)
     }
