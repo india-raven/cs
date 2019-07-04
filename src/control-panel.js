@@ -49,7 +49,7 @@ export default class ControlPanel extends PureComponent {
           <input
             type="range"
             value={settings.year}
-            min={1900}
+            min={1895}
             max={2018}
             step={1}
             onChange={evt => this.props.onChange("year", evt.target.value)}
