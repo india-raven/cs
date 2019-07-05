@@ -3,7 +3,8 @@ import ReactMapGL, {
   LinearInterpolator,
   FlyToInterpolator,
 } from 'react-map-gl';
-
+// import { Route, Redirect } from 'react-router'
+// import { Link, Switch,Route } from 'react-router-dom'
 import ControlPanel from './control-panel';
 import { defaultMapStyle, dataLayer } from './map-style.js';
 import { updatePercentiles } from './utils';
@@ -31,6 +32,7 @@ class Map extends Component {
     },
     name: '',
     show: false,
+    toPage: true
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
@@ -139,9 +141,18 @@ class Map extends Component {
 
     this.setState({ show: false });
   };
+  handleSubmit = (event) => {
+      this.setState(() => ({
+        toPage: true
+      }))
+      this.onClick(event);
+  }
 
   render() {
     const { viewport, mapStyle } = this.state;
+    // if (this.state.toPage === true) {
+    //   return <Redirect to='./component/totalInfo/info_USA.js' />
+    // }
     return (
       <div style={{ height: '100%' }}>
         <ReactMapGL
@@ -167,6 +178,8 @@ class Map extends Component {
           handleClose={this.hideModal}
           onClick={this.hideModal}
         />
+       
+                       
       </div>
     );
   }
