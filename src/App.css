@@ -24,11 +24,14 @@ body {
 }
 
 .state-info {
+  overflow: auto;
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
   position: absolute;
   top: 0;
   left: 0;
   /* width: 20%; */
-  width: 500px;
+  width: 520px;
   height: 80%;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -76,17 +79,18 @@ input {
   z-index: 9;
   pointer-events: none;
 }
-
+/*
 .modal {
-  position: fixed;
-  top: 2;
-  left: 2;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
+  position: absolute;
+  /* top: 2; */
+/* left: 2; */
+/* margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); */
+/* } */
 
-.modal-main {
+/* .modal-main {
   position: fixed;
   background: white;
   width: 80%;
@@ -94,7 +98,7 @@ input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .display-block {
   display: block;
@@ -105,12 +109,14 @@ input {
 }
 
 .job-board {
+  overflow: auto;
+  overflow-y: hidden;
   position: fixed;
   top: 5%;
   right: 5%;
   left: 5%;
   bottom: 5%;
-  /* max-width: 320px; */
+  /* max-width: 90vw; */
   max-height: 100%;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -125,13 +131,18 @@ input {
 
 .job-board-info {
   scroll-behavior: smooth;
-  overflow-x: scroll;
+  overflow-y: scroll;
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: auto;
+  height: 90%;
 }
 
+.job-board > i {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
 .job-description {
   scroll-behavior: smooth;
   overflow-y: scroll;
@@ -144,11 +155,17 @@ input {
 }
 
 .job-list-and-description {
+  /* word-wrap: break-word; */
   display: flex;
   height: 90%;
   position: absolute;
   /* margin: auto; */
-  margin-right: 100px;
-  right: 50;
+  /* margin-right: 100px; */
+  /* right: 50; */
   /* width: auto; */
+}
+
+.job {
+  /* color: yellow; */
+  text-transform: capitalize;
 }

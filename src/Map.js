@@ -10,7 +10,6 @@ import { updatePercentiles } from './utils';
 import { fromJS } from 'immutable';
 import { json as requestJson } from 'd3-request';
 
-import JobBoard from './component/JobBoard';
 import StateInfo from './component/StateInfo';
 
 const MAPBOX_TOKEN =
@@ -94,7 +93,7 @@ class Map extends Component {
       features,
       srcEvent: { offsetX, offsetY },
     } = event;
-    console.log('COORDS:', event.lngLat);
+    // console.log('COORDS:', event.lngLat);
     if (features[0]) {
       this.setState({
         name: features[0].properties.name,
@@ -130,8 +129,8 @@ class Map extends Component {
 
   showModal = event => {
     this.setState({ show: true });
-    console.log('inside');
-    console.log(this.state);
+    // console.log('inside');
+    // console.log(this.state);
     this.onClick(event);
   };
 
@@ -162,8 +161,6 @@ class Map extends Component {
           settings={this.state}
           onChange={this.updateSettings}
         />
-
-        {/* <JobBoard /> */}
 
         <StateInfo
           name={this.state.name}
