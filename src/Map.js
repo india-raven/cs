@@ -10,7 +10,7 @@ import { defaultMapStyle, dataLayer } from './map-style.js';
 import { updatePercentiles } from './utils';
 import { fromJS } from 'immutable';
 import { json as requestJson } from 'd3-request';
-
+import Button from './component/totalInfo/button'
 import StateInfo from './component/StateInfo';
 
 const MAPBOX_TOKEN =
@@ -179,7 +179,7 @@ class Map extends Component {
           onClick={this.hideModal}
         />
        
-                       
+        <Button />               
       </div>
     );
   }
