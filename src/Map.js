@@ -11,6 +11,7 @@ import { updatePercentiles } from './utils';
 import { fromJS } from 'immutable';
 import { json as requestJson } from 'd3-request';
 
+import JobBoard from './component/JobBoard';
 import StateInfo from './component/StateInfo';
 
 const MAPBOX_TOKEN =
@@ -172,6 +173,9 @@ class Map extends Component {
           settings={this.state}
           onChange={this.updateSettings}
         />
+
+        {/* <JobBoard /> */}
+
         <StateInfo
           name={this.state.name}
           show={this.state.show}

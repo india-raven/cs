@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Map from './Map'
 import { Route, Switch, Router } from 'react-router';
+import Fire from './Fire';
 function App() {
   return (
 
