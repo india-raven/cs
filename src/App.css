@@ -10,8 +10,8 @@ body {
 .control-panel {
   position: absolute;
   bottom: 0;
-  left: 30%;
-  right: 30%;
+  left: 70%;
+  /* right: 30%; */
   max-width: 50%;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
