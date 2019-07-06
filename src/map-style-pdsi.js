@@ -1,4 +1,5 @@
 import { fromJS } from "immutable";
+import MAP_STYLE from "./map-style-basic-v8.json";
 
 // For more information on data-driven styles, see https://www.mapbox.com/help/gl-dds-ref/
 export const dataLayerPDSI = fromJS({
@@ -10,29 +11,31 @@ export const dataLayerPDSI = fromJS({
     "fill-color": {
       property: "percentile",
       stops: [
-        [0, "#0064FF"],
-        [1, "#0094FF"],
-        [2, "#00C4FF"],
-        [3, "#00E4FF"],
-        [4, "#00FFD0"],
-        [5, "#00FF83"],
-        [6, "#00FF10"],
-        [7, "#65FF00"],
-        [8, "#B0FF00"],
-        [9, "#FDFF00"],
-        [10, "#FFF000"],
-        [11, "#FFDC00"],
-        [12, "#FFC800"],
-        [13, "#FFB400"],
-        [14, "#FFA000"],
-        [15, "#FF8C00"],
-        [16, "#FF7800"],
-        [17, "#FF6400"],
-        [18, "#FF5000"],
-        [19, "#FF3C00"],
-        [20, "#FF2800"]
+        [0, "#9FFF33"],
+        [1, "#BBFF33"],
+        [2, "#CEFF33"],
+        [3, "#E0FF33"],
+        [4, "#ECFF33"],
+        [5, "#FFFF33"],
+        [6, "#FFF633"],
+        [7, "#FFE933"],
+        [8, "#FFDD33"],
+        [9, "#FFD733"],
+        [10, "#FFCE33"],
+        [11, "#FFC133"],
+        [12, "#FFB533"],
+        [13, "#FFAC33"],
+        [14, "#FFA533"],
+        [15, "#FF9633"],
+        [16, "#FF8333"],
+        [17, "#FF7733"],
+        [18, "#FF6B33"],
+        [19, "#FF5B33"],
+        [20, "#FF4633"]
       ]
     },
     "fill-opacity": 0.6
   }
 });
+
+export const defaultMapStyle = fromJS(MAP_STYLE);

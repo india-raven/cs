@@ -22,7 +22,7 @@ class Map extends Component {
     mapStyle: defaultMapStyle,
     year: 2018,
     data: null,
-    selectedData: "temp",
+    selectedData: "pdsi",
     hoveredFeature: null,
     viewport: {
       width: "100vw",
@@ -56,7 +56,7 @@ class Map extends Component {
         // Add geojson source to map
         .setIn(["sources", "pdsiByState"], fromJS({ type: "geojson", data }))
         // Add point layer to map
-        .set("layers", defaultMapStyle.get("layers").push(dataLayer));
+        .set("layers", defaultMapStyle.get("layers").push(dataLayerPDSI));
 
       this.setState({ data, mapStyle });
     }
@@ -73,15 +73,15 @@ class Map extends Component {
             return f.properties.temperature[value];
           });
           const newMapStyle = mapStyle.setIn(
-            ["sources", "temperatureByState", "data"],
-            fromJS(data)
+            ["sources", "temperatureByState"],
+            fromJS({ type: "geojson", data })
           );
           this.setState({ mapStyle: newMapStyle });
         } else {
           updatePercentiles(data, f => f.properties.pdsi[value]);
           const newMapStyle = mapStyle.setIn(
-            ["sources", "temperatureByState", "data"],
-            fromJS(data)
+            ["sources", "pdsiByState"],
+            fromJS({ type: "geojson", data })
           );
           this.setState({ mapStyle: newMapStyle });
         }
