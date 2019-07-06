@@ -22,7 +22,8 @@
     "react-map-gl": "^5.0.3",
     "react-router": "^5.0.1",
     "react-scripts": "3.0.1",
-    "serve": "^11.0.2"
+    "serve": "^11.0.2",
+    "react-stripe-checkout": "^2.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
