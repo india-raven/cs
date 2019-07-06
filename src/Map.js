@@ -6,6 +6,7 @@ import ReactMapGL, {
 
 import ControlPanel from "./control-panel";
 import { defaultMapStyle, dataLayer } from "./map-style.js";
+import { dataLayerPDSI } from "./map-style-pdsi.js";
 import { updatePercentiles } from "./utils";
 import { fromJS } from "immutable";
 import { json as requestJson } from "d3-request";
@@ -97,7 +98,7 @@ class Map extends Component {
   componentDidMount() {
     //COMPONENT DID MOUNT IS USED TO REQUEST GEOJSON FILE WITH TEMP INFORMATION RIGHT AFTER COMPONENT IS MOUNTED
     requestJson("data/us-temp.geojson", (error, response) => {
-      //WE USE CONVINIENT D3 LIBRARY TO REQUEST JSON
+      //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
       if (!error) {
         this.loadData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
       } else {
