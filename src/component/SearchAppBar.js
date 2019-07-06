@@ -14,7 +14,8 @@ import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    height: 100
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -22,14 +23,21 @@ const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
     flexGrow: 1,
-    color: "white"
+    color: "white",
+    fontSize: 30
   },
   title: {
     flexGrow: 1,
-    display: "none",
+    // display: "none",
+    display: "flex",
+
     [theme.breakpoints.up("sm")]: {
-      display: "block"
-    }
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "flex-start"
+    },
+
+    height: "100%"
   },
   search: {
     position: "relative",
@@ -76,20 +84,29 @@ export default function SearchAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar style={{ backgroundColor: "#006600" }}>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            <Button className={classes.button}>Home</Button>
-            <Button className={classes.button}>Job board</Button>
-          </Typography>
-
+        <Toolbar
+          style={{
+            backgroundColor: "#006600",
+            height: 100,
+            display: "flex",
+            justifyContent: "space-between"
+          }}
+        >
+          <div style={{ display: "flex" }}>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="Open drawer"
+              style={{ flex: 1 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography className={classes.title} variant="h6" noWrap>
+              <Button className={classes.button}>Home</Button>
+              <Button className={classes.button}>Job board</Button>
+            </Typography>
+          </div>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
