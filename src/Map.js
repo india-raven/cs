@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactMapGL, {
   LinearInterpolator,
+
   FlyToInterpolator
 } from "react-map-gl";
 
@@ -10,6 +11,8 @@ import { dataLayerPDSI } from "./map-style-pdsi.js";
 import { updatePercentiles } from "./utils";
 import { fromJS } from "immutable";
 import { json as requestJson } from "d3-request";
+
+
 
 import JobBoard from "./component/JobBoard";
 import StateInfo from "./component/StateInfo";
@@ -32,8 +35,11 @@ class Map extends Component {
       zoom: 4,
       captureScroll: false
     },
+
     name: "",
     show: false
+
+  
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
@@ -172,10 +178,19 @@ class Map extends Component {
 
     this.setState({ show: false });
   };
+  handleSubmit = (event) => {
+      this.setState(() => ({
+        toPage: true
+      }))
+      this.onClick(event);
+  }
 
   render() {
     console.log(this.state);
     const { viewport, mapStyle } = this.state;
+    // if (this.state.toPage === true) {
+    //   return <Redirect to='./component/totalInfo/info_USA.js' />
+    // }
     return (
       <div style={{ height: "100%" }}>
         <ReactMapGL
@@ -207,6 +222,8 @@ class Map extends Component {
           handleClose={this.hideModal}
           onClick={this.hideModal}
         />
+       
+                       
       </div>
     );
   }
