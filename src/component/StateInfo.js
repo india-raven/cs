@@ -57,7 +57,7 @@ export default class StateInfo extends PureComponent {
         <p>chart 5</p> */}
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
-        {/* <GraphLine stateData={stateData.pdsi}/> */}
+        <GraphLine stateData={stateData.pdsi} />
       </Container>
     );
   }
