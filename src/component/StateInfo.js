@@ -47,7 +47,7 @@ export default class StateInfo extends PureComponent {
             {this.state.currentChart}
           </div>
         </div> */}
-        <GraphLine stateData={stateData} />
+        <GraphLine stateData={stateData.temperature} />
         {/* <ChartBubble /> */}
         {/* <p>chart 1 </p>
         <p>chart 2</p>
@@ -57,6 +57,7 @@ export default class StateInfo extends PureComponent {
         <p>chart 5</p> */}
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
+        {/* <GraphLine stateData={stateData.pdsi}/> */}
       </Container>
     );
   }

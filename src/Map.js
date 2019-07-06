@@ -33,7 +33,10 @@ class Map extends Component {
       captureScroll: false
     },
     name: "",
-    stateData: {},
+    stateData: {
+      temperature: "",
+      pdsi: ""
+    },
     show: false,
     toPage: true
   };

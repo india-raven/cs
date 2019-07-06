@@ -31,11 +31,11 @@ class GraphLine extends Component {
   };
 
   render() {
-    let temp = this.props.stateData.temperature;
+    let data = this.props.stateData;
 
-    if (temp) {
-      temp = JSON.parse(temp);
-      const data = this.convertObjToArr(temp);
+    if (data) {
+      data = JSON.parse(data);
+      data = this.convertObjToArr(data);
       console.log("=======>", data);
       let margins = { top: 20, right: 30, bottom: 30, left: 40 };
       // return new Date(parseInt(d.Year),0)
