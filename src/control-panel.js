@@ -28,32 +28,40 @@ export default class ControlPanel extends PureComponent {
 
     return (
       <Container>
-        <h3>Annual Average Temperature</h3>
-        <p>
-          Map showing annual average by state in year <b>{settings.year}</b>.
-          Hover over a state to see details.
-        </p>
-        {/* <p>
+        <div className="ctrl-panel">
+          <h3>Annual Average Temperature</h3>
+          <p>
+            Map showing annual average by state in year <b>{settings.year}</b>.
+            Hover over a state to see details.
+          </p>
+          {/* <p>
           Data source: <a href="www.census.gov">US Census Bureau</a>
         </p> */}
 
-        <hr />
+          <hr />
 
-        <div key={"year"} className="input">
-          <JobBoard show={this.state.show} handleClose={this.hideModal} />
-          <button type="button" onClick={this.showModal}>
-            See nearby jobs
-          </button>
-
-          <label>Year</label>
-          <input
-            type="range"
-            value={settings.year}
-            min={1895}
-            max={2018}
-            step={1}
-            onChange={evt => this.props.onChange("year", evt.target.value)}
-          />
+          <div key={"year"} className="input">
+            <JobBoard show={this.state.show} handleClose={this.hideModal} />
+            <button type="button" onClick={this.showModal}>
+              See nearby jobs
+            </button>
+            <div className="year-and-slider">
+              <input
+                className="slider"
+                type="range"
+                value={settings.year}
+                min={1895}
+                max={2018}
+                step={1}
+                onChange={evt => this.props.onChange("year", evt.target.value)}
+              />
+            </div>
+            <div className="sliderticks">
+              <p>1925</p>
+              <p>1971</p>
+              <p>2018</p>
+            </div>
+          </div>
         </div>
       </Container>
     );
