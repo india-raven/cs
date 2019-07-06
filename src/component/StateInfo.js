@@ -37,7 +37,7 @@ export default class StateInfo extends PureComponent {
       <Container classInStateInfo={showHideClassName}>
         {/* <div style={{position:'absolute', width:'10%'}}> */}
         <i className="fas fa-times fa-2x" onClick={onClick} />
-        <h3>STATE {name}</h3>
+        <h3>{name}</h3>
         <h3>STATE DESCRIPTION</h3>
         {/* <button type="button" onClick={this.changeChart}>
           Change Chart1
