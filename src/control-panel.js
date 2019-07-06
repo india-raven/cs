@@ -44,12 +44,29 @@ export default class ControlPanel extends PureComponent {
           <button type="button" onClick={this.showModal}>
             See nearby jobs
           </button>
-
+          <form style={{ display: "flex", "flex-direction": "column" }}>
+            <p>Select data to map:</p>
+            <div style={{ display: "flex" }}>
+              <input type="radio" name="datatype" value="temp" /> Temperature{" "}
+              <br />
+            </div>
+            <div style={{ display: "flex" }}>
+              <input type="radio" name="datatype" value="pdsi" /> PDSI <br />
+            </div>
+          </form>
           <label>Year</label>
-          <input
+          {/* <input
             type="range"
             value={settings.year}
             min={1895}
+            max={2018}
+            step={1}
+            onChange={evt => this.props.onChange("year", evt.target.value)}
+          /> */}
+          <input
+            type="range"
+            value={settings.year}
+            min={1924}
             max={2018}
             step={1}
             onChange={evt => this.props.onChange("year", evt.target.value)}
