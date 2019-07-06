@@ -28,7 +28,7 @@ class Map extends Component {
       height: "100vh",
       latitude: 39.82,
       longitude: -98.5795,
-      zoom: 3,
+      zoom: 4,
       captureScroll: false
     },
     name: "",
@@ -36,32 +36,30 @@ class Map extends Component {
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
-    updatePercentiles(data, f => f.properties.temperature[this.state.year]);
-    const mapStyle = defaultMapStyle
-      // Add geojson source to map
-      .setIn(
-        ["sources", "temperatureByState"],
-        fromJS({ type: "geojson", data })
-      )
-      // Add point layer to map
-      .set("layers", defaultMapStyle.get("layers").push(dataLayer));
+    const selectedData = this.state.selectedData;
+    if (selectedData === "temp") {
+      updatePercentiles(data, f => f.properties.temperature[this.state.year]);
+      const mapStyle = defaultMapStyle
+        // Add geojson source to map
+        .setIn(
+          ["sources", "temperatureByState"],
+          fromJS({ type: "geojson", data })
+        )
+        // Add point layer to map
+        .set("layers", defaultMapStyle.get("layers").push(dataLayer));
 
-    this.setState({ data, mapStyle });
+      this.setState({ data, mapStyle });
+    } else {
+      updatePercentiles(data, f => f.properties.pdsi[this.state.year]);
+      const mapStyle = defaultMapStyle
+        // Add geojson source to map
+        .setIn(["sources", "pdsiByState"], fromJS({ type: "geojson", data }))
+        // Add point layer to map
+        .set("layers", defaultMapStyle.get("layers").push(dataLayer));
+
+      this.setState({ data, mapStyle });
+    }
   };
-
-  // loadDataPDSI = data => {
-  //   updatePercentiles(data, f => f.properties.pdsi[this.state.year]);
-  //   const mapStyle = defaultMapStyle
-  //     // Add geojson source to map
-  //     .setIn(
-  //       ["sources", "pdsiByState"],
-  //       fromJS({ type: "geojson", data })
-  //     )
-  //     // Add point layer to map
-  //     .set("layers", defaultMapStyle.get("layers").push(dataLayer));
-
-  //   this.setState({ data, mapStyle });
-  // };
 
   updateSettings = (name, value) => {
     if (name === "year") {
@@ -69,12 +67,23 @@ class Map extends Component {
 
       const { data, mapStyle } = this.state;
       if (data) {
-        updatePercentiles(data, f => f.properties.temperature[value]);
-        const newMapStyle = mapStyle.setIn(
-          ["sources", "temperatureByState", "data"],
-          fromJS(data)
-        );
-        this.setState({ mapStyle: newMapStyle });
+        if (this.state.selectedData === "temp") {
+          updatePercentiles(data, f => {
+            return f.properties.temperature[value];
+          });
+          const newMapStyle = mapStyle.setIn(
+            ["sources", "temperatureByState", "data"],
+            fromJS(data)
+          );
+          this.setState({ mapStyle: newMapStyle });
+        } else {
+          updatePercentiles(data, f => f.properties.pdsi[value]);
+          const newMapStyle = mapStyle.setIn(
+            ["sources", "temperatureByState", "data"],
+            fromJS(data)
+          );
+          this.setState({ mapStyle: newMapStyle });
+        }
       }
     }
   };
