@@ -11,7 +11,7 @@ import { dataLayerPDSI } from "./map-style-pdsi.js";
 import { updatePercentiles } from "./utils";
 import { fromJS } from "immutable";
 import { json as requestJson } from "d3-request";
-
+import Button from './component/totalInfo/button.js'
 
 
 import JobBoard from "./component/JobBoard";
@@ -223,7 +223,7 @@ class Map extends Component {
           onClick={this.hideModal}
         />
        
-                       
+         <Button />              
       </div>
     );
   }
