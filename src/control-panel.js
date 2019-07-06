@@ -49,16 +49,16 @@ export default class ControlPanel extends PureComponent {
           <button type="button" onClick={this.showModal}>
             See nearby jobs
           </button>
-          <form style={{ display: "flex", "flex-direction": "column" }}>
+          <form style={{ display: "flex", flexDirection: "column" }}>
             <p>Select data to map:</p>
             <div style={{ display: "flex" }}>
               <input
                 type="radio"
                 name="datatype"
-                value="temp"
-                checked={this.props.selectedData === "temp"}
+                value="Temperature"
+                checked={this.props.selectedData === "Temperature"}
                 onChange={() => {
-                  this.props.updateSelectedData("temp");
+                  this.props.updateSelectedData("PDSI");
                   requestJson("data/us-temp.geojson", (error, response) => {
                     //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
                     if (!error) {
@@ -77,10 +77,10 @@ export default class ControlPanel extends PureComponent {
               <input
                 type="radio"
                 name="datatype"
-                value="pdsi"
-                checked={this.props.selectedData === "pdsi"}
+                value="PDSI"
+                checked={this.props.selectedData === "PDSI"}
                 onChange={() => {
-                  this.props.updateSelectedData("pdsi");
+                  this.props.updateSelectedData("PDSI");
                   requestJson("data/us-temp.geojson", (error, response) => {
                     //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
                     if (!error) {

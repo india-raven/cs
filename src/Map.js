@@ -22,7 +22,7 @@ class Map extends Component {
     mapStyle: defaultMapStyle,
     year: 2018,
     data: null,
-    selectedData: "pdsi",
+    selectedData: "Temperature",
     hoveredFeature: null,
     viewport: {
       width: "100vw",
@@ -38,7 +38,7 @@ class Map extends Component {
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
     const selectedData = this.state.selectedData;
-    if (selectedData === "temp") {
+    if (selectedData === "Temperature") {
       updatePercentiles(data, f => f.properties.temperature[this.state.year]);
       const mapStyle = defaultMapStyle
         // Add geojson source to map
@@ -68,7 +68,7 @@ class Map extends Component {
 
       const { data, mapStyle } = this.state;
       if (data) {
-        if (this.state.selectedData === "temp") {
+        if (this.state.selectedData === "Temperature") {
           updatePercentiles(data, f => {
             return f.properties.temperature[value];
           });
@@ -151,7 +151,8 @@ class Map extends Component {
         <div className="tooltip" style={{ left: x, top: y }}>
           <div>State: {hoveredFeature.properties.name}</div>
           <div>
-            Average Annual Temperature: {hoveredFeature.properties.value}
+            Average Annual {this.state.selectedData}:{" "}
+            {hoveredFeature.properties.value}
           </div>
           {/* <div>Percentile: {(hoveredFeature.properties.percentile / 8) * 100}</div> */}
         </div>
