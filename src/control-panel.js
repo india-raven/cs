@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import JobBoard from "./component/JobBoard";
+import Slider from "./component/Slider";
 
 import { json as requestJson } from "d3-request";
 
@@ -61,9 +62,8 @@ export default class ControlPanel extends PureComponent {
                   onChange={() => {
                     this.props.updateSelectedData("PDSI");
                     requestJson("data/us-temp.geojson", (error, response) => {
-                      //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
                       if (!error) {
-                        this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
+                        this.props.mapNewData(response);
                       } else {
                         console.log("----------------------------------------");
                         console.error(error);
@@ -83,9 +83,8 @@ export default class ControlPanel extends PureComponent {
                   onChange={() => {
                     this.props.updateSelectedData("PDSI");
                     requestJson("data/us-temp.geojson", (error, response) => {
-                      //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
                       if (!error) {
-                        this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
+                        this.props.mapNewData(response);
                       } else {
                         console.log("----------------------------------------");
                         console.error(error);
@@ -97,38 +96,7 @@ export default class ControlPanel extends PureComponent {
                 PDSI <br />
               </div>
             </form>
-            <label>Year</label>
-            {/* <input
-            type="range"
-            value={settings.year}
-            min={1895}
-            max={2018}
-            step={1}
-            onChange={evt => this.props.onChange("year", evt.target.value)}
-          /> */}
-            <input
-              type="range"
-              value={settings.year}
-              min={1924}
-              max={2018}
-              step={1}
-              onChange={evt => this.props.onChange("year", evt.target.value)}
-            />
-            <div className="sliderticks">
-              <p>1925</p>
-              <p>1934</p>
-              <p>1945</p>
-              <p>1955</p>
-              <p>1962</p>
-              <p>1971</p>
-              <p>1980</p>
-              <p>1990</p>
-              <p>2005</p>
-              <p>2008</p>
-              <div className="tick-2018">
-                <p>2018</p>
-              </div>
-            </div>
+            <Slider settings={settings} onChange={this.props.onChange} />
           </div>
         </div>
       </Container>

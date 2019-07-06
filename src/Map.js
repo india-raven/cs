@@ -119,6 +119,7 @@ class Map extends Component {
     const hoveredFeature =
       features && features.find(f => f.layer.id === "data");
     this.setState({ hoveredFeature, x: offsetX, y: offsetY });
+    console.log("THIS.STATE>>>:", this.state);
   };
 
   onClick = event => {
