@@ -53,6 +53,11 @@ body {
   margin: 0 0 20px 0;
 }
 
+.tick-2018 {
+  margin-left: 0;
+  padding-left: 0;
+}
+
 .state-info {
   position: absolute;
   top: 0;
