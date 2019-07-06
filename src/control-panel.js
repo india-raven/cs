@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import JobBoard from "./component/JobBoard";
 
+import { json as requestJson } from "d3-request";
+
 const defaultContainer = ({ children }) => (
   <div className="control-panel">{children}</div>
 );
@@ -55,7 +57,19 @@ export default class ControlPanel extends PureComponent {
                 name="datatype"
                 value="temp"
                 checked={this.props.selectedData === "temp"}
-                onChange={() => this.props.updateSelectedData("temp")}
+                onChange={() => {
+                  this.props.updateSelectedData("temp");
+                  requestJson("data/us-temp.geojson", (error, response) => {
+                    //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
+                    if (!error) {
+                      this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
+                    } else {
+                      console.log("----------------------------------------");
+                      console.error(error);
+                      console.log("----------------------------------------");
+                    }
+                  });
+                }}
               />{" "}
               Temperature <br />
             </div>
@@ -67,6 +81,16 @@ export default class ControlPanel extends PureComponent {
                 checked={this.props.selectedData === "pdsi"}
                 onChange={() => {
                   this.props.updateSelectedData("pdsi");
+                  requestJson("data/us-temp.geojson", (error, response) => {
+                    //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
+                    if (!error) {
+                      this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
+                    } else {
+                      console.log("----------------------------------------");
+                      console.error(error);
+                      console.log("----------------------------------------");
+                    }
+                  });
                 }}
               />{" "}
               PDSI <br />

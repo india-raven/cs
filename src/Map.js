@@ -195,6 +195,7 @@ class Map extends Component {
           onChange={this.updateSettings}
           selectedData={this.state.selectedData}
           updateSelectedData={this.updateSelectedData}
+          mapNewData={this.loadData}
         />
 
         {/* <JobBoard /> */}
