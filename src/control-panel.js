@@ -12,7 +12,10 @@ export default class ControlPanel extends PureComponent {
   //     show: false
   //   };
   // }
-  state = { show: false };
+  state = {
+    show: false
+    // selectedData: "temp"
+  };
 
   showModal = () => {
     this.setState({ show: true });
@@ -47,11 +50,26 @@ export default class ControlPanel extends PureComponent {
           <form style={{ display: "flex", "flex-direction": "column" }}>
             <p>Select data to map:</p>
             <div style={{ display: "flex" }}>
-              <input type="radio" name="datatype" value="temp" /> Temperature{" "}
-              <br />
+              <input
+                type="radio"
+                name="datatype"
+                value="temp"
+                checked={this.props.selectedData === "temp"}
+                onChange={() => this.props.updateSelectedData("temp")}
+              />{" "}
+              Temperature <br />
             </div>
             <div style={{ display: "flex" }}>
-              <input type="radio" name="datatype" value="pdsi" /> PDSI <br />
+              <input
+                type="radio"
+                name="datatype"
+                value="pdsi"
+                checked={this.props.selectedData === "pdsi"}
+                onChange={() => {
+                  this.props.updateSelectedData("pdsi");
+                }}
+              />{" "}
+              PDSI <br />
             </div>
           </form>
           <label>Year</label>

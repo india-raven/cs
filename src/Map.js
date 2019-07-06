@@ -79,7 +79,11 @@ class Map extends Component {
     }
   };
 
-  updateSelectedData() {}
+  updateSelectedData = data => {
+    this.setState({
+      selectedData: data
+    });
+  };
 
   componentDidMount() {
     //COMPONENT DID MOUNT IS USED TO REQUEST GEOJSON FILE WITH TEMP INFORMATION RIGHT AFTER COMPONENT IS MOUNTED
@@ -159,6 +163,7 @@ class Map extends Component {
   };
 
   render() {
+    console.log(this.state);
     const { viewport, mapStyle } = this.state;
     return (
       <div style={{ height: "100%" }}>
@@ -178,6 +183,8 @@ class Map extends Component {
           containerComponent={this.props.containerComponent}
           settings={this.state}
           onChange={this.updateSettings}
+          selectedData={this.state.selectedData}
+          updateSelectedData={this.updateSelectedData}
         />
 
         {/* <JobBoard /> */}
