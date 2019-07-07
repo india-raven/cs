@@ -1,5 +1,5 @@
 import React from "react";
 
-export const PDSItooltip = () => {
+export function PDSItooltip(props) {
   return <div>?</div>;
-};
+}

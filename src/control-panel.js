@@ -56,7 +56,7 @@ export default class ControlPanel extends PureComponent {
             </button>
             <form style={{ display: "flex", flexDirection: "column" }}>
               <p>Select data to map:</p>
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
                 <input
                   type="radio"
                   name="datatype"
@@ -77,7 +77,7 @@ export default class ControlPanel extends PureComponent {
                 />{" "}
                 Temperature <br />
               </div>
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
                 <input
                   type="radio"
                   name="datatype"
@@ -96,10 +96,19 @@ export default class ControlPanel extends PureComponent {
                     });
                   }}
                 />{" "}
-                PDSI
-                <Tooltip title="pdsi-info" placement="top-end">
-                  <PDSItooltip />
-                </Tooltip>
+                <div style={{ display: "flex" }}>
+                  <p>PDSI </p>
+                  {"   "}
+                  <Tooltip
+                    title="Palmer Drought Severity Index. See more at climatedataguide.ucar.edu"
+                    placement="top-start"
+                    style={{ paddingLeft: "10px" }}
+                  >
+                    {/* <PDSItooltip /> */}
+                    <p>?</p>
+                    {/* <FontAwesomeIcon icon={["far", "fa-question-circle"]} /> */}
+                  </Tooltip>
+                </div>
                 <br />
               </div>
             </form>
