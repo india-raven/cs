@@ -17,6 +17,7 @@ import ControlInfo from './control-info'
 import JobBoard from "./component/JobBoard";
 import StateInfo from "./component/StateInfo";
 
+
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
 
@@ -218,8 +219,6 @@ class Map extends Component {
           updateSelectedData={this.updateSelectedData}
           mapNewData={this.loadData}
         />
-
-        {/* <JobBoard /> */}
 
         <StateInfo
           name={this.state.name}

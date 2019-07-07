@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-import JobBoard from "./component/JobBoard";
+import React, { PureComponent } from 'react';
+import JobBoard from './component/JobBoard';
 
 import { json as requestJson } from "d3-request";
 
@@ -94,14 +94,20 @@ export default class ControlPanel extends PureComponent {
             </div>
           </form>
           <label>Year</label>
+
           <input
             type="range"
             value={settings.year}
             min={1924}
             max={2018}
             step={1}
-            onChange={evt => this.props.onChange("year", evt.target.value)}
+            onChange={evt => this.props.onChange('year', evt.target.value)}
           />
+
+          <JobBoard show={this.state.show} handleClose={this.hideModal} />
+          <button type="button" onClick={this.showModal}>
+            See nearby jobs
+          </button>
         </div>
       </Container>
     );
