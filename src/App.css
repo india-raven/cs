@@ -226,7 +226,7 @@ input {
   height: 100vh;
   /* max-height: 100%; */
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
   /* padding: 12px 24px 12px 24px;
   margin: auto; */
   font-size: 13px;
@@ -241,6 +241,7 @@ input {
     -o-animation: fadein 2s; /* Opera < 12.1 */
        animation: fadein 2s;
 }
+
 /* 
 .usaInfo {
   position: fixed;

@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import NewPage from './component/totalInfo/newPage'
 
 //modal wrapper for our popup
 const defaultContainer = ({ children, classInStateInfo }) => (
@@ -23,15 +24,13 @@ export default class StateInfo extends PureComponent {
     const showHideClassName = show
       ? " usaInfo display-block"
       : " usaInfo display-none";
-
     const Container = this.props.containerComponent || defaultContainer;
-
     return (
       <Container classInStateInfo={showHideClassName}>
         {/* <div style={{position:'absolute', width:'10%'}}> */}
-        <i className="fas fa-times fa-2x" onClick={onClick} />
-        <h3>STATE {this.props.name}</h3>
-        <h3>STATE DESCRIPTION</h3>
+        <i className="fas fa-times fa-3x" onClick={onClick}/>
+         <NewPage />
+
         {/* <button type="button" onClick={this.changeChart}>
           Change Chart1
         </button> */}

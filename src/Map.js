@@ -168,15 +168,22 @@ class Map extends Component {
     this.onClick(event);
   };
   
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+  
   showUSA = () => {
     this.setState({ showUSAInfo: true });
     console.log('setting showUSAInfo')
     // this.onClick(event);
   };
 
-  hideModal = () => {
-    this.setState({ show: false });
+  hideUSA = () => {
+    this.setState({ showUSAInfo: false });
+    console.log('closing showUSAInfo')
+    // this.onClick(event);
   };
+ 
   handleSubmit = (event) => {
       this.setState(() => ({
         toPage: true
@@ -227,7 +234,7 @@ class Map extends Component {
          <ControlInfo 
           show={this.state.showUSAInfo}
           handleClose={this.hideModal}
-          onClick={this.hideModal}/>
+          onClick={this.hideUSA}/>
           
       </div>
     );
