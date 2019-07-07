@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import NewPage from './component/totalInfo/newPage'
-
+import Fab from '@material-ui/core/Fab';
+import IconButton from '@material-ui/core/IconButton';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 //modal wrapper for our popup
 const defaultContainer = ({ children, classInStateInfo }) => (
   <div className={classInStateInfo}>{children}</div> //change
@@ -28,9 +30,9 @@ export default class StateInfo extends PureComponent {
     return (
       <Container classInStateInfo={showHideClassName}>
         {/* <div style={{position:'absolute', width:'10%'}}> */}
-        <i className="fas fa-times fa-3x" onClick={onClick}/>
+      
+        <i className="fas fa-times fa-2x" onClick={onClick}/>
          <NewPage />
-
         {/* <button type="button" onClick={this.changeChart}>
           Change Chart1
         </button> */}
