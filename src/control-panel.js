@@ -35,10 +35,10 @@ export default class ControlPanel extends PureComponent {
     return (
       <Container>
         <div className="ctrl-panel">
-          <h3>Annual Average Temperature</h3>
+          <h3>Average Annual {this.props.selectedData}</h3>
           <p>
             Map showing annual average by state in year <b>{settings.year}</b>.
-            Hover over a state to see details.
+            Hover over a state to see details!
           </p>
           {/* <p>
           Data source: <a href="www.census.gov">US Census Bureau</a>
@@ -60,7 +60,7 @@ export default class ControlPanel extends PureComponent {
                   value="Temperature"
                   checked={this.props.selectedData === "Temperature"}
                   onChange={() => {
-                    this.props.updateSelectedData("PDSI");
+                    this.props.updateSelectedData("Temperature");
                     requestJson("data/us-temp.geojson", (error, response) => {
                       if (!error) {
                         this.props.mapNewData(response);
