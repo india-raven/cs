@@ -11,8 +11,8 @@ import { dataLayerPDSI } from "./map-style-pdsi.js";
 import { updatePercentiles } from "./utils";
 import { fromJS } from "immutable";
 import { json as requestJson } from "d3-request";
-
-
+import Button from './component/totalInfo/button.js'
+import ControlInfo from './control-info'
 
 import JobBoard from "./component/JobBoard";
 import StateInfo from "./component/StateInfo";
@@ -35,11 +35,9 @@ class Map extends Component {
       zoom: 4,
       captureScroll: false
     },
-
     name: "",
-    show: false
-
-  
+    show: false,
+    showUSAInfo: false
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
@@ -131,7 +129,6 @@ class Map extends Component {
       features,
       srcEvent: { offsetX, offsetY }
     } = event;
-    console.log("COORDS:", event.lngLat);
     if (features[0]) {
       this.setState({
         name: features[0].properties.name,
@@ -168,16 +165,25 @@ class Map extends Component {
 
   showModal = event => {
     this.setState({ show: true });
-    console.log("inside");
-    console.log(this.state);
     this.onClick(event);
   };
-
+  
   hideModal = () => {
-    console.log("close");
-
     this.setState({ show: false });
   };
+  
+  showUSA = () => {
+    this.setState({ showUSAInfo: true });
+    console.log('setting showUSAInfo')
+    // this.onClick(event);
+  };
+
+  hideUSA = () => {
+    this.setState({ showUSAInfo: false });
+    console.log('closing showUSAInfo')
+    // this.onClick(event);
+  };
+ 
   handleSubmit = (event) => {
       this.setState(() => ({
         toPage: true
@@ -186,7 +192,6 @@ class Map extends Component {
   }
 
   render() {
-    console.log(this.state);
     const { viewport, mapStyle } = this.state;
     // if (this.state.toPage === true) {
     //   return <Redirect to='./component/totalInfo/info_USA.js' />
@@ -223,7 +228,14 @@ class Map extends Component {
           onClick={this.hideModal}
         />
        
-                       
+         <Button onClick={this.showUSA}/> 
+     
+         
+         <ControlInfo 
+          show={this.state.showUSAInfo}
+          handleClose={this.hideModal}
+          onClick={this.hideUSA}/>
+          
       </div>
     );
   }

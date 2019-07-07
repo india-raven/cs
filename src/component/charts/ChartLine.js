@@ -12,7 +12,7 @@ class ChartLine extends Component {
         let x = width/2;
         let y = height/2 ;
         return (
-          <svg width='950px' height='950px'>
+          <svg width='500px' height='500px' viewBox="0 0 400 330" >
             <Pie x={x} y={y} 
             radius={radius} 
        innerRadius={radius*0.4}

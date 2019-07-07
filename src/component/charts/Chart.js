@@ -6,7 +6,7 @@ import data from './d'
 import Bars from './Bar'
 import Tooltip from './Tooltip'
 import ResponsiveChart from './ResponsiveChart'
-
+import * as d3 from "d3"
  class Chart extends Component {
   constructor() {
     super()
@@ -20,10 +20,10 @@ import ResponsiveChart from './ResponsiveChart'
 
   render() {
     console.log(this)
-    const margins = { top: 10, right: 15, bottom: 0, left: 15}
+    const margins = { top: 10, right: 60, bottom: 0, left: 60}
     const svgDimensions = {
-      width: Math.max(this.props.parentWidth, 600),
-      height: 400
+      width: Math.max(this.props.parentWidth, 900),
+      height: 600
     }
 
     const maxValue = Math.max(...data.map(d => d.value))
@@ -35,15 +35,15 @@ import ResponsiveChart from './ResponsiveChart'
       .range([margins.left, svgDimensions.width -margins.right])
     const yScale = this.yScale
       .domain([minValue, maxValue])
-      .range([svgDimensions.height - 50,margins.top])
+      .range([svgDimensions.height - margins.bottom,margins.top])
 
-    
+    //  /* <svg  viewBox={`0 0 ${svgDimensions.width +
+    //         margins.left} ${svgDimensions.height + margins.bottom}`} //THE PROBLEM IS HERE
+    //       preserveAspectRatio="xMinYMin meet" */
     return (
       
       <div>
-      <svg  viewBox={`0 0 ${svgDimensions.width +
-            margins.left} ${svgDimensions.height + 50}`} //THE PROBLEM IS HERE
-          preserveAspectRatio="xMinYMin meet"
+        <svg  
       width={svgDimensions.width} height={svgDimensions.height}
      >
         
@@ -64,8 +64,9 @@ import ResponsiveChart from './ResponsiveChart'
           onMouseOverCallback={datum => this.setState({hoveredBar: datum})}
           onMouseOutCallback={datum => this.setState({hoveredBar: null})}
           // onMouseMoveCallback={datum=>this.setState({hoveredBar:datum})}
-          
+         
         />
+       
       </svg>
      
       { this.state.hoveredBar ?

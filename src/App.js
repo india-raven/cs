@@ -7,10 +7,9 @@ import Checkout from "./component/Checkout";
 import { Route, Switch, Router } from 'react-router';
 
 function App() {
+
   return (
-
     <div className="App">
-
       <Map />
       {/* <Checkout
         name={"India Raven"}
@@ -18,10 +17,6 @@ function App() {
         amount={1}
       /> */}
     </div>
-
-
-
-
   );
 }
 
