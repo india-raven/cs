@@ -46,5 +46,6 @@ export default class Bars extends Component {
         {bars}
       </g>
     );
+
   }
 }
