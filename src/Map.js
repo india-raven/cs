@@ -37,7 +37,11 @@ class Map extends Component {
     },
     name: "",
     show: false,
-    showUSAInfo: false
+    showUSAInfo: false,
+    stateData: {
+      temperature: "",
+      pdsi: ""
+    },
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
@@ -139,7 +143,8 @@ class Map extends Component {
           latitude: event.lngLat[1],
           zoom: 5,
           captureScroll: false
-        }
+        },
+        stateData: features[0].properties.temperature
       });
     } else {
       this.setState({ name: "" });
@@ -196,6 +201,7 @@ class Map extends Component {
     // if (this.state.toPage === true) {
     //   return <Redirect to='./component/totalInfo/info_USA.js' />
     // }
+    console.log(this.state.data)
     return (
       <div style={{ height: "100%" }}>
         <ReactMapGL
@@ -226,6 +232,7 @@ class Map extends Component {
           show={this.state.show}
           handleClose={this.hideModal}
           onClick={this.hideModal}
+          stateData={this.state.stateData}
         />
        
          <Button onClick={this.showUSA}/> 

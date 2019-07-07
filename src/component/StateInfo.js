@@ -29,7 +29,7 @@ export default class StateInfo extends PureComponent {
   render() {
 
     const { show, name, onClick, stateData} = this.props;
-    console.log('-------=======>',this)
+    console.log('-------=======>',stateData)
     const showHideClassName = show
       ? "state-info display-block"
       : "state-info display-none";
@@ -60,7 +60,7 @@ export default class StateInfo extends PureComponent {
         <p>chart 5</p> */}
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
-        {/* <LineChartSideBar stateData={stateData}/> */}
+        <LineChartSideBar stateData={stateData}/>
       </Container>
     );
   }

@@ -38,7 +38,7 @@ export default class JobBoard extends Component {
           </button>
           <hr />
           <div className="job-list-and-description">
-            <div className="job-board-info">
+            {/* <div className="job-board-info">
               {this.state.jobs.map(job => {
                 // "Job1"
                 return (
@@ -51,7 +51,7 @@ export default class JobBoard extends Component {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
             <hr />
             <div className="job-description">
               <JobDescription job={this.state.currJob} />
