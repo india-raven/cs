@@ -85,10 +85,7 @@ export default class ControlPanel extends PureComponent {
                     //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
                     if (!error) {
                       this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
-                    } else {
-                      console.log("----------------------------------------");
-                      console.error(error);
-                      console.log("----------------------------------------");
+                    } else {                
                     }
                   });
                 }}
@@ -97,14 +94,6 @@ export default class ControlPanel extends PureComponent {
             </div>
           </form>
           <label>Year</label>
-          {/* <input
-            type="range"
-            value={settings.year}
-            min={1895}
-            max={2018}
-            step={1}
-            onChange={evt => this.props.onChange("year", evt.target.value)}
-          /> */}
           <input
             type="range"
             value={settings.year}

@@ -1,48 +1,56 @@
-import React, { PureComponent } from 'react';
-import Button from './component/totalInfo/button'
-import AnotherComponent from './component/totalInfo/newPage'
-const defaultContainer = ({ children }) => (
-  <div className="control-info">{children}</div>
+import React, { PureComponent } from "react";
+
+//modal wrapper for our popup
+const defaultContainer = ({ children, classInStateInfo }) => (
+  <div className={classInStateInfo}>{children}</div> //change
 );
 
-export default class ControlInfo extends PureComponent {
-    constructor(props) {
-        super(props)
-        this.state = { isEmptyState: true,
-            show: false }
-      }
-    
-      triggerAddComponent = () => {
-        this.setState({
-          ...this.state,
-          isEmptyState: false,
-          isAddINFO: true,
-        //   show: false
-        })
-      }
-//   state = { show: false };
-
-  showModal = () => {
-    this.setState({ show: true });
-  };
-
-  hideModal = () => {
-    this.setState({ show: false });
-  };
-
+export default class StateInfo extends PureComponent {
+  constructor() {
+    super();
+    this.state = {
+     
+    };
+    // this.changeChart = this.changeChart.bind(this);
+  }
+  // changeChart() {
+  //   this.setState({
+  //     currentChart: <ChartBubble />
+  //   });
+  // }
   render() {
+    const { show, onClick } = this.props;
+    const showHideClassName = show
+      ? " usaInfo display-block"
+      : " usaInfo display-none";
+
     const Container = this.props.containerComponent || defaultContainer;
-    const { settings } = this.props;
 
     return (
-        <button>
-  
-       {/* <Button addComponent={this.triggerAddComponent} /> */}
-      {this.state.isEmptyState && <Button addComponent={this.triggerAddComponent} />}
+      <Container classInStateInfo={showHideClassName}>
+        {/* <div style={{position:'absolute', width:'10%'}}> */}
+        <i className="fas fa-times fa-2x" onClick={onClick} />
+        <h3>STATE {this.props.name}</h3>
+        <h3>STATE DESCRIPTION</h3>
+        {/* <button type="button" onClick={this.changeChart}>
+          Change Chart1
+        </button> */}
+        {/* <div style={{ position: "relative", width: "10%" }}>
+          <div style={{ position: "absolute", width: "10%" }}>
+            {this.state.currentChart}
+          </div>
+        </div> */}
+        {/* <Chart /> */}
+        {/* <ChartBubble /> */}
+        {/* <p>chart 1 </p>
+        <p>chart 2</p>
+        <p>chart 3</p>
+        <p>chart 4</p>
 
-      {this.state.isAddINFO && <AnotherComponent />}
-    
-    </button>
+        <p>chart 5</p> */}
+        {/* <ChartApp className={showHideClassName}/> */}
+        {/* </div> */}
+      </Container>
     );
   }
 }

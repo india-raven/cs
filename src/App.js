@@ -6,8 +6,11 @@ import Fire from "./Fire";
 import Checkout from "./component/Checkout";
 import './App.css';
 import { Route, Switch, Router } from 'react-router';
+import ReactPageScroller from "react-page-scroller";
+
 
 function App() {
+  
   return (
 
     <div className="App">
@@ -19,10 +22,6 @@ function App() {
         amount={1}
       /> */}
     </div>
-
-     
-      
-
   );
 }
 
