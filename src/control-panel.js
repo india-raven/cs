@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
+import { Tooltip } from "@material-ui/core";
+
 import JobBoard from "./component/JobBoard";
 import Slider from "./component/Slider";
+import { PDSItooltip } from "./component/PDSItooltip";
 
 import { json as requestJson } from "d3-request";
 
@@ -93,7 +96,11 @@ export default class ControlPanel extends PureComponent {
                     });
                   }}
                 />{" "}
-                PDSI <br />
+                PDSI
+                <Tooltip title="pdsi-info" placement="top-end">
+                  <PDSItooltip />
+                </Tooltip>
+                <br />
               </div>
             </form>
             <Slider settings={settings} onChange={this.props.onChange} />

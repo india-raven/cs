@@ -26,6 +26,7 @@ export default class JobBoard extends Component {
   }
 
   render(props) {
+    console.log("JOB BOARD JOBS:", this.state.jobs);
     const showHideClassName = this.props.show
       ? "modal display-block"
       : "modal display-none";

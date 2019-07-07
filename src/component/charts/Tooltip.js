@@ -27,14 +27,6 @@ export default ({ hoveredBar, scales }) => {
             hoveredBar.value +
             "\u2103"}
         </td>
-        <td>
-          PDSI:{" "}
-          {((hoveredBar.value * 9) / 5 + 32).toFixed(2) +
-            "\u2109" +
-            " | " +
-            hoveredBar.value +
-            "\u2103"}
-        </td>
       </Paper>
     </div>
   );
