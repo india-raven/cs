@@ -17,7 +17,6 @@ export default class StateInfo extends PureComponent {
       // donutChart: <ChartLine />, //donut
       bubbleChart: <ChartBubble />, //
       currentChart: <LineChartSideBar />
-
     };
     this.changeChart = this.changeChart.bind(this);
   }
@@ -60,7 +59,7 @@ export default class StateInfo extends PureComponent {
         <p>chart 5</p> */}
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
-        <LineChartSideBar stateData={stateData}/>
+        <LineChartSideBar stateData={stateData.temperature}/>
       </Container>
     );
   }

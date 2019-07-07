@@ -144,7 +144,7 @@ class Map extends Component {
           zoom: 5,
           captureScroll: false
         },
-        stateData: features[0].properties.temperature
+        stateData: features[0].properties
       });
     } else {
       this.setState({ name: "" });
