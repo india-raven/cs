@@ -3,6 +3,7 @@ import ChartApp from "./charts/ChartApp";
 import Chart from "./charts/Chart";
 import ChartLine from "./charts/ChartLine";
 import ChartBubble from "./charts/ChartBubble";
+import LineChartSideBar from "./charts/LineChartSideBar"
 //modal wrapper for our popup
 const defaultContainer = ({ children, classInStateInfo }) => (
   <div className={classInStateInfo}>{children}</div> //change
@@ -15,7 +16,8 @@ export default class StateInfo extends PureComponent {
       barChart: <Chart />, //barchart 
       // donutChart: <ChartLine />, //donut
       bubbleChart: <ChartBubble />, //
-      currentChart: <Chart />
+      currentChart: <LineChartSideBar />
+
     };
     this.changeChart = this.changeChart.bind(this);
   }
@@ -25,7 +27,9 @@ export default class StateInfo extends PureComponent {
     });
   }
   render() {
-    const { show, name, onClick } = this.props;
+
+    const { show, name, onClick, stateData} = this.props;
+    console.log('-------=======>',this)
     const showHideClassName = show
       ? "state-info display-block"
       : "state-info display-none";
@@ -46,7 +50,7 @@ export default class StateInfo extends PureComponent {
             {this.state.currentChart}
           </div>
         </div> */}
-        <Chart />
+        {/* <Chart /> */}
         {/* <ChartBubble /> */}
         {/* <p>chart 1 </p>
         <p>chart 2</p>
@@ -56,6 +60,7 @@ export default class StateInfo extends PureComponent {
         <p>chart 5</p> */}
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
+        {/* <LineChartSideBar stateData={stateData}/> */}
       </Container>
     );
   }

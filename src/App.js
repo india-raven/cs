@@ -6,7 +6,7 @@ import Fire from "./Fire";
 import Checkout from "./component/Checkout";
 import './App.css';
 import { Route, Switch, Router } from 'react-router';
-import ReactPageScroller from "react-page-scroller";
+// import ReactPageScroller from "react-page-scroller";
 
 
 function App() {

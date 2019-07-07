@@ -16,7 +16,7 @@ class GraphLine extends Component {
     
 
     render() {
-      console.log(data)
+     
         let margins = {top: 20, right: 60, bottom: 30, left: 70}
         // return new Date(parseInt(d.Year),0)
         const svgDimensions = { width: 850, height: 400}
