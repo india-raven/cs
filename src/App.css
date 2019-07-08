@@ -11,7 +11,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  max-width: 320px;
+  max-width: 600px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   padding: 12px 24px;
@@ -21,6 +21,30 @@ body {
   color: #6b6b76;
   outline: none;
   text-transform: uppercase;
+}
+
+.slider {
+  width: 100%;
+  margin: 2px;
+  background: #d3d3d3;
+}
+
+.sliderticks {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3px;
+}
+
+.sliderticks p {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 2px;
+  background-color: #d3d3d3;
+  height: 10px;
+  line-height: 40px;
+  margin: 0 0 20px 0;
 }
 
 .state-info {
@@ -345,3 +369,4 @@ input {
   top: 5px;
   right: 10px;
 }
+
