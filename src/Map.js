@@ -32,7 +32,7 @@ class Map extends Component {
       height: "100vh",
       latitude: 39.82,
       longitude: -98.5795,
-      zoom: 4,
+      zoom: 4.5,
       captureScroll: false
     },
     name: "",
