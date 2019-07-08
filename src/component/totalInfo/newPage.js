@@ -72,10 +72,10 @@ export default class NewPage extends React.Component{
           <Typography variant="h4" gutterBottom>CO2<Typography variant="body2" color="textSecondary">Carbon Dioxide</Typography></Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-        <GraphLine padding={'10px'}/>
+       
           <Typography>
-          
-         <div align='left' > {'Carbon dioxide (CO2) is an important heat-trapping (greenhouse) gas, which is released through human activities such as deforestation and burning fossil fuels, as well as natural processes such as respiration and volcanic eruptions.'}
+          <GraphLine />
+         <div > {'Carbon dioxide (CO2) is an important heat-trapping (greenhouse) gas, which is released through human activities such as deforestation and burning fossil fuels, as well as natural processes such as respiration and volcanic eruptions.'}
           </div></Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

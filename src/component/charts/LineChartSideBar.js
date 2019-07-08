@@ -10,7 +10,7 @@ class LineChartSideBar extends Component {
     // this.state={
     //   data:[]
     // }
-    this.xScale = scaleLinear()
+    this.xScale =scaleLinear()
     this.yScale = scaleLinear()
     // this.changeViewData=this.changeViewData.bind(this)
 }    
