@@ -1,20 +1,11 @@
-<<<<<<< HEAD
-import React, { PureComponent } from "react";
-import ChartApp from "./charts/ChartApp";
-import Chart from "./charts/Chart";
-import ChartLine from "./charts/ChartLine";
-import ChartBubble from "./charts/ChartBubble";
-import LineChartSideBar from "./charts/LineChartSideBar"
-import LinePDChart from "./charts/LinePDChart"
-=======
 import React, { PureComponent } from 'react';
 import ChartApp from './charts/ChartApp';
 import Chart from './charts/Chart';
 import ChartLine from './charts/ChartLine';
 import ChartBubble from './charts/ChartBubble';
-
+import LineChartSideBar from './charts/LineChartSideBar';
+import LinePDChart from './charts/LinePDChart';
 import JobBoard from './JobBoard';
->>>>>>> development
 //modal wrapper for our popup
 const defaultContainer = ({ children, classInStateInfo }) => (
   <div className={classInStateInfo}>{children}</div> //change
@@ -28,7 +19,7 @@ export default class StateInfo extends PureComponent {
       barChart: <Chart />, //barchart
       // donutChart: <ChartLine />, //donut
       bubbleChart: <ChartBubble />, //
-      currentChart: <LineChartSideBar />
+      currentChart: <LineChartSideBar />,
     };
     this.changeChart = this.changeChart.bind(this);
   }
@@ -71,9 +62,9 @@ export default class StateInfo extends PureComponent {
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
         <div>{'Average Temperature \u2109 (1895-2018)'}</div>
-        <LineChartSideBar stateData={stateData.temperature}/>
+        <LineChartSideBar stateData={stateData.temperature} />
         <div>{'Average PSDI (1925-2018)'}</div>
-        <LinePDChart stateData={stateData.pdsi}/>
+        <LinePDChart stateData={stateData.pdsi} />
       </Container>
     );
   }

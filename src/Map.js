@@ -13,22 +13,8 @@ import { json as requestJson } from 'd3-request';
 import Button from './component/totalInfo/button.js';
 import ControlInfo from './control-info';
 
-<<<<<<< HEAD
-import ControlPanel from "./control-panel";
-import { defaultMapStyle, dataLayer } from "./map-style.js";
-import { dataLayerPDSI } from "./map-style-pdsi.js";
-import { updatePercentiles } from "./utils";
-import { fromJS } from "immutable";
-import { json as requestJson } from "d3-request";
-import Button from './component/totalInfo/button.js'
-import ControlInfo from './control-info'
-
-import JobBoard from "./component/JobBoard";
-import StateInfo from "./component/StateInfo";
-=======
 import JobBoard from './component/JobBoard';
 import StateInfo from './component/StateInfo';
->>>>>>> development
 
 const MAPBOX_TOKEN =
   'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
@@ -48,20 +34,13 @@ class Map extends Component {
       zoom: 4,
       captureScroll: false,
     },
-<<<<<<< HEAD
-    name: "",
+    name: '',
     show: false,
     showUSAInfo: false,
     stateData: {
-      temperature: "",
-      pdsi: ""
+      temperature: '',
+      pdsi: '',
     },
-=======
-    name: '',
-    stateData: {},
-    show: false,
-    showUSAInfo: false,
->>>>>>> development
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
@@ -162,15 +141,9 @@ class Map extends Component {
           longitude: event.lngLat[0],
           latitude: event.lngLat[1],
           zoom: 5,
-<<<<<<< HEAD
-          captureScroll: false
-        },
-        stateData: features[0].properties
-=======
           captureScroll: false,
         },
         stateData: features[0].properties,
->>>>>>> development
       });
     } else {
       this.setState({ name: '' });
@@ -202,17 +175,10 @@ class Map extends Component {
   hideModal = () => {
     this.setState({ show: false });
   };
-<<<<<<< HEAD
-
-  showUSA = () => {
-    this.setState({ showUSAInfo: true });
-    console.log('setting showUSAInfo')
-=======
 
   showUSA = () => {
     this.setState({ showUSAInfo: true });
     console.log('setting showUSAInfo');
->>>>>>> development
     // this.onClick(event);
   };
 
@@ -231,7 +197,7 @@ class Map extends Component {
 
   render() {
     const { viewport, mapStyle } = this.state;
-    console.log(this.state.data)
+    console.log(this.state.data);
     return (
       <div style={{ height: '100%' }}>
         <ReactMapGL
