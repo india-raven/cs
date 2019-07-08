@@ -35,6 +35,18 @@ body {
   padding: 0 10px;
 }
 
+.sliderticks p {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 2px;
+  background-color: #d3d3d3;
+  height: 10px;
+  line-height: 40px;
+  margin: 0 0 20px 0;
+}
+
 .state-info {
   overflow: auto;
   /* overflow-y: scroll; */
