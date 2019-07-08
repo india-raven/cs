@@ -21,6 +21,9 @@ export default class JobBoard extends Component {
       .ref("/")
       .once("value")
       .then(snapshot => {
+        // let jobs = Array.from(snapshot.val());
+        // jobs.pop();
+        console.log(snapshot.val());
         this.setState({ jobs: snapshot.val() });
       });
   }
