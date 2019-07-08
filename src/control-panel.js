@@ -90,14 +90,6 @@ export default class ControlPanel extends PureComponent {
             </div>
           </form>
           <label>Year</label>
-          <input
-            type="range"
-            value={settings.year}
-            min={1924}
-            max={2018}
-            step={1}
-            onChange={evt => this.props.onChange('year', evt.target.value)}
-          />
           <JobBoard show={this.state.show} handleClose={this.hideModal} />
         </div>
       </Container>
