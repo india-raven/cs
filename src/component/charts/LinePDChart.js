@@ -60,21 +60,15 @@ class LineChartSideBar extends Component {
         const max = d3.max(data, d => Math.abs(d.y))
         const min= d3.min(data, d => Math.abs(d.y))
         // console.log(d3.extent(this.props.data, d => d.date))
-        console.log(max)
-        console.log(min)
         const xScale = this.xScale
                  .domain(d3.extent(data, d =>{return d.date}))
-                 
                  .range([margins.left, svgDimensions.width -margins.right])
         const yScale = this.yScale
-                 .domain([min, d3.max(data, d => d.y)]).nice()
+                 .domain([-5, d3.max(data, d => d.y)]).nice()
                  .range([svgDimensions.height - margins.bottom, margins.top])
-   
         return (
-        
           <svg  width={svgDimensions.width} height={svgDimensions.height}>
           <AxesL
-          
     scales={{ xScale, yScale }}
     margins={margins}
     svgDimensions={svgDimensions}
