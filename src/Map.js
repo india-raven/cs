@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactMapGL, {
   LinearInterpolator,
-
   FlyToInterpolator
 } from "react-map-gl";
 
@@ -113,7 +112,18 @@ class Map extends Component {
       }
     });
   }
-  onViewportChange = viewport => this.setState({ viewport });
+  onViewportChange = viewport => this.setState({ viewport: {...this.state.viewport, ...viewport} });
+
+  goToViewport = (longitude, latitude) => {
+    this.onViewportChange({
+      captureScroll: false,
+      longitude,
+      latitude,
+      zoom: 6,
+      transitionInterpolator: new FlyToInterpolator(),
+      transitionDuration: 1500
+    })
+  }
 
   onHover = event => {
     const {
@@ -131,17 +141,18 @@ class Map extends Component {
       srcEvent: { offsetX, offsetY }
     } = event;
     if (features[0]) {
-      this.setState({
-        name: features[0].properties.name,
-        viewport: {
-          width: "100vw",
-          height: "100vh",
-          longitude: event.lngLat[0],
-          latitude: event.lngLat[1],
-          zoom: 5,
-          captureScroll: false
-        }
-      });
+      this.goToViewport(event.lngLat[0], event.lngLat[1])
+      // this.setState({
+      //   name: features[0].properties.name,
+      //   viewport: {
+      //     width: "100vw",
+      //     height: "100vh",
+      //     longitude: event.lngLat[0],
+      //     latitude: event.lngLat[1],
+      //     zoom: 5,
+      //     captureScroll: false
+      //   }
+      // });
     } else {
       this.setState({ name: "" });
       this.hideModal();
@@ -205,7 +216,7 @@ class Map extends Component {
           mapStyle={mapStyle}
           onViewportChange={this.onViewportChange}
           onHover={this.onHover}
-          // onClick={this.onClick}
+          // onStateClick={this.onViewportChange}
           onClick={this.showModal}
         >
           {this.renderTooltip()}
