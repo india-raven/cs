@@ -60,6 +60,7 @@ export default class StateInfo extends PureComponent {
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
         <LineChartSideBar stateData={stateData.temperature}/>
+        <LineChartSideBar stateData={stateData.pdsi}/>
       </Container>
     );
   }

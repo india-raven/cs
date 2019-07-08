@@ -198,9 +198,6 @@ class Map extends Component {
 
   render() {
     const { viewport, mapStyle } = this.state;
-    // if (this.state.toPage === true) {
-    //   return <Redirect to='./component/totalInfo/info_USA.js' />
-    // }
     console.log(this.state.data)
     return (
       <div style={{ height: "100%" }}>
@@ -242,7 +239,6 @@ class Map extends Component {
           show={this.state.showUSAInfo}
           handleClose={this.hideModal}
           onClick={this.hideUSA}/>
-          
       </div>
     );
   }

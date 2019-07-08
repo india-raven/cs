@@ -8,13 +8,9 @@ import data from './CO2'
 class GraphLine extends Component {
   constructor() {
     super()
-    
     this.xScale = scaleLinear()
     this.yScale = scaleLinear()
-    
 }    
-    
-
     render() {
      
         let margins = {top: 20, right: 60, bottom: 30, left: 70}

@@ -55,8 +55,8 @@ class LineChartSideBar extends Component {
       data = JSON.parse(data);
       data = this.convertObjToArr(data);
       console.log("=======>", data);
-        let margins = {top: 20, right: 30, bottom: 30, left: 40}
-        const svgDimensions = { width: 500, height: 400}
+        let margins = {top: 10, right: 5, bottom: 40, left: 25}
+        const svgDimensions = { width: 500, height:300}
         const max = d3.max(data, d => Math.abs(d.y))
         const min= d3.min(data, d => Math.abs(d.y))
         // console.log(d3.extent(this.props.data, d => d.date))
