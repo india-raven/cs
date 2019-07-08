@@ -12,7 +12,7 @@ export default class StateInfo extends PureComponent {
   constructor() {
     super();
     this.state = {
-     
+
     };
     // this.changeChart = this.changeChart.bind(this);
   }
@@ -30,8 +30,8 @@ export default class StateInfo extends PureComponent {
     return (
       <Container classInStateInfo={showHideClassName}>
         {/* <div style={{position:'absolute', width:'10%'}}> */}
-      
-        <i className="fas fa-times fa-2x" onClick={onClick}/>
+
+        <i className="fas fa-times fa-3x" onClick={onClick}/>
          <NewPage />
         {/* <button type="button" onClick={this.changeChart}>
           Change Chart1

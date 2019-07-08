@@ -38,10 +38,6 @@ export default class ControlPanel extends PureComponent {
           Map showing annual average by state in year <b>{settings.year}</b>.
           Hover over a state to see details.
         </p>
-        {/* <p>
-          Data source: <a href="www.census.gov">US Census Bureau</a>
-        </p> */}
-
         <hr />
 
         <div key={"year"} className="input">
@@ -85,7 +81,7 @@ export default class ControlPanel extends PureComponent {
                     //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
                     if (!error) {
                       this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
-                    } else {                
+                    } else {
                     }
                   });
                 }}
@@ -103,11 +99,7 @@ export default class ControlPanel extends PureComponent {
             step={1}
             onChange={evt => this.props.onChange('year', evt.target.value)}
           />
-
           <JobBoard show={this.state.show} handleClose={this.hideModal} />
-          <button type="button" onClick={this.showModal}>
-            See nearby jobs
-          </button>
         </div>
       </Container>
     );
