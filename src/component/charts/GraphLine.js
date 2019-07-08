@@ -15,7 +15,7 @@ class GraphLine extends Component {
      
         let margins = {top: 20, right: 60, bottom: 30, left: 70}
         // return new Date(parseInt(d.Year),0)
-        const svgDimensions = { width: 850, height: 400}
+        const svgDimensions = { width: 900, height: 400}
         const max = d3.max(data, d => Math.abs(d.y))
         const min= d3.min(data, d => Math.abs(d.y))
         console.log(d3.extent(data, d => d.date))

@@ -21,12 +21,7 @@ export default class Bars extends Component {
     onMouseOut() {
       this.setState({isHovered: false});
     }
-    onMouseOn() {
-      this.setState({isHovered: true});
-    }
-    onMouseOu(){
-      this.setState({isHovered: false});
-    }
+  
     render() {
       console.log('>>>>>>',this)
       const { scales, margins, data, svgDimensions, ...props } = this.props

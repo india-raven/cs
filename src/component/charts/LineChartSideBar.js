@@ -71,8 +71,9 @@ class LineChartSideBar extends Component {
                  .range([svgDimensions.height - margins.bottom, margins.top])
    
         return (
-        
+          
           <svg  width={svgDimensions.width} height={svgDimensions.height}>
+             
           <AxesL
           
     scales={{ xScale, yScale }}

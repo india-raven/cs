@@ -60,7 +60,9 @@ export default class StateInfo extends PureComponent {
         <p>chart 5</p> */}
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
+        <div>{'Average Temperature \u2109 (1895-2018)'}</div>
         <LineChartSideBar stateData={stateData.temperature}/>
+        <div>{'Average PSDI (1925-2018)'}</div>
         <LinePDChart stateData={stateData.pdsi}/>
       </Container>
     );

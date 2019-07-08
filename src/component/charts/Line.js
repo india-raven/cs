@@ -31,7 +31,10 @@ export default class Line extends Component {
               stroke-linecap= {"round"}
             
              />
+             
        </g>
+     
+    
       )
     }
   }

@@ -55,7 +55,7 @@ class LineChartSideBar extends Component {
       data = JSON.parse(data);
       data = this.convertObjToArr(data);
       console.log("=======>", data);
-        let margins = {top: 10, right: 5, bottom: 40, left: 25}
+        let margins = {top: 20, right: 5, bottom: 40, left: 40}
         const svgDimensions = { width: 500, height:300}
         const max = d3.max(data, d => Math.abs(d.y))
         const min= d3.min(data, d => Math.abs(d.y))
@@ -78,8 +78,16 @@ class LineChartSideBar extends Component {
    margins={margins}
    maxValue={max}
           minValue={min}
-           data={data} />
-        
+           data={data} 
+         
+           />
+        <text 
+        text={'Love meter (%)'}
+        transform ={'rotate(-90)'}
+       
+        />
+            
+            
            </svg>
            
         );
