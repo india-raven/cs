@@ -1,8 +1,8 @@
-import React from 'react';
-import './App.css';
-import Map from './Map';
-import Fire from './Fire';
-import Checkout from './component/Checkout';
+import React from "react";
+import "./App.css";
+import Map from "./Map";
+import GeoFire from "./Fire";
+import Checkout from "./component/Checkout";
 
 function App() {
   return (
