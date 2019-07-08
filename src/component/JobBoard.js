@@ -3,8 +3,8 @@ import GeoFire from "../GeoFire";
 import firebase from "firebase";
 import { JobDescription } from "../component/JobDescription";
 
-const jobs = require("../jobs");
-// import jobs from '../../public/data/jobs.json';
+const jobs = require("./jobs");
+// import jobs from "../../public/data/jobs.json";
 
 export default class JobBoard extends Component {
   constructor(props) {
