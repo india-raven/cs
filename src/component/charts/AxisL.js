@@ -19,8 +19,8 @@ export default class Axis extends Component {
         .scale(this.props.scale)
         // .tickSize(-this.props.tickSize)
         .tickPadding([5])
-        .ticks([5])
-  
+        .ticks([10])
+        // .tickFormat(d3.format("d"))
       d3Select(this.axisElement).call(axis)
     }
   

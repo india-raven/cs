@@ -4,6 +4,7 @@ import Chart from "./charts/Chart";
 import ChartLine from "./charts/ChartLine";
 import ChartBubble from "./charts/ChartBubble";
 import LineChartSideBar from "./charts/LineChartSideBar"
+import LinePDChart from "./charts/LinePDChart"
 //modal wrapper for our popup
 const defaultContainer = ({ children, classInStateInfo }) => (
   <div className={classInStateInfo}>{children}</div> //change
@@ -60,7 +61,7 @@ export default class StateInfo extends PureComponent {
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
         <LineChartSideBar stateData={stateData.temperature}/>
-        <LineChartSideBar stateData={stateData.pdsi}/>
+        <LinePDChart stateData={stateData.pdsi}/>
       </Container>
     );
   }
