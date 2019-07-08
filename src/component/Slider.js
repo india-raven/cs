@@ -6,8 +6,9 @@ export default class Slider extends Component {
             <div>
                 <input
                 type="range"
-                value={settings.year}
-                min={1924}
+                className="slider"
+                value={this.props.settings.year}
+                min={1925}
                 max={2018}
                 step={1}
                 onChange={evt => this.props.onChange('year', evt.target.value)}
