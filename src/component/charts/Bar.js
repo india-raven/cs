@@ -21,8 +21,9 @@ export default class Bars extends Component {
   onMouseOut() {
     this.setState({ isHovered: false });
   }
+
   render() {
-    // console.log('>>>>>>',this)
+    console.log('>>>>>>', this);
     const { scales, margins, data, svgDimensions, ...props } = this.props;
     const { xScale, yScale } = scales;
     const { height } = svgDimensions;
@@ -37,7 +38,6 @@ export default class Bars extends Component {
         fill={this.colorScale(datum.value)}
         onMouseOver={() => this.props.onMouseOverCallback(datum)}
         onMouseOut={() => this.props.onMouseOutCallback(null)}
-        // onMouseMove={()=>this.props.onMouseMoveCallback({datum})}
       />
     ));
 
@@ -46,6 +46,5 @@ export default class Bars extends Component {
         {bars}
       </g>
     );
-
   }
 }
