@@ -39,40 +39,40 @@ import * as d3 from "d3"
       .range([margins.left, svgDimensions.width - margins.right]);
     const yScale = this.yScale
       .domain([minValue, maxValue])
+      .range([svgDimensions.height - margins.bottom,margins.top])
 
-      .range([svgDimensions.height - 50, margins.top]);
-
-
+    //  /* <svg  viewBox={`0 0 ${svgDimensions.width +
+    //         margins.left} ${svgDimensions.height + margins.bottom}`} //THE PROBLEM IS HERE
+    //       preserveAspectRatio="xMinYMin meet" */
     return (
       <div>
         <svg
-          viewBox={`0 0 ${svgDimensions.width +
-            margins.left} ${svgDimensions.height + 50}`} //THE PROBLEM IS HERE
-          preserveAspectRatio="xMinYMin meet"
-          width={svgDimensions.width}
-          height={svgDimensions.height}
-        >
-          <Axes
-            scales={{ xScale, yScale }}
-            margins={margins}
-            svgDimensions={svgDimensions}
-          />
+      width={svgDimensions.width} height={svgDimensions.height}
+     >
 
-          <Bars
-            scales={{ xScale, yScale }}
-            margins={margins}
-            data={data}
-            maxValue={maxValue}
-            minValue={minValue}
-            svgDimensions={svgDimensions}
-            onMouseOverCallback={datum => this.setState({ hoveredBar: datum })}
-            onMouseOutCallback={datum => this.setState({ hoveredBar: null })}
-            // onMouseMoveCallback={datum=>this.setState({hoveredBar:datum})}
-          />
-        </svg>
+        <Axes
+          scales={{ xScale, yScale }}
+          margins={margins}
+          svgDimensions={svgDimensions}
 
-        {this.state.hoveredBar ? (
+        />
 
+        <Bars
+          scales={{ xScale, yScale }}
+          margins={margins}
+          data={data}
+          maxValue={maxValue}
+          minValue={minValue}
+          svgDimensions={svgDimensions}
+          onMouseOverCallback={datum => this.setState({hoveredBar: datum})}
+          onMouseOutCallback={datum => this.setState({hoveredBar: null})}
+          // onMouseMoveCallback={datum=>this.setState({hoveredBar:datum})}
+
+        />
+
+      </svg>
+
+      { this.state.hoveredBar ?
           <Tooltip
             hoveredBar={this.state.hoveredBar}
             scales={{ xScale, yScale }}
