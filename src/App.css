@@ -23,6 +23,18 @@ body {
   text-transform: uppercase;
 }
 
+.slider {
+  width: 100%;
+  margin: 2px;
+  background: #d3d3d3;
+}
+
+.sliderticks {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
 .state-info {
   overflow: auto;
   /* overflow-y: scroll; */
@@ -345,3 +357,4 @@ input {
   top: 5px;
   right: 10px;
 }
+
