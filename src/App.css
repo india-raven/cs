@@ -1,6 +1,8 @@
 body {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
 }
 #map {
   width: 100vw;
@@ -21,6 +23,8 @@ body {
   color: #6b6b76;
   outline: none;
   text-transform: uppercase;
+  opacity: 0.95;
+  border-radius: 10px;
 }
 
 .slider {
@@ -64,7 +68,7 @@ body {
   margin: 20px;
   /* margin-top: 250px; */
   font-size: 13px;
-  opacity: 0.9;
+  opacity: 0.95;
   line-height: 2;
   color: #6b6b76;
   outline: none;
@@ -135,6 +139,7 @@ input {
 }
 
 .job-board {
+  opacity: 1;
   overflow: auto;
   overflow-y: hidden;
   position: fixed;
@@ -369,4 +374,3 @@ input {
   top: 5px;
   right: 10px;
 }
-
