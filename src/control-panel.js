@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import JobBoard from './component/JobBoard';
-import Slider from './component/Slider'
+import Slider from './component/Slider';
 
 import { json as requestJson } from 'd3-request';
 
@@ -55,7 +55,7 @@ export default class ControlPanel extends PureComponent {
                 value="Temperature"
                 checked={this.props.selectedData === 'Temperature'}
                 onChange={() => {
-                  this.props.updateSelectedData('PDSI');
+                  this.props.updateSelectedData('Temperature');
                   requestJson('data/us-temp.geojson', (error, response) => {
                     //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
                     if (!error) {
