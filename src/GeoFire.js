@@ -9,13 +9,13 @@ class GeoFire {
   init = () => {
     if (!firebase.apps.length) {
       firebase.initializeApp({
-        apiKey: "AIzaSyC5grXJ2ztg8V_6OpintdIY1j8jYE1-IL0",
-        authDomain: "india-raven-geojson.firebaseapp.com",
-        databaseURL: "https://india-raven-geojson.firebaseio.com",
-        projectId: "india-raven-geojson",
-        storageBucket: "india-raven-geojson.appspot.com",
-        messagingSenderId: "347346209071",
-        appId: "1:347346209071:web:5c889f55f2d5750a"
+        apiKey: process.env.GEOFIRE_APP_API_KEY,
+        authDomain: process.env.GEOFIRE_APP_AUTH_DOMAIN,
+        databaseURL: process.env.GEOFIRE_APP_FIREBASE_DATABASE_URL,
+        projectId: process.env.GEOFIRE_APP_PROJECT_ID,
+        storageBucket: process.env.GEOFIRE_APP_STORAGE_BUCKET,
+        messagingSenderId: process.env.GEOFIRE_APP_MESSAGING_SENDER_ID,
+        appId: process.env.GEOFIRE_APP_APP_ID
       });
     }
   };
