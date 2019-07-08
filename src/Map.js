@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import ReactMapGL, {
   LinearInterpolator,
-  FlyToInterpolator,
-} from 'react-map-gl';
+  FlyToInterpolator
+} from "react-map-gl";
 
-import ControlPanel from './control-panel';
-import { defaultMapStyle, dataLayer } from './map-style.js';
-import { dataLayerPDSI } from './map-style-pdsi.js';
-import { updatePercentiles } from './utils';
-import { fromJS } from 'immutable';
-import { json as requestJson } from 'd3-request';
-import Button from './component/totalInfo/button.js';
-import ControlInfo from './control-info';
+import ControlPanel from "./control-panel";
+import { defaultMapStyle, dataLayer } from "./map-style.js";
+import { dataLayerPDSI } from "./map-style-pdsi.js";
+import { updatePercentiles } from "./utils";
+import { fromJS } from "immutable";
+import { json as requestJson } from "d3-request";
+import Button from './component/totalInfo/button.js'
+import ControlInfo from './control-info'
+
+import JobBoard from "./component/JobBoard";
+import StateInfo from "./component/StateInfo";
 
 import JobBoard from './component/JobBoard';
 import StateInfo from './component/StateInfo';
@@ -31,8 +34,8 @@ class Map extends Component {
       height: '100vh',
       latitude: 39.82,
       longitude: -98.5795,
-      zoom: 4,
-      captureScroll: false,
+      zoom: 4.5,
+      captureScroll: false
     },
     name: '',
     show: false,
@@ -115,7 +118,18 @@ class Map extends Component {
       }
     });
   }
-  onViewportChange = viewport => this.setState({ viewport });
+  onViewportChange = viewport => this.setState({ viewport: {...this.state.viewport, ...viewport} });
+
+  goToViewport = (longitude, latitude) => {
+    this.onViewportChange({
+      captureScroll: false,
+      longitude,
+      latitude,
+      zoom: 6,
+      transitionInterpolator: new FlyToInterpolator(),
+      transitionDuration: 1500
+    })
+  }
 
   onHover = event => {
     const {
@@ -133,6 +147,9 @@ class Map extends Component {
       srcEvent: { offsetX, offsetY },
     } = event;
     if (features[0]) {
+
+      this.goToViewport(event.lngLat[0], event.lngLat[1])
+      //POTENTIONAL PROBLEM HERE
       this.setState({
         name: features[0].properties.name,
         viewport: {
@@ -206,7 +223,7 @@ class Map extends Component {
           mapStyle={mapStyle}
           onViewportChange={this.onViewportChange}
           onHover={this.onHover}
-          // onClick={this.onClick}
+          // onStateClick={this.onViewportChange}
           onClick={this.showModal}
         >
           {this.renderTooltip()}
