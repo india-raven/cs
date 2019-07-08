@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import ReactMapGL, {
   LinearInterpolator,
-  FlyToInterpolator
-} from "react-map-gl";
+  FlyToInterpolator,
+} from 'react-map-gl';
 
-import ControlPanel from "./control-panel";
-import { defaultMapStyle, dataLayer } from "./map-style.js";
-import { dataLayerPDSI } from "./map-style-pdsi.js";
-import { updatePercentiles } from "./utils";
-import { fromJS } from "immutable";
-import { json as requestJson } from "d3-request";
-import Button from './component/totalInfo/button.js'
-import ControlInfo from './control-info'
-
-import JobBoard from "./component/JobBoard";
-import StateInfo from "./component/StateInfo";
+import ControlPanel from './control-panel';
+import { defaultMapStyle, dataLayer } from './map-style.js';
+import { dataLayerPDSI } from './map-style-pdsi.js';
+import { updatePercentiles } from './utils';
+import { fromJS } from 'immutable';
+import { json as requestJson } from 'd3-request';
+import Button from './component/totalInfo/button.js';
+import ControlInfo from './control-info';
 
 import JobBoard from './component/JobBoard';
 import StateInfo from './component/StateInfo';
@@ -35,7 +32,7 @@ class Map extends Component {
       latitude: 39.82,
       longitude: -98.5795,
       zoom: 4.5,
-      captureScroll: false
+      captureScroll: false,
     },
     name: '',
     show: false,
@@ -118,7 +115,8 @@ class Map extends Component {
       }
     });
   }
-  onViewportChange = viewport => this.setState({ viewport: {...this.state.viewport, ...viewport} });
+  onViewportChange = viewport =>
+    this.setState({ viewport: { ...this.state.viewport, ...viewport } });
 
   goToViewport = (longitude, latitude) => {
     this.onViewportChange({
@@ -127,9 +125,9 @@ class Map extends Component {
       latitude,
       zoom: 6,
       transitionInterpolator: new FlyToInterpolator(),
-      transitionDuration: 1500
-    })
-  }
+      transitionDuration: 1500,
+    });
+  };
 
   onHover = event => {
     const {
@@ -147,19 +145,18 @@ class Map extends Component {
       srcEvent: { offsetX, offsetY },
     } = event;
     if (features[0]) {
-
-      this.goToViewport(event.lngLat[0], event.lngLat[1])
+      this.goToViewport(event.lngLat[0], event.lngLat[1]);
       //POTENTIONAL PROBLEM HERE
       this.setState({
-        name: features[0].properties.name,
-        viewport: {
-          width: '100vw',
-          height: '100vh',
-          longitude: event.lngLat[0],
-          latitude: event.lngLat[1],
-          zoom: 5,
-          captureScroll: false,
-        },
+        //   name: features[0].properties.name,
+        //   viewport: {
+        //     width: '100vw',
+        //     height: '100vh',
+        //     longitude: event.lngLat[0],
+        //     latitude: event.lngLat[1],
+        //     zoom: 5,
+        //     captureScroll: false,
+        //   },
         stateData: features[0].properties,
       });
     } else {
