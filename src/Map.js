@@ -1,10 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import ReactMapGL, {
   LinearInterpolator,
+  FlyToInterpolator,
+} from 'react-map-gl';
 
-  FlyToInterpolator
-} from "react-map-gl";
+import ControlPanel from './control-panel';
+import { defaultMapStyle, dataLayer } from './map-style.js';
+import { dataLayerPDSI } from './map-style-pdsi.js';
+import { updatePercentiles } from './utils';
+import { fromJS } from 'immutable';
+import { json as requestJson } from 'd3-request';
+import Button from './component/totalInfo/button.js';
+import ControlInfo from './control-info';
 
+<<<<<<< HEAD
 import ControlPanel from "./control-panel";
 import { defaultMapStyle, dataLayer } from "./map-style.js";
 import { dataLayerPDSI } from "./map-style-pdsi.js";
@@ -16,25 +25,30 @@ import ControlInfo from './control-info'
 
 import JobBoard from "./component/JobBoard";
 import StateInfo from "./component/StateInfo";
+=======
+import JobBoard from './component/JobBoard';
+import StateInfo from './component/StateInfo';
+>>>>>>> development
 
 const MAPBOX_TOKEN =
-  "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
+  'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
 
 class Map extends Component {
   state = {
     mapStyle: defaultMapStyle,
     year: 2018,
     data: null,
-    selectedData: "Temperature",
+    selectedData: 'Temperature',
     hoveredFeature: null,
     viewport: {
-      width: "100vw",
-      height: "100vh",
+      width: '100vw',
+      height: '100vh',
       latitude: 39.82,
       longitude: -98.5795,
       zoom: 4,
-      captureScroll: false
+      captureScroll: false,
     },
+<<<<<<< HEAD
     name: "",
     show: false,
     showUSAInfo: false,
@@ -42,54 +56,60 @@ class Map extends Component {
       temperature: "",
       pdsi: ""
     },
+=======
+    name: '',
+    stateData: {},
+    show: false,
+    showUSAInfo: false,
+>>>>>>> development
   };
   //setIn(original, ['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}}
   loadData = data => {
     const selectedData = this.state.selectedData;
-    if (selectedData === "Temperature") {
+    if (selectedData === 'Temperature') {
       updatePercentiles(data, f => f.properties.temperature[this.state.year]);
       const mapStyle = defaultMapStyle
         // Add geojson source to map
         .setIn(
-          ["sources", "temperatureByState"],
-          fromJS({ type: "geojson", data })
+          ['sources', 'temperatureByState'],
+          fromJS({ type: 'geojson', data })
         )
         // Add point layer to map
-        .set("layers", defaultMapStyle.get("layers").push(dataLayer));
+        .set('layers', defaultMapStyle.get('layers').push(dataLayer));
 
       this.setState({ data, mapStyle });
     } else {
       updatePercentiles(data, f => f.properties.pdsi[this.state.year]);
       const mapStyle = defaultMapStyle
         // Add geojson source to map
-        .setIn(["sources", "pdsiByState"], fromJS({ type: "geojson", data }))
+        .setIn(['sources', 'pdsiByState'], fromJS({ type: 'geojson', data }))
         // Add point layer to map
-        .set("layers", defaultMapStyle.get("layers").push(dataLayerPDSI));
+        .set('layers', defaultMapStyle.get('layers').push(dataLayerPDSI));
 
       this.setState({ data, mapStyle });
     }
   };
 
   updateSettings = (name, value) => {
-    if (name === "year") {
+    if (name === 'year') {
       this.setState({ year: value });
 
       const { data, mapStyle } = this.state;
       if (data) {
-        if (this.state.selectedData === "Temperature") {
+        if (this.state.selectedData === 'Temperature') {
           updatePercentiles(data, f => {
             return f.properties.temperature[value];
           });
           const newMapStyle = mapStyle.setIn(
-            ["sources", "temperatureByState"],
-            fromJS({ type: "geojson", data })
+            ['sources', 'temperatureByState'],
+            fromJS({ type: 'geojson', data })
           );
           this.setState({ mapStyle: newMapStyle });
         } else {
           updatePercentiles(data, f => f.properties.pdsi[value]);
           const newMapStyle = mapStyle.setIn(
-            ["sources", "pdsiByState"],
-            fromJS({ type: "geojson", data })
+            ['sources', 'pdsiByState'],
+            fromJS({ type: 'geojson', data })
           );
           this.setState({ mapStyle: newMapStyle });
         }
@@ -99,20 +119,20 @@ class Map extends Component {
 
   updateSelectedData = data => {
     this.setState({
-      selectedData: data
+      selectedData: data,
     });
   };
 
   componentDidMount() {
     //COMPONENT DID MOUNT IS USED TO REQUEST GEOJSON FILE WITH TEMP INFORMATION RIGHT AFTER COMPONENT IS MOUNTED
-    requestJson("data/us-temp.geojson", (error, response) => {
+    requestJson('data/us-temp.geojson', (error, response) => {
       //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
       if (!error) {
         this.loadData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
       } else {
-        console.log("----------------------------------------");
+        console.log('----------------------------------------');
         console.error(error);
-        console.log("----------------------------------------");
+        console.log('----------------------------------------');
       }
     });
   }
@@ -121,33 +141,39 @@ class Map extends Component {
   onHover = event => {
     const {
       features,
-      srcEvent: { offsetX, offsetY }
+      srcEvent: { offsetX, offsetY },
     } = event;
     const hoveredFeature =
-      features && features.find(f => f.layer.id === "data");
+      features && features.find(f => f.layer.id === 'data');
     this.setState({ hoveredFeature, x: offsetX, y: offsetY });
   };
 
   onClick = event => {
     const {
       features,
-      srcEvent: { offsetX, offsetY }
+      srcEvent: { offsetX, offsetY },
     } = event;
     if (features[0]) {
       this.setState({
         name: features[0].properties.name,
         viewport: {
-          width: "100vw",
-          height: "100vh",
+          width: '100vw',
+          height: '100vh',
           longitude: event.lngLat[0],
           latitude: event.lngLat[1],
           zoom: 5,
+<<<<<<< HEAD
           captureScroll: false
         },
         stateData: features[0].properties
+=======
+          captureScroll: false,
+        },
+        stateData: features[0].properties,
+>>>>>>> development
       });
     } else {
-      this.setState({ name: "" });
+      this.setState({ name: '' });
       this.hideModal();
     }
   };
@@ -159,7 +185,7 @@ class Map extends Component {
         <div className="tooltip" style={{ left: x, top: y }}>
           <div>State: {hoveredFeature.properties.name}</div>
           <div>
-            Average Annual {this.state.selectedData}:{" "}
+            Average Annual {this.state.selectedData}:{' '}
             {hoveredFeature.properties.value}
           </div>
           {/* <div>Percentile: {(hoveredFeature.properties.percentile / 8) * 100}</div> */}
@@ -172,35 +198,42 @@ class Map extends Component {
     this.setState({ show: true });
     this.onClick(event);
   };
-  
+
   hideModal = () => {
     this.setState({ show: false });
   };
-  
+<<<<<<< HEAD
+
   showUSA = () => {
     this.setState({ showUSAInfo: true });
     console.log('setting showUSAInfo')
+=======
+
+  showUSA = () => {
+    this.setState({ showUSAInfo: true });
+    console.log('setting showUSAInfo');
+>>>>>>> development
     // this.onClick(event);
   };
 
   hideUSA = () => {
     this.setState({ showUSAInfo: false });
-    console.log('closing showUSAInfo')
+    console.log('closing showUSAInfo');
     // this.onClick(event);
   };
- 
-  handleSubmit = (event) => {
-      this.setState(() => ({
-        toPage: true
-      }))
-      this.onClick(event);
-  }
+
+  handleSubmit = event => {
+    this.setState(() => ({
+      toPage: true,
+    }));
+    this.onClick(event);
+  };
 
   render() {
     const { viewport, mapStyle } = this.state;
     console.log(this.state.data)
     return (
-      <div style={{ height: "100%" }}>
+      <div style={{ height: '100%' }}>
         <ReactMapGL
           {...this.state.viewport}
           mapboxApiAccessToken={MAPBOX_TOKEN}
@@ -222,8 +255,6 @@ class Map extends Component {
           mapNewData={this.loadData}
         />
 
-        {/* <JobBoard /> */}
-
         <StateInfo
           name={this.state.name}
           show={this.state.show}
@@ -231,14 +262,14 @@ class Map extends Component {
           onClick={this.hideModal}
           stateData={this.state.stateData}
         />
-       
-         <Button onClick={this.showUSA}/> 
-     
-         
-         <ControlInfo 
+
+        <Button onClick={this.showUSA} />
+
+        <ControlInfo
           show={this.state.showUSAInfo}
           handleClose={this.hideModal}
-          onClick={this.hideUSA}/>
+          onClick={this.hideUSA}
+        />
       </div>
     );
   }

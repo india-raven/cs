@@ -33,9 +33,7 @@ export default class JobBoard extends Component {
       <div className={showHideClassName}>
         <div className="job-board">
           <h1>Jobs Near You: </h1>
-          <button type="button" onClick={this.props.handleClose}>
-            close
-          </button>
+          <i className="fas fa-times fa-2x" onClick={this.props.handleClose} />
           <hr />
           <div className="job-list-and-description">
             {/* <div className="job-board-info">
@@ -43,10 +41,13 @@ export default class JobBoard extends Component {
                 // "Job1"
                 return (
                   <div
+                    className="job"
                     onClick={() => this.setState({ currJob: job })}
                     key={job.id}
                   >
-                    <h1>{job.title}</h1>
+                    <h2>
+                      {job.title} | {job.company}
+                    </h2>
                     <hr />
                   </div>
                 );

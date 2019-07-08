@@ -23,7 +23,7 @@ class Fire {
   observeAuth = user => {
     if (!user) {
       try {
-        console.log('IM HERE NOW');
+        // console.log('IM HERE NOW');
         firebase.auth().signInAnonymously();
       } catch ({ message }) {
         alert(message);

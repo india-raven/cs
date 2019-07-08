@@ -1,5 +1,5 @@
 import React from 'react'
-import AxisL from './AxisL'
+import Axis from './Axis'
 
 export default ({ scales, margins, svgDimensions }) => {
     const { height, width } = svgDimensions
@@ -8,7 +8,7 @@ export default ({ scales, margins, svgDimensions }) => {
       orient: 'Bottom',
       scale: scales.xScale,
       translate: `translate(0, ${height - margins.bottom})`,
-      tickSize: height - margins.top - margins.bottom,
+      // tickSize: height - margins.top - margins.bottom,
     }
   
     const yProps = {
@@ -16,12 +16,14 @@ export default ({ scales, margins, svgDimensions }) => {
       scale: scales.yScale,
       translate: `translate(${margins.left}, 0)`,
       tickSize: width - margins.left - margins.right,
+     
     }
-  
+    // console.log(scales)
     return (
+
       <g>
-        <AxisL {...xProps} />
-        <AxisL {...yProps} />
+        <Axis {...xProps} />
+        <Axis {...yProps} />
       </g>
     )
   }
