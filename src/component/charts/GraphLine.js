@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   scaleBand,
   scaleUtc,
   scaleLinear,
   scaleTime,
-  scaleSequential
-} from "d3-scale";
-import * as d3 from "d3";
+  scaleSequential,
+} from 'd3-scale';
+import * as d3 from 'd3';
 // import data from './data_l'
-import AxesL from "./AxesL";
-import Line from "./Line";
+import AxesL from './AxesL';
+import Line from './Line';
 class GraphLine extends Component {
   constructor() {
     super();
@@ -36,7 +36,7 @@ class GraphLine extends Component {
     if (temp.temperature) {
       temp = JSON.parse(temp.temperature);
       const data = this.convertObjToArr(temp);
-      console.log("=======>", data);
+      console.log('=======>', data);
       let margins = { top: 20, right: 30, bottom: 30, left: 40 };
       // return new Date(parseInt(d.Year),0)
       const svgDimensions = { width: 500, height: 400 };
