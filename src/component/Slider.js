@@ -16,14 +16,14 @@ export default class Slider extends Component {
                 <div className="sliderticks">
                     <p>1925</p>
                     <p>1934</p>
-                    <p>1945</p>
-                    <p>1955</p>
+                    <p>1943</p>
+                    <p>1952</p>
                     <p>1962</p>
                     <p>1971</p>
-                    <p>1980</p>
+                    <p>1981</p>
                     <p>1990</p>
-                    <p>2005</p>
-                    <p>2008</p>
+                    <p>1999</p>
+                    <p>2009</p>
                     <p>2018</p>
                 </div>
             </div>
