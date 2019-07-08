@@ -29,7 +29,7 @@ export default class StateInfo extends PureComponent {
   }
 
   render() {
-    const { show, name, onClick } = this.props;
+    const { show, name, onClick, stateData } = this.props;
     const showHideClassName = show
       ? 'state-info display-block'
       : 'state-info display-none';
@@ -40,7 +40,7 @@ export default class StateInfo extends PureComponent {
       <Container classInStateInfo={showHideClassName}>
         {/* <div style={{position:'absolute', width:'10%'}}> */}
         <i className="fas fa-times fa-2x" onClick={onClick} />
-        <h3>STATE {this.props.name}</h3>
+        <h3>STATE {name}</h3>
         <h3>STATE DESCRIPTION</h3>
         <Chart />
       </Container>
