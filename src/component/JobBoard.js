@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import Fire from "../Fire";
+import GeoFire from "../GeoFire";
 import firebase from "firebase";
 import { JobDescription } from "../component/JobDescription";
 
@@ -16,13 +16,14 @@ export default class JobBoard extends Component {
   }
 
   componentDidMount() {
-    firebase
-      .database()
-      .ref("/")
-      .once("value")
-      .then(snapshot => {
-        this.setState({ jobs: snapshot.val() });
-      });
+    // firebase
+    //   .database()
+    //   .ref("/")
+    //   .once("value")
+    //   .then(snapshot => {
+    //     console.log(snapshot.val());
+    //     this.setState({ jobs: snapshot.val() });
+    //   });
     // .then(this.setState({ currJob: jobs[0] }));
   }
 
