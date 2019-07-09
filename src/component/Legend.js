@@ -3,7 +3,6 @@ import React, {Component} from 'react'
 export default class Legend extends Component {
     render() {
     const selectedData= this.props.selectedData
-    console.log(selectedData)
         return (
             selectedData === 'Temperature' ?
 <div id='state-legend' class='legend'>
