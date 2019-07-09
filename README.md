@@ -17,11 +17,14 @@ For the application to run correctly, you must install the required dependencies
 
 ### `npm install`
 
-In order for Firebase to load correctly, please create a .env.local file in the root folder. As a reference, there is an included template .env.example in the root folder. You will need to rename it to .env.local, fill it with your firebase credentials, and then add .env.local to your .gitignore file.
+In order for Firebase to load correctly, please create a .env.local file in the root folder. We included a template called .env.example in the root folder. You will need to rename it to .env.local, fill it with your firebase credentials, and then add .env.local to your .gitignore file.
 
-**For the .env.local file to work with the create-react-app, notice that your variables require a REACT_APP prefix.
+Notes:
+1. For the .env.local file to work with the create-react-app, notice that your variables require a REACT_APP prefix.
 
-**Remember to include your .env.local file in the .gitignore file
+2. Remember to include your .env.local file in the .gitignore file
+
+3. Firebase is loading geoJson data that renders state shapes and is a pivotal piece the application. You can find our template example here: 
 
 Once your setup is complete, you can run the following script in the project directory:
 
@@ -39,5 +42,11 @@ We have a deploy bash script for Heroku located in our script folder. It is desi
 
 However, if you would like to launch your own clone, you will need to configure a new application with Heroku.
 
-##The Future for Visual Climate
+##VisualClimate's Future
 
+We would love to continue iterating and developing this application to its full potential. Here are some ideas we'd like to create:
+
+-Machine Learning projection of temperature changes in the future
+-Blog
+-Volunteer Feature
+-Donation Feature for Climate Change Initiatives
