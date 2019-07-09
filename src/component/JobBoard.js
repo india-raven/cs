@@ -16,15 +16,7 @@ export default class JobBoard extends Component {
   }
 
   componentDidMount() {
-    // firebase
-    //   .database()
-    //   .ref("/")
-    //   .once("value")
-    //   .then(snapshot => {
-    //     console.log(snapshot.val());
-    //     this.setState({ jobs: snapshot.val() });
-    //   });
-    // .then(this.setState({ currJob: jobs[0] }));
+    this.setState({ jobs: jobs });
   }
 
   render(props) {
