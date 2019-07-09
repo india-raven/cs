@@ -5,6 +5,7 @@ import history from "./history";
 import { Router } from "react-router-dom";
 import GeoFire from "./Fire";
 import Checkout from "./component/Checkout";
+import Navbar from "./component/Navbar";
 import Routes from "./component/Routes";
 // import SearchAppBar from "./component/searchappbar";
 
@@ -12,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Router history={history}>
-        {/* <SearchAppBar /> */}
+        <Navbar />
         <Routes />
         {/* <Map /> */}
         {/* <Checkout
