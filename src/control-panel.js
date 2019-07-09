@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import JobBoard from './component/JobBoard';
 import Slider from './component/Slider';
+import Legend from './component/Legend'
 
 import { json as requestJson } from 'd3-request';
 
@@ -34,7 +35,10 @@ export default class ControlPanel extends PureComponent {
 
     return (
       <Container>
-        <h3>Annual Average Temperature</h3>
+        <h3>Annual Average Temperature and PDSI</h3>
+        <div>
+          <Legend selectedData={this.props.selectedData}/>
+        </div>
         <p>
           Map showing annual average by state in year <b>{settings.year}</b>.
           Hover over a state to see details.
