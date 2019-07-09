@@ -15,7 +15,7 @@ body {
   height: 60px;
   max-width: 40%;
   min-width: 560px;
-  border-radius: 0px 0px 10px 0px;
+  border-radius: 0px 0px 5px 0px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   opacity: 0.5;
@@ -42,16 +42,51 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  max-width: 600px;
+  max-width: 500px;
+  border-radius: 0px 0px 0px 5px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  padding: 12px 24px;
-  margin: 20px;
+  opacity: 0.5;
+  padding: 0;
+  margin: 0;
   font-size: 13px;
-  line-height: 2;
+  /* line-height: 2; */
   color: #6b6b76;
   outline: none;
   text-transform: uppercase;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.control-panel:hover {
+  opacity: 1;
+}
+
+.control-expand {
+  margin: 0;
+  padding: 0;
+}
+
+.control-expand-summary {
+  margin: 0px;
+  /* display: flex;
+  align-items: center;
+  height: auto; */
+}
+
+/* .control-expand summary  */
+
+.data-radio {
+  margin: 0 0 0 5px;
+  padding: 0 0 0 5px;
+}
+
+.datatype {
+  margin: 0;
+  padding: 0;
 }
 
 .slider {
