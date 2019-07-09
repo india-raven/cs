@@ -374,3 +374,8 @@ input {
   top: 5px;
   right: 10px;
 }
+
+.pie {
+  width: 500px;
+  margin: 0 auto;
+}
