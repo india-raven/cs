@@ -34,7 +34,7 @@ class Map extends Component {
       height: "100vh",
       latitude: 39.82,
       longitude: -98.5795,
-      zoom: 4.5,
+      zoom: 3.6,
       captureScroll: false
     },
     name: "",
@@ -136,7 +136,7 @@ class Map extends Component {
       captureScroll: false,
       longitude,
       latitude,
-      zoom: 6,
+      zoom: 4.7,
       transitionInterpolator: new FlyToInterpolator(),
       transitionDuration: 1500
     });
