@@ -16,8 +16,7 @@ body {
   width: auto;
   height: 60px;
   max-width: 40%;
-  min-width: 560px;
-  border-radius: 0px 0px 5px 0px;
+  border-radius: 0px 0px 10px 0px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   opacity: 0.5;
@@ -44,71 +43,18 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  max-width: 520px;
-  border-radius: 0px 0px 0px 5px;
+  max-width: 350px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  opacity: 0.5;
-  padding: 0;
-  margin: 0;
+  padding: 12px 24px;
+  margin: 20px;
   font-size: 13px;
+  line-height: 2;
   color: #6b6b76;
   outline: none;
   text-transform: uppercase;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  -moz-transition: opacity 0.5s ease-in-out;
-  -ms-transition: opacity 0.5s ease-in-out;
-  -o-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.control-panel:hover {
-  opacity: 1;
-}
-
-#control-panel-title {
-  text-align: center;
-  margin: 0px;
-}
-
-#control-panel-info {
-  margin: 0px;
-}
-
-.form-content {
-  display: flex;
-  justify-content: space-between;
-  text-align: right;
-}
-
-.form-content p {
-  flex: 3;
-  padding-right: "10px";
-}
-
-.input-with-text {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: space-around;
-  padding: 0px 5px 0px 5px;
-  margin-left: 5px;
-  border-radius: 3px;
-  background-color: #f0f0f0;
-}
-
-.input-with-text-spec {
-  display: flex;
-}
-
-.data-radio {
-  margin: 0 0 0 5px;
-  padding: 0 0 0 5px;
-}
-
-.datatype {
-  margin: 0;
-  padding: 0;
+  opacity: 0.95;
+  border-radius: 10px;
 }
 
 .slider {
@@ -179,7 +125,7 @@ label {
 
 input {
   margin-left: 20px;
-  width: auto;
+  width: 160px;
 }
 
 .tooltip {
