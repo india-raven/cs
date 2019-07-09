@@ -24,7 +24,7 @@ Notes:
 
 2. Remember to include your .env.local file in the .gitignore file
 
-3. Firebase is loading geoJson data that renders state shapes and is a pivotal piece the application. You can find our template example here: 
+3. Firebase is loading geoJson data that renders state shapes and is a pivotal piece the application. You can find our template here: https://storage.cloud.google.com/visualclimategeojson/us-temp.geojson
 
 Once your setup is complete, you can run the following script in the project directory:
 
@@ -42,11 +42,11 @@ We have a deploy bash script for Heroku located in our script folder. It is desi
 
 However, if you would like to launch your own clone, you will need to configure a new application with Heroku.
 
-##VisualClimate's Future
+###VisualClimate's Future
 
 We would love to continue iterating and developing this application to its full potential. Here are some ideas we'd like to create:
 
--Machine Learning projection of temperature changes in the future
--Blog
--Volunteer Feature
+-Machine Learning future temperature projections
+-Volunteer Opportunities
 -Donation Feature for Climate Change Initiatives
+-Blog
