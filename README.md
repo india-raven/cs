@@ -11,7 +11,16 @@ VisualClimate demonstrates changes on a map for temperature, CO2, and drought le
 * We use Firebase to store our job data, which is received from the Indeed Jobs API. 
 * [Create React App](https://github.com/facebook/create-react-app) serves as the scaffold for our entire application and Material UI is used for styling.
 
-### Available Scripts
+## The Future
+
+We believe in this application and aim to continue iterating towards its full potential. Here are some ideas we'd like to create:
+
+* Machine Learning future temperature projections
+* Volunteer Opportunities
+* Donation Feature for Climate Change Initiatives
+* Blog
+
+## Application Setup and Available Scripts
 
 You must install the required dependencies for the application to run correctly:
 
@@ -24,28 +33,20 @@ In order for Firebase to load correctly, please create a .env.local file in the 
 
 * Remember to include your .env.local file in the .gitignore file
 
-* Firebase is loading geoJson data that renders state shapes and is a pivotal piece the application. You can find our template here: [geoJson](https://storage.cloud.google.com/visualclimategeojson/us-temp.geojson)
+* Firebase is loading geoJson data that renders state shapes and is an essential piece of the application. You can find our template here: [geoJson](https://storage.cloud.google.com/visualclimategeojson/us-temp.geojson)
 
 Once your setup is complete, you can run the following script in the project directory:
 
 ### `npm start`
 
-This script runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This script runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits. You will also see any lint errors in the console.
 
-### Deployment
+## Deployment
 
-We have a deploy bash script for Heroku located in our script folder. It is designed to take your deployment branch and launch that into Heroku's master branch.
+We have a deploy bash script for Heroku located in our script folder. It is designed to clone your development branch, clone it into a deploy branch, and launches it into Heroku's master branch.
 
-You will need to configure a new application with Heroku first if you would like to launch a clone of this repository.
+Instead of development, you can choose to use your master branch in the bash script.
 
-## VisualClimate's Future
-
-We believe in this application and aim to continue iterating towards its full potential. Here are some ideas we'd like to create:
-
-* Machine Learning future temperature projections
-* Volunteer Opportunities
-* Donation Feature for Climate Change Initiatives
-* Blog
+Please note that you will need to first configure a new application with Heroku if you would like to launch a clone of this repository.
