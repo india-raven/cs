@@ -9,9 +9,9 @@ class GeoFire {
   init = () => {
     if (!firebase.apps.length) {
       firebase.initializeApp({
-        apiKey: process.env.GEOFIRE_APP_API_KEY,
+        apiKey: "AIzaSyC5grXJ2ztg8V_6OpintdIY1j8jYE1-IL0",
         authDomain: process.env.GEOFIRE_APP_AUTH_DOMAIN,
-        databaseURL: process.env.GEOFIRE_APP_FIREBASE_DATABASE_URL,
+        databaseURL: "https://india-raven-geojson.firebaseio.com",
         projectId: process.env.GEOFIRE_APP_PROJECT_ID,
         storageBucket: process.env.GEOFIRE_APP_STORAGE_BUCKET,
         messagingSenderId: process.env.GEOFIRE_APP_MESSAGING_SENDER_ID,
