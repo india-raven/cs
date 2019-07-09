@@ -38,13 +38,10 @@ export default class ControlPanel extends PureComponent {
 
     return (
       <Container>
-        <ExpansionPanel className="control-expand" width={2}>
+        <ExpansionPanel width={2}>
           <ExpansionPanelSummary
-            // className="control-expand-summary"
             expandIcon={<ExpandMoreIcon />}
-            // aria-controls="panel1a-content"
             id="panel1a-header"
-            // style={{ margin: "0px" }}
           >
             <h3 style={{ textAlign: "center", margin: "5px" }}>
               Control Panel
@@ -135,6 +132,7 @@ export default class ControlPanel extends PureComponent {
                     </div>
                   </div>
                 </form>
+                <hr />
                 <Slider settings={settings} onChange={this.props.onChange} />
                 <JobBoard show={this.state.show} handleClose={this.hideModal} />
               </div>
