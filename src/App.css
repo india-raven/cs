@@ -7,6 +7,36 @@ body {
   height: 100vh;
 }
 
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 60px;
+  max-width: 40%;
+  border-radius: 0px 0px 10px 0px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0.5;
+  padding: 12px 24px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 2;
+  color: #6b6b76;
+  outline: none;
+  text-transform: uppercase;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+}
+
+.navbar:hover {
+  opacity: 1;
+}
+
 .control-panel {
   position: absolute;
   top: 0;
@@ -369,4 +399,3 @@ input {
   top: 5px;
   right: 10px;
 }
-

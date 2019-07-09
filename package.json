@@ -23,6 +23,7 @@
     "react-dom": "^16.8.6",
     "react-map-gl": "^5.0.3",
     "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-stripe-checkout": "^2.6.3",
     "serve": "^11.0.2"
