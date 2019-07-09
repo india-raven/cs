@@ -35,6 +35,17 @@ export default class AboutUs extends Component {
 						and Material UI is used for styling.
 					</li>
 				</ul>
+				<h2>The Future</h2>
+				<p>
+					We believe in this application and aim to continue iterating towards
+					its full potential. Here are some ideas we'd like to create:
+				</p>
+				<ul>
+					<li>Machine Learning future temperature projections</li>
+					<li>Volunteer Opportunities</li>
+					<li>Donation Feature for Climate Change Initiatives</li>
+					<li>Blog</li>
+				</ul>
 			</div>
 		);
 	}
