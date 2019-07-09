@@ -21,15 +21,16 @@ export default class Legend extends Component {
 <div><h3>Cold</h3></div>
 </div> : <div id='state-legend' class='legend'>
 <div><h3>Low</h3></div>
-<div><span style={{background: '#723122'}}></span></div>
-<div><span style={{background: '#8B4225'}}></span></div>
-<div><span style={{background: '#A25626'}}></span></div>
-<div><span style={{background: '#B86B25'}}></span></div>
-<div><span style={{background: '#CA8323'}}></span></div>
-<div><span style={{background: '#DA9C20'}}></span></div>
-<div><span style={{background: '#E6B71E'}}></span></div>
-<div><span style={{background: '#EED322'}}></span></div>
-<div><span style={{background: '#F2F12D'}}></span></div>
+<div><span style={{background: '#FF4633'}}></span></div>
+<div><span style={{background: '#FF8333'}}></span></div>
+<div><span style={{background: '#FFA533'}}></span></div>
+<div><span style={{background: '#FFB533'}}></span></div>
+<div><span style={{background: '#FFB533'}}></span></div>
+<div><span style={{background: '#FFDD33'}}></span></div>
+<div><span style={{background: '#FFF633'}}></span></div>
+<div><span style={{background: '#ECFF33'}}></span></div>
+<div><span style={{background: '#CEFF33'}}></span></div>
+<div><span style={{background: '#9FFF33'}}></span></div>
 <div><h3>High</h3></div>
 </div>
         )
