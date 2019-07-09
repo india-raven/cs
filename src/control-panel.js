@@ -38,6 +38,7 @@ export default class ControlPanel extends PureComponent {
           >
             <h3 id="control-panel-title">Control Panel</h3>
           </ExpansionPanelSummary>
+          <hr />
           <ExpansionPanelDetails>
             <div>
               <p id="control-panel-info">
