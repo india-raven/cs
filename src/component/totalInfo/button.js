@@ -4,7 +4,7 @@ const Button = props => {
   return (
     <div className="knopochka">
       <button className="btn" onClick={() => props.onClick()}>
-        USA
+        USA Climate Info
       </button>
     </div>
   );

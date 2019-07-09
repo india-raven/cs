@@ -1,6 +1,7 @@
-import React, { PureComponent } from "react";
-import JobBoard from "./component/JobBoard";
-import Slider from "./component/Slider";
+import React, { PureComponent } from 'react';
+import JobBoard from './component/JobBoard';
+import Slider from './component/Slider';
+import Legend from './component/Legend'
 
 import { json as requestJson } from "d3-request";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
@@ -40,6 +41,9 @@ export default class ControlPanel extends PureComponent {
           </ExpansionPanelSummary>
           <hr />
           <ExpansionPanelDetails>
+          <div>
+             <Legend selectedData={this.props.selectedData}/>
+          </div>
             <div>
               <p id="control-panel-info">
                 Annual state averages in <b>{settings.year}</b>. Hover over
