@@ -13,15 +13,8 @@ const defaultContainer = ({ children }) => (
 );
 
 export default class ControlPanel extends PureComponent {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     show: false
-  //   };
-  // }
   state = {
     show: false
-    // selectedData: "temp"
   };
 
   showModal = () => {
@@ -43,13 +36,11 @@ export default class ControlPanel extends PureComponent {
             expandIcon={<ExpandMoreIcon />}
             id="panel1a-header"
           >
-            <h3 style={{ textAlign: "center", margin: "5px" }}>
-              Control Panel
-            </h3>
+            <h3 id="control-panel-title">Control Panel</h3>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <div>
-              <p style={{ margin: 0 }}>
+              <p id="control-panel-info">
                 Annual state averages in <b>{settings.year}</b>. Hover over
                 states for details!
               </p>
@@ -59,22 +50,11 @@ export default class ControlPanel extends PureComponent {
                 <button type="button" onClick={this.showModal}>
                   See nearby jobs
                 </button>
-                <form style={{ display: "flex", flexDirection: "column" }}>
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <p style={{ flex: 3 }}>Select data to map:</p>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        flex: 1,
-                        alignItems: "flex-end"
-                      }}
-                    >
-                      <div
-                        style={{ display: "flex", justifyContent: "flex-end" }}
-                      >
+                <form>
+                  <div className="form-content">
+                    <p>Select data to map:</p>
+                    <div className="input-with-text">
+                      <div className="input-with-text-spec">
                         <p className="datatype">Temperature</p>
                         <input
                           type="radio"
@@ -104,9 +84,7 @@ export default class ControlPanel extends PureComponent {
                           }}
                         />
                       </div>
-                      <div
-                        style={{ display: "flex", justifyContent: "flex-end" }}
-                      >
+                      <div className="input-with-text-spec">
                         <p className="datatype">PDSI</p>
                         <input
                           type="radio"
