@@ -16,6 +16,7 @@ export default class ControlPanel extends PureComponent {
   render() {
     const Container = this.props.containerComponent || defaultContainer;
     const { settings } = this.props;
+    const logo = require("../VisualClimate_logo.png");
 
     return (
       <Container>
@@ -28,6 +29,8 @@ export default class ControlPanel extends PureComponent {
           </Button>
           <Button>Blog</Button>
           <Button>About</Button>
+          <hr />
+          <img src={logo} alt="VisualClimate logo" style={{ width: "30%" }} />
         </div>
       </Container>
     );
