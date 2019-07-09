@@ -64,6 +64,38 @@ body {
   opacity: 1;
 }
 
+#control-panel-title {
+  text-align: center;
+  margin: 0px;
+}
+
+#control-panel-info {
+  margin: 0px;
+}
+
+.form-content {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.form-content p {
+  flex: 3;
+  padding-right: "10px";
+}
+
+.input-with-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  padding-left: 10px;
+}
+
+.input-with-text-spec {
+  display: flex;
+}
+
 .data-radio {
   margin: 0 0 0 5px;
   padding: 0 0 0 5px;
