@@ -72,6 +72,7 @@ export default class ControlPanel extends PureComponent {
                   });
                 }}
               />{' '}
+              {/* <i className="fas fa-temperature-high fa-2x" /> */}
               Temperature <br />
             </div>
             <div style={{ display: 'flex' }}>
@@ -94,7 +95,6 @@ export default class ControlPanel extends PureComponent {
               PDSI <br />
             </div>
           </form>
-          <label>Year</label>
           <Slider settings={settings} onChange={this.props.onChange} />
           <JobBoard show={this.state.show} handleClose={this.hideModal} />
         </div>

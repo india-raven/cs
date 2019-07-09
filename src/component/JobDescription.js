@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export const JobDescription = props => {
   return (
@@ -11,7 +11,7 @@ export const JobDescription = props => {
       <h2>
         <i className="fas fa-map-marked-alt" /> {props.job.location}
       </h2>
-      <a target={'_blank'} href={props.job.url}>
+      <a target={"_blank"} href={props.job.url}>
         Get more info
       </a>
       <h2>
