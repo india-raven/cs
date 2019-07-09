@@ -5,7 +5,7 @@ export function updatePercentiles(featureCollection, accessor) {
   const { features } = featureCollection;
   const scale = scaleLinear()
     .domain(features.map(accessor))
-    .range(range(10));
+    .range(range(21));
   features.forEach(f => {
     const value = accessor(f);
     f.properties.value = value;
