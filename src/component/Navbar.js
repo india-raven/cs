@@ -8,6 +8,10 @@ const defaultContainer = ({ children }) => (
   <div className="navbar">{children}</div>
 );
 
+const AdapterLink = React.forwardRef((props, ref) => (
+  <Link innerRef={ref} {...props} />
+));
+
 export default class ControlPanel extends PureComponent {
   render() {
     const Container = this.props.containerComponent || defaultContainer;
@@ -16,8 +20,12 @@ export default class ControlPanel extends PureComponent {
     return (
       <Container>
         <div style={{ display: "flex" }}>
-          <Button style={{ color: "black" }}>Home</Button>
-          <Button>National Stats</Button>
+          <Button component={AdapterLink} to="/">
+            Home
+          </Button>
+          <Button component={AdapterLink} to="/usa">
+            National Stats
+          </Button>
           <Button>Blog</Button>
           <Button>About</Button>
         </div>
