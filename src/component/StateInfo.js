@@ -1,4 +1,6 @@
 import React, { PureComponent } from "react";
+import { Button } from "@material-ui/core";
+
 import ChartApp from "./charts/ChartApp";
 import Chart from "./charts/Chart";
 import ChartLine from "./charts/ChartLine";
@@ -15,7 +17,7 @@ export default class StateInfo extends PureComponent {
   constructor() {
     super();
     this.state = {
-      // show: false,
+      show: false,
       barChart: <Chart />, //barchart
       // donutChart: <ChartLine />, //donut
       bubbleChart: <ChartBubble />, //
@@ -29,6 +31,14 @@ export default class StateInfo extends PureComponent {
     });
   }
 
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
   render() {
     const { show, name, onClick, stateData } = this.props;
     const showHideClassName = show
@@ -41,26 +51,21 @@ export default class StateInfo extends PureComponent {
       <Container classInStateInfo={showHideClassName}>
         {/* <div style={{position:'absolute', width:'10%'}}> */}
         <i className="fas fa-times fa-2x" onClick={onClick} />
-        <h3>{name}</h3>
-        <hr />
-        {/* <button type="button" onClick={this.changeChart}>
-          Change Chart1
-        </button> */}
-        {/* <div style={{ position: "relative", width: "10%" }}>
-          <div style={{ position: "absolute", width: "10%" }}>
-            {this.state.currentChart}
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h3>{name}</h3>
+          <div style={{ "padding-right": "50px;" }}>
+            <Button
+              type="button"
+              variant="contained"
+              // style={{ "padding-right": "60px;" }}
+              onClick={this.showModal}
+            >
+              Climate-related job opportunities
+            </Button>
           </div>
-        </div> */}
-        {/* <Chart /> */}
-        {/* <ChartBubble /> */}
-        {/* <p>chart 1 </p>
-        <p>chart 2</p>
-        <p>chart 3</p>
-        <p>chart 4</p>
-
-        <p>chart 5</p> */}
-        {/* <ChartApp className={showHideClassName}/> */}
-        {/* </div> */}
+          <JobBoard show={this.state.show} handleClose={this.hideModal} />
+        </div>
+        <hr />
         <div>{"Average Temperature \u2109 (1895-2018)"}</div>
         <LineChartSideBar stateData={stateData.temperature} />
         <hr />
