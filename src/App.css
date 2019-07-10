@@ -304,6 +304,7 @@ input {
 }
 
 .usaInfo {
+
   position: absolute;
   z-index: 2;
   top: 0;
@@ -313,7 +314,8 @@ input {
   width: 100vw;
   height: 100vh;
   /* max-height: 100%; */
-  background: #fff;
+  /* background: #fff; */
+  background-image: url('https://images.wallpaperscraft.com/image/lake_mountain_water_134189_3840x2160.jpg');
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
   /* padding: 12px 24px 12px 24px;
   margin: auto; */
@@ -435,4 +437,13 @@ input {
 .pie {
   width: 500px;
   margin: 0 auto;
+}
+
+.chart {
+  width: 100%;
+}
+
+.page {
+  /* background-image: url('https://images.wallpaperscraft.com/image/lake_mountain_water_134189_3840x2160.jpg'); */
+  /* background-repeat: no-repeat; */
 }

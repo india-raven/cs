@@ -77,7 +77,9 @@ export default class NewPage extends React.Component {
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
+              <div className="chart">
                 <Chart />
+              </div>
                 <Typography>
                   <div align="left">
                     {
