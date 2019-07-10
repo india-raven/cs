@@ -15,45 +15,50 @@ import '../Blog/ArticleView.css'
 
 class ArticleView extends Component {
     // componentDidMount() {
-    //     document.body.classNameName = 'posts show'
+    //     document.body.classNameNameName = 'posts show'
     // }
     // componentWillMount() {
     //     this.props.getArticle(this.props.match.params.id)
     // }    
     // componentWillUnmount() {
-    //     document.body.classNameName = ''
+    //     document.body.classNameNameName = ''
     // }
     render() {
      
         
         return (
             <div>
-          <div class="wrapper">
-            <center> <a href="/"><div class="site-title">   Tech Effects </div></a></center>
+          <div className="wrapper" >
+            <center> <a href="/blog"><div className="site-title"> Climate Change :-(</div></a></center>
           </div>    
-          <div class="wrapper site-description">
-            <center>a blog</center>
+          <div className="wrapper site-description">
+            <center>a  climate blog</center>
           </div>
-          <div class="wrapper">
-             <div class="trigger site-navigation">
-             <a class="page-link" href="/">HOME</a>
-                <span class="exclamationMark">/</span><a class="page-link" href="/about/">About</a>
-                <span class="exclamationMark">/</span><a class="page-link" href="/portfolio/">Portfolio</a>
-                <span class="exclamationMark">/</span><a class="page-link" href="/contact/">Contact</a>
+          {/* <div className="wrapper">
+             <div className="trigger site-navigation">
+             <a className="page-link" href="/">HOME</a>
+                <span className="exclamationMark">/</span><a className="page-link" href="/about/">About</a>
+                <span className="exclamationMark">/</span><a className="page-link" href="/portfolio/">Portfolio</a>
+                <span className="exclamationMark">/</span><a className="page-link" href="/contact/">Contact</a>
             </div>
-         </div>
-          <div class='page-content'>
-              <div class='wrapper'>
-                  <div class='home'>
-                       <div class='post postContent'>
-                           <div class='postDate'> 
+         </div> */}
+          <div className='page-content'>
+              <div className='wrapper'>
+                  <div className='home'>
+                      {/* NEED TO CREEATE COMPONENT TO RENDER EACH ARTICLE */}
+                       <div className='post postContent'>
+                           <div className='postDate'> 
                            <time datetime="2019-07-02T00:15:31+00:00" itemprop="datePublished">Jul 2, 2019</time>
                            </div>
-                           <div class="postTitle">
-                                 <a class="postLink" href="/">Title 1</a>
+                           <div className="postTag">
+      
+    </div>
+    <br />
+                           <div className="postTitle">
+                                 <a className="postLink" href="/">CLIMATE CHANGE DIGEST JULY 2019</a>
                            </div>
-                           <div class="postExt">
-                                Article content....
+                           <div className="postExt">
+                                Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please.
                         </div>
                        </div>
                   </div>
