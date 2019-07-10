@@ -1,34 +1,28 @@
-import React, { Component } from 'react';
-// import Fire from "../Fire";
-import firebase from 'firebase';
-import { JobDescription } from '../component/JobDescription';
+import React, { Component } from "react";
+import GeoFire from "../GeoFire";
+import firebase from "firebase";
+import { JobDescription } from "../component/JobDescription";
 
-const jobs = require('../jobs');
-// import jobs from '../../public/data/jobs.json';
+const jobs = require("./jobs");
+// import jobs from "../../public/data/jobs.json";
 
 export default class JobBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       jobs: [],
-      currJob: jobs[0],
+      currJob: jobs[0]
     };
   }
 
   componentDidMount() {
-    firebase
-      .database()
-      .ref('/')
-      .once('value')
-      .then(snapshot => {
-        this.setState({ jobs: snapshot.val() });
-      });
+    this.setState({ jobs: jobs });
   }
 
   render(props) {
     const showHideClassName = this.props.show
-      ? 'modal display-block'
-      : 'modal display-none';
+      ? "modal display-block"
+      : "modal display-none";
     return (
       <div className={showHideClassName}>
         <div className="job-board">

@@ -42,7 +42,7 @@ class Chart extends Component {
     //         margins.left} ${svgDimensions.height + margins.bottom}`} //THE PROBLEM IS HERE
     //       preserveAspectRatio="xMinYMin meet" */
     return (
-      <div>
+      <div >
         <svg width={svgDimensions.width} height={svgDimensions.height}>
           <Axes
             scales={{ xScale, yScale }}
