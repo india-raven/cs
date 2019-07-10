@@ -43,8 +43,7 @@ export default class AboutUs extends Component {
 								<ExpansionPanelDetails>
 									<Typography variant="h6">
 										<Typography>
-											<div align="left">
-												<h1>Our Mission</h1>
+											<div className="aboutSizing" align="left">
 												<p>
 													Welcome! Our team believes that the visualization of
 													climate change is a pivotal tool in spreading
@@ -79,8 +78,7 @@ export default class AboutUs extends Component {
 								</ExpansionPanelSummary>
 								<ExpansionPanelDetails style={{ display: "block" }}>
 									<Typography>
-										<div align="left">
-											<h2>Fullstack technologies that were used</h2>
+										<div className="aboutSizing" align="left">
 											<ul>
 												<li>
 													The backbone of this application uses React Mapbox GL
@@ -122,16 +120,15 @@ export default class AboutUs extends Component {
 								</ExpansionPanelSummary>
 								<ExpansionPanelDetails>
 									<Typography>
-										<div>
+										<div className="aboutSizing">
 											{" "}
-											<h2>What we have in store for this application</h2>
 											<p>
 												We believe in this application and aim to continue
 												iterating towards its full potential. Here are some
 												ideas we'd like to create:
 											</p>
 											<ul>
-												<li>Machine Learning future temperature projections</li>
+												<li>Machine Learning to project future temperatures</li>
 												<li>Volunteer Opportunities</li>
 												<li>Donation Feature for Climate Change Initiatives</li>
 												<li>Blog</li>
@@ -156,9 +153,8 @@ export default class AboutUs extends Component {
 								</ExpansionPanelSummary>
 								<ExpansionPanelDetails>
 									<Typography>
-										<div>
+										<div className="aboutSizing">
 											{" "}
-											<h2>What we have in store for this application</h2>
 											<p>
 												We believe in this application and aim to continue
 												iterating towards its full potential. Here are some
