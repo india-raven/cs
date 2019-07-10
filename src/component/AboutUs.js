@@ -73,8 +73,7 @@ export default class AboutUs extends Component {
 										Fullstack Technologies{" "}
 										<Typography variant="h5" color="textSecondary">
 											{" "}
-											Marvel at what we used to create
-											VisualClimate.
+											Marvel at what we used to create VisualClimate.
 										</Typography>
 									</Typography>
 								</ExpansionPanelSummary>
@@ -127,7 +126,9 @@ export default class AboutUs extends Component {
 									<Typography>
 										<div className="aboutSizing">
 											<p>
-												We aim to continue building toward VisualClimate's complete potential. Here are some ideas we'd like to develop:
+												We aim to continue building toward VisualClimate's
+												complete potential. Here are some ideas we'd like to
+												develop:
 											</p>
 											<ul>
 												<li>Machine Learning to project future temperatures</li>
@@ -156,6 +157,30 @@ export default class AboutUs extends Component {
 								<ExpansionPanelDetails>
 									<Typography>
 										<div className="aboutSizing">
+											<a target="_blank" href="https://github.com/zyabb">
+												<img
+													alt="Ruslan"
+													src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Frog-128.png"
+												/>
+											</a>
+											<a target="_blank" href="https://github.com/TalRodin">
+												<img
+													alt="Alyona"
+													src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Panda-128.png"
+												/>
+											</a>
+											<a target="_blank" href="https://github.com/dbtracy">
+												<img
+													alt="Dan"
+													src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Penguin-128.png"
+												/>
+											</a>
+											<a target="_blank" href="https://github.com/xavierolivares">
+												<img
+													alt="Xavier"
+													src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Rabbit-128.png"
+												/>
+											</a>
 											<ul>
 												<li>Ruslan</li>
 												<li>Alyona</li>
