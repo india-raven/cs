@@ -1,4 +1,5 @@
 import firebase from "firebase";
+
 class GeoFire {
   constructor() {
     this.init();
