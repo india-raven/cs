@@ -1,19 +1,20 @@
 # VisualClimate
 
-Welcome! Our team believes that the visualization of climate change is a pivotal tool in spreading awareness and the need to act.
+We believe in visualizing climate and its usefulness in helping to spread awareness and the need to act.
 
-VisualClimate demonstrates changes on a map for temperature, CO2, and drought levels throughout a century’s worth of US climate change data. Along with chart visualization, this application also allows the user to seek nearby jobs opportunities that are related to climate change.
+Utilizing maps and charts, VisualClimate illustrates changes for temperature, CO2, and drought levels by using a century’s worth of US climate change data. We also wanted to bring climate change job opportunities to you! Select a state and see related jobs in your area.
 
 ## Technologies
 
 * The backbone of this application uses React Mapbox GL and React to track temperature changes over time in color.
-* D3 supports the map with traditional chart visualization. Our climate data is pulled from the National Centers for Environmental Protection and National Oceanic and Atmospheric Administration.
-* We use Firebase to store our job data, which is received from the Indeed Jobs API. 
+* D3 supports the map with traditional chart visualization. 
+* Our climate data is pulled from the National Centers for Environmental Protection and National Oceanic and Atmospheric Administration.
+* We use Firebase to store the data for our map (temperature, PDSI, and map coordinates). 
 * [Create React App](https://github.com/facebook/create-react-app) serves as the scaffold for our entire application and Material UI is used for styling.
 
 ## The Future
 
-We believe in this application and aim to continue iterating towards its full potential. Here are some ideas we'd like to create:
+We aim to continue building toward VisualClimate's complete potential. Here are some ideas we'd like to develop:
 
 * Machine Learning future temperature projections
 * Volunteer Opportunities

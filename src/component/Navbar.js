@@ -20,16 +20,31 @@ export default class ControlPanel extends PureComponent {
     return (
       <Container>
         <div style={{ display: "flex" }}>
-          <Button component={AdapterLink} to="/">
-            Home
-          </Button>
-          <Button component={AdapterLink} to="/usa">
-            National Stats
-          </Button>
-          <Button component={AdapterLink} to='/blog'>Blog</Button>
-          <Button>About</Button>
-          <hr />
-          <img src={logo} alt="VisualClimate logo" style={{ width: "30%" }} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flex: 2,
+              width: "auto"
+            }}
+          >
+            <Button component={AdapterLink} to="/">
+              Home
+            </Button>
+            <Button component={AdapterLink} to="/usa">
+              National Stats
+            </Button>
+                <Button component={AdapterLink} to='/blog'>Blog</Button>
+            <Button component={AdapterLink} to="/about">About</Button>
+          </div>
+          <hr style={{ margin: "1px" }} />
+          <div style={{ display: "flex", justifyContent: "center", flex: 1 }}>
+            <img
+              src={logo}
+              alt="VisualClimate logo"
+              style={{ maxWidth: "80%" }}
+            />
+          </div>
         </div>
       </Container>
     );

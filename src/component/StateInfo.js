@@ -1,11 +1,13 @@
-import React, { PureComponent } from 'react';
-import ChartApp from './charts/ChartApp';
-import Chart from './charts/Chart';
-import ChartLine from './charts/ChartLine';
-import ChartBubble from './charts/ChartBubble';
-import LineChartSideBar from './charts/LineChartSideBar';
-import LinePDChart from './charts/LinePDChart';
-import JobBoard from './JobBoard';
+import React, { PureComponent } from "react";
+import { Button } from "@material-ui/core";
+
+import ChartApp from "./charts/ChartApp";
+import Chart from "./charts/Chart";
+import ChartLine from "./charts/ChartLine";
+import ChartBubble from "./charts/ChartBubble";
+import LineChartSideBar from "./charts/LineChartSideBar";
+import LinePDChart from "./charts/LinePDChart";
+import JobBoard from "./JobBoard";
 //modal wrapper for our popup
 const defaultContainer = ({ children, classInStateInfo }) => (
   <div className={classInStateInfo}>{children}</div> //change
@@ -15,25 +17,23 @@ export default class StateInfo extends PureComponent {
   constructor() {
     super();
     this.state = {
-      // show: false,
-      barChart: <Chart />, //barchart
-      // donutChart: <ChartLine />, //donut
-      bubbleChart: <ChartBubble />, //
-      currentChart: <LineChartSideBar />,
+      show: false
     };
-    this.changeChart = this.changeChart.bind(this);
   }
-  changeChart() {
-    this.setState({
-      currentChart: <ChartBubble />,
-    });
-  }
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
 
   render() {
     const { show, name, onClick, stateData } = this.props;
     const showHideClassName = show
-      ? 'state-info display-block'
-      : 'state-info display-none';
+      ? "state-info display-block"
+      : "state-info display-none";
 
     const Container = this.props.containerComponent || defaultContainer;
 
@@ -41,29 +41,20 @@ export default class StateInfo extends PureComponent {
       <Container classInStateInfo={showHideClassName}>
         {/* <div style={{position:'absolute', width:'10%'}}> */}
         <i className="fas fa-times fa-2x" onClick={onClick} />
-        <h3>STATE {name}</h3>
-        <h3>STATE DESCRIPTION</h3>
-        {/* <button type="button" onClick={this.changeChart}>
-          Change Chart1
-        </button> */}
-        {/* <div style={{ position: "relative", width: "10%" }}>
-          <div style={{ position: "absolute", width: "10%" }}>
-            {this.state.currentChart}
+        <div className="state-info-title-and-btn">
+          <h3>{name}</h3>
+          <div id="jobs-btn">
+            <Button type="button" variant="contained" onClick={this.showModal}>
+              Climate-related job opportunities
+            </Button>
           </div>
-        </div> */}
-        {/* <Chart /> */}
-        {/* <ChartBubble /> */}
-        {/* <p>chart 1 </p>
-        <p>chart 2</p>
-        <p>chart 3</p>
-        <p>chart 4</p>
-
-        <p>chart 5</p> */}
-        {/* <ChartApp className={showHideClassName}/> */}
-        {/* </div> */}
-        <div>{'Average Temperature \u2109 (1895-2018)'}</div>
+          <JobBoard show={this.state.show} handleClose={this.hideModal} />
+        </div>
+        <hr />
+        <div>{"Average Temperature \u2109 (1895-2018)"}</div>
         <LineChartSideBar stateData={stateData.temperature} />
-        <div>{'Average PSDI (1925-2018)'}</div>
+        <hr />
+        <div>{"Average PSDI (1925-2018)"}</div>
         <LinePDChart stateData={stateData.pdsi} />
       </Container>
     );

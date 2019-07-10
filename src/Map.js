@@ -136,7 +136,7 @@ class Map extends Component {
       captureScroll: false,
       longitude,
       latitude,
-      zoom: 6,
+      zoom: 4.7,
       transitionInterpolator: new FlyToInterpolator(),
       transitionDuration: 1500
     });
@@ -161,7 +161,7 @@ class Map extends Component {
       this.goToViewport(event.lngLat[0], event.lngLat[1]);
       //POTENTIONAL PROBLEM HERE
       this.setState({
-        //   name: features[0].properties.name,
+        name: features[0].properties.name,
         //   viewport: {
         //     width: '100vw',
         //     height: '100vh',

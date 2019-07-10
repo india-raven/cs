@@ -3,7 +3,7 @@ import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import ArticleV from './Blog/ArticleV'
 import Map from "../Map";
 import NewPage from "../component/totalInfo/newPage";
-
+import AboutUs from "./AboutUs"
 export default class Routes extends Component {
   // componentDidMount() {
   //   this.props.loadInitialData();
@@ -19,6 +19,7 @@ export default class Routes extends Component {
         <Route path="/usa" component={NewPage} />
         <Route path='/blog' component={ArticleV} />
         {/* <Route  path="/blog/:id(\d+)" component={SingleArticle} /> */}
+        <Route path="/about" component={AboutUs} />
         {/* <Route path="/blog" component={Blog} /> */}
         {/* <Route path="/about" component={About} /> */}
         <Redirect to="/" />
