@@ -150,7 +150,7 @@ export default class AboutUs extends Component {
 										Our Team{" "}
 										<Typography variant="h5" color="textSecondary">
 											{" "}
-											See the developers who brought this application to life!
+											Connect with the developers who brought this application to life!
 										</Typography>
 									</Typography>
 								</ExpansionPanelSummary>
