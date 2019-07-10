@@ -1,24 +1,21 @@
-import React, { PureComponent } from 'react';
-import JobBoard from './component/JobBoard';
-import Slider from './component/Slider';
-import Legend from './component/Legend'
+import React, { PureComponent } from "react";
+import JobBoard from "./component/JobBoard";
+import Slider from "./component/Slider";
+import Legend from "./component/Legend";
 
-import { json as requestJson } from 'd3-request';
+import { json as requestJson } from "d3-request";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const defaultContainer = ({ children }) => (
   <div className="control-panel">{children}</div>
 );
 
 export default class ControlPanel extends PureComponent {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     show: false
-  //   };
-  // }
   state = {
-    show: false,
-    // selectedData: "temp"
+    show: false
   };
 
   showModal = () => {
@@ -35,69 +32,94 @@ export default class ControlPanel extends PureComponent {
 
     return (
       <Container>
-        <h3>Annual Average Temperature and PDSI</h3>
-        <div>
-          <Legend selectedData={this.props.selectedData}/>
-        </div>
-        <p>
-          Map showing annual average by state in year <b>{settings.year}</b>.
-          Hover over a state to see details.
-        </p>
-        <hr />
-
-        <div key={'year'} className="input">
-          <JobBoard show={this.state.show} handleClose={this.hideModal} />
-          <button type="button" onClick={this.showModal}>
-            See nearby jobs
-          </button>
-          <form style={{ display: 'flex', flexDirection: 'column' }}>
-            <p>Select data to map:</p>
-            <div style={{ display: 'flex' }}>
-              <input
-                type="radio"
-                name="datatype"
-                value="Temperature"
-                checked={this.props.selectedData === 'Temperature'}
-                onChange={() => {
-                  this.props.updateSelectedData('Temperature');
-                  requestJson('data/us-temp.geojson', (error, response) => {
-                    //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
-                    if (!error) {
-                      this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
-                    } else {
-                      console.log('----------------------------------------');
-                      console.error(error);
-                      console.log('----------------------------------------');
-                    }
-                  });
-                }}
-              />{' '}
-              {/* <i className="fas fa-temperature-high fa-2x" /> */}
-              Temperature <br />
+        <ExpansionPanel width={2}>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            id="panel1a-header"
+          >
+            <h3 id="control-panel-title">Control Panel</h3>
+          </ExpansionPanelSummary>
+          <hr />
+          <ExpansionPanelDetails>
+            <div>
+              <hr />
+              <p id="control-panel-info">
+                Annual state averages in <b>{settings.year}</b>. Hover over
+                states for details!
+              </p>
+              <hr />
+              <div key={"year"} className="input">
+                <form>
+                  <div className="form-content">
+                    <p>Select data to map:</p>
+                    <div className="input-with-text">
+                      <div className="input-with-text-spec">
+                        <p className="datatype">Temperature</p>
+                        <input
+                          type="radio"
+                          name="datatype"
+                          value="Temperature"
+                          className="data-radio"
+                          checked={this.props.selectedData === "Temperature"}
+                          onChange={() => {
+                            this.props.updateSelectedData("Temperature");
+                            requestJson(
+                              "data/us-temp.geojson",
+                              (error, response) => {
+                                //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
+                                if (!error) {
+                                  this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
+                                } else {
+                                  console.log(
+                                    "----------------------------------------"
+                                  );
+                                  console.error(error);
+                                  console.log(
+                                    "----------------------------------------"
+                                  );
+                                }
+                              }
+                            );
+                          }}
+                        />
+                      </div>
+                      <div className="input-with-text-spec">
+                        <p className="datatype">PDSI</p>
+                        <input
+                          type="radio"
+                          name="datatype"
+                          value="PDSI"
+                          className="data-radio"
+                          checked={this.props.selectedData === "PDSI"}
+                          onChange={() => {
+                            this.props.updateSelectedData("PDSI");
+                            requestJson(
+                              "data/us-temp.geojson",
+                              (error, response) => {
+                                //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
+                                if (!error) {
+                                  this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
+                                } else {
+                                }
+                              }
+                            );
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                {/* <hr /> */}
+                <Slider settings={settings} onChange={this.props.onChange} />
+                <hr />
+                <div id="legend">
+                  <Legend selectedData={this.props.selectedData} />
+                </div>
+                <JobBoard show={this.state.show} handleClose={this.hideModal} />
+              </div>
             </div>
-            <div style={{ display: 'flex' }}>
-              <input
-                type="radio"
-                name="datatype"
-                value="PDSI"
-                checked={this.props.selectedData === 'PDSI'}
-                onChange={() => {
-                  this.props.updateSelectedData('PDSI');
-                  requestJson('data/us-temp.geojson', (error, response) => {
-                    //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
-                    if (!error) {
-                      this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
-                    } else {
-                    }
-                  });
-                }}
-              />{' '}
-              PDSI <br />
-            </div>
-          </form>
-          <Slider settings={settings} onChange={this.props.onChange} />
-          <JobBoard show={this.state.show} handleClose={this.hideModal} />
-        </div>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
       </Container>
     );
   }
