@@ -51,15 +51,10 @@ export default class StateInfo extends PureComponent {
       <Container classInStateInfo={showHideClassName}>
         {/* <div style={{position:'absolute', width:'10%'}}> */}
         <i className="fas fa-times fa-2x" onClick={onClick} />
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className="state-info-title-and-btn">
           <h3>{name}</h3>
-          <div style={{ "padding-right": "50px;" }}>
-            <Button
-              type="button"
-              variant="contained"
-              // style={{ "padding-right": "60px;" }}
-              onClick={this.showModal}
-            >
+          <div id="jobs-btn">
+            <Button type="button" variant="contained" onClick={this.showModal}>
               Climate-related job opportunities
             </Button>
           </div>
