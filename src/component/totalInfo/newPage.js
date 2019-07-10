@@ -19,7 +19,7 @@ export default class NewPage extends React.Component {
     return (
       <Box width="95%" justifyContent="center" margin={6} boxShadow={3}>
         <div>
-          <ExpansionPanel width={4}>
+          <ExpansionPanel width={7}>
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -34,10 +34,9 @@ export default class NewPage extends React.Component {
                 </Typography>{' '}
               </Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography variant="h6">
-                <ChartLine
-                  padding={'10px'}
+
+            <ChartLine 
+                  padding={'20px'}
                   data={[
                     { couse: 'H2O 36-70%', value: 12 },
                     { couse: 'CO2 9-26%', value: 6 },
@@ -45,14 +44,20 @@ export default class NewPage extends React.Component {
                     { couse: 'O3 3-7%', value: 4 },
                   ]}
                 />
-                <Typography>
-                  <div align="left">
+     
+            <ExpansionPanelDetails>
+                  <div align="bottom">
                     {
                       'Greenhouse gases are components of the atmosphere that contribute to the greenhouse effect. Some greenhouse gases occur naturally in the atmosphere, while others result from human activities such as burning of fossil fuels such as coal. Greenhouse gases include water vapor, carbon dioxide, methane, nitrous oxide, and ozone. The major greenhouse gases are water vapor, which causes about 36-70% of the greenhouse effect on Earth (not including clouds); carbon dioxide, which causes 9-26%; methane, which causes 4-9%, and ozone, which causes 3-7%. It is not possible to state that a certain gas causes a certain percentage of the greenhouse effect, because the influences of the various gases are not additive. (The higher ends of the ranges quoted are for the gas alone; the lower ends, for the gas counting overlaps.) Other greenhouse gases include, but are not limited to, nitrous oxide, sulfur hexafluoride, hydrofluorocarbons, perfluorocarbons and chlorofluorocarbons.'
                     }
+                    
                   </div>
-                </Typography>
-              </Typography>
+                 
+            
+                <div font-style='oblique'>References:</div>
+                    <a href="https://climate.nasa.gov/causes/">NASA Climate</a>
+                    
+            
             </ExpansionPanelDetails>
           </ExpansionPanel>
           <ExpansionPanel>
@@ -69,8 +74,9 @@ export default class NewPage extends React.Component {
                 </Typography>{' '}
               </Typography>
             </ExpansionPanelSummary>
+            <Chart />
             <ExpansionPanelDetails>
-              <Chart />
+              
               <Typography>
                 <div align="left">
                   {
@@ -95,8 +101,10 @@ export default class NewPage extends React.Component {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
+              <div>{'(1960-2014)'}</div>
                 <GraphLine />
                 <div>
+                  
                   {' '}
                   {
                     'Carbon dioxide (CO2) is an important heat-trapping (greenhouse) gas, which is released through human activities such as deforestation and burning fossil fuels, as well as natural processes such as respiration and volcanic eruptions.'
