@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
-import ChartApp from './charts/ChartApp';
-import Chart from './charts/Chart';
-import ChartLine from './charts/ChartLine';
-import ChartBubble from './charts/ChartBubble';
-import LineChartSideBar from './charts/LineChartSideBar';
-import LinePDChart from './charts/LinePDChart';
-import JobBoard from './JobBoard';
+import React, { PureComponent } from "react";
+import ChartApp from "./charts/ChartApp";
+import Chart from "./charts/Chart";
+import ChartLine from "./charts/ChartLine";
+import ChartBubble from "./charts/ChartBubble";
+import LineChartSideBar from "./charts/LineChartSideBar";
+import LinePDChart from "./charts/LinePDChart";
+import JobBoard from "./JobBoard";
 //modal wrapper for our popup
 const defaultContainer = ({ children, classInStateInfo }) => (
   <div className={classInStateInfo}>{children}</div> //change
@@ -19,21 +19,21 @@ export default class StateInfo extends PureComponent {
       barChart: <Chart />, //barchart
       // donutChart: <ChartLine />, //donut
       bubbleChart: <ChartBubble />, //
-      currentChart: <LineChartSideBar />,
+      currentChart: <LineChartSideBar />
     };
     this.changeChart = this.changeChart.bind(this);
   }
   changeChart() {
     this.setState({
-      currentChart: <ChartBubble />,
+      currentChart: <ChartBubble />
     });
   }
 
   render() {
     const { show, name, onClick, stateData } = this.props;
     const showHideClassName = show
-      ? 'state-info display-block'
-      : 'state-info display-none';
+      ? "state-info display-block"
+      : "state-info display-none";
 
     const Container = this.props.containerComponent || defaultContainer;
 
@@ -61,9 +61,9 @@ export default class StateInfo extends PureComponent {
         <p>chart 5</p> */}
         {/* <ChartApp className={showHideClassName}/> */}
         {/* </div> */}
-        <div>{'Average Temperature \u2109 (1895-2018)'}</div>
+        <div>{"Average Temperature \u2109 (1895-2018)"}</div>
         <LineChartSideBar stateData={stateData.temperature} />
-        <div>{'Average PSDI (1925-2018)'}</div>
+        <div>{"Average PDSI (1925-2018)"}</div>
         <LinePDChart stateData={stateData.pdsi} />
       </Container>
     );
