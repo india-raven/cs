@@ -8,7 +8,14 @@ import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import Background from ''
 
+// const sectionStyle = {
+// 	width: "100%",
+// 	height: "100%",
+// 	backgroundImage: `url(${Background})`
+
+// }
 export default class AboutUs extends Component {
 	render() {
 		return (
@@ -166,7 +173,8 @@ export default class AboutUs extends Component {
 													/>
 												</a>
 												<p><strong>Bio:</strong> I love building things and working on a team to accomplish great things.</p>
-												<p><strong>Github Profile:</strong> https://github.com/zyabb</p>
+												<p><strong>Github Profile:</strong> github.com/zyabb</p>
+												<p><strong>LinkedIn Profile:</strong> linkedin.com/in/ruslan-zyabbarov</p>
 											</div>
 											<div>
 												<h2>ALYONA RODINA</h2>
@@ -177,18 +185,20 @@ export default class AboutUs extends Component {
 													/>
 												</a>
 												<p><strong>Bio:</strong> I excel in using my expertise in data science and mathematics to help the world make more informed decisions. </p>
-												<p><strong>Github Profile:</strong> https://github.com/zyabb</p>
+												<p><strong>Github Profile:</strong> github.com/TalRodin</p>
+												<p><strong>LinkedIn Profile:</strong> linkedin.com/in/alyonarodin</p>
 											</div>
 											<div>
 												<h2>DAN TRACY</h2>
-												<a target="_blank" href="https://github.com/TalRodin">
+												<a target="_blank" href="https://github.com/dbtracy">
 													<img
 														alt="Dan"
 														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Penguin-128.png"
 													/>
 												</a>
 												<p><strong>Bio:</strong> Musician- and actor-turned-coder. I'm interested in working as part of a team to help build ideas, especially those that can turn our good planet into a great one. </p>
-												<p><strong>Github Profile:</strong> https://github.com/dbtracy</p>
+												<p><strong>Github Profile:</strong> github.com/dbtracy</p>
+												<p><strong>LinkedIn Profile:</strong> linkedin.com/in/dan-tracy</p>
 											</div>
 											<div>
 												<h2>XAVIER OLIVARES</h2>
@@ -202,7 +212,8 @@ export default class AboutUs extends Component {
 													/>
 												</a>
 												<p><strong>Bio:</strong> After immersing myself in the world of eCommerce, I wanted to go from selling online to building the software that makes it all work. My dive into the technical end has been great and I'm enjoying the process.</p>
-												<p><strong>Github Profile:</strong> https://github.com/xavierolivares</p>
+												<p><strong>Github Profile:</strong> github.com/xavierolivares</p>
+												<p><strong>LinkedIn Profile:</strong> linkedin.com/in/xavierolivaresb</p>
 											</div>
 										</div>
 									</Typography>
