@@ -12,8 +12,6 @@ trap cleanup_at_exit EXIT
 echo "MSG deploy-branch"
 git checkout -b deploy
 
-echo "MSG creating optimized build"
-npm run build
 
 echo "MSG adding env file"
 git add -f ./.env
