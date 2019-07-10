@@ -54,9 +54,11 @@ export default class NewPage extends React.Component {
                   </div>
                   <Typography>
                     <div align="left">
+                    <strong>We are. </strong>
                       {
-                        'Greenhouse gases are components of the atmosphere that contribute to the greenhouse effect. Some greenhouse gases occur naturally in the atmosphere, while others result from human activities such as burning of fossil fuels such as coal. Greenhouse gases include water vapor, carbon dioxide, methane, nitrous oxide, and ozone. The major greenhouse gases are water vapor, which causes about 36-70% of the greenhouse effect on Earth (not including clouds); carbon dioxide, which causes 9-26%; methane, which causes 4-9%, and ozone, which causes 3-7%. It is not possible to state that a certain gas causes a certain percentage of the greenhouse effect, because the influences of the various gases are not additive. (The higher ends of the ranges quoted are for the gas alone; the lower ends, for the gas counting overlaps.) Other greenhouse gases include, but are not limited to, nitrous oxide, sulfur hexafluoride, hydrofluorocarbons, perfluorocarbons and chlorofluorocarbons.'
+                        'While a wide range of natural phenomena can radically affect the climate, publishing climate scientists overwhelmingly agree that global warming and resultant climate effects that we\'re witnessing are the result of human activity. Life on Earth is dependent on an atmospheric "greenhouse" – a layer of gasses, primarily water vapour, in the lower atmosphere that trap heat from the sun as it\'s reflected back from the Earth, radiating it back and keeping our planet at a temperature capable of supporting life. Human activity is currently generating an excess of long-lived greenhouse gasses that – unlike water vapour – don\'t dissipate in response to temperature increases, resulting in a continuing buildup of heat. '
                       }
+                      <a href='https://www.wired.co.uk/article/what-is-climate-change-definition-causes-effects' style={{textDecoration: 'none', color: 'grey'}}>Source</a>
                     </div>
                   </Typography>
                 </Typography>
@@ -84,8 +86,9 @@ export default class NewPage extends React.Component {
                 <Typography>
                   <div  align="left">
                     {
-                      'Greenhouse gases are components of the atmosphere that contribute to the greenhouse effect. Some greenhouse gases occur naturally in the atmosphere, while others result from human activities such as burning of fossil fuels such as coal. Greenhouse gases include water vapor, carbon dioxide, methane, nitrous oxide, and ozone. The major greenhouse gases are water vapor, which causes about 36-70% of the greenhouse effect on Earth (not including clouds); carbon dioxide, which causes 9-26%; methane, which causes 4-9%, and ozone, which causes 3-7%. It is not possible to state that a certain gas causes a certain percentage of the greenhouse effect, because the influences of the various gases are not additive. (The higher ends of the ranges quoted are for the gas alone; the lower ends, for the gas counting overlaps.) Other greenhouse gases include, but are not limited to, nitrous oxide, sulfur hexafluoride, hydrofluorocarbons, perfluorocarbons and chlorofluorocarbons.'
+                      'A temperature anomaly is the difference from an average, or baseline, temperature. The baseline temperature is typically computed by averaging 30 or more years of temperature data. A positive anomaly indicates the observed temperature was warmer than the baseline, while a negative anomaly indicates the observed temperature was cooler than the baseline. When calculating an average of absolute temperatures, things like station location or elevation will have an effect on the data (ex. higher elevations tend to be cooler than lower elevations and urban areas tend to be warmer than rural areas). However, when looking at anomalies, those factors are less critical. For example, a summer month over an area may be cooler than average, both at a mountain top and in a nearby valley, but the absolute temperatures will be quite different at the two locations. '
                     }
+                    <a href='https://www.ncdc.noaa.gov/monitoring-references/dyk/anomalies-vs-temperature' style={{textDecoration: 'none', color: 'grey'}}>Source</a>
                   </div>
                 </Typography>
               </ExpansionPanelDetails>
@@ -109,8 +112,9 @@ export default class NewPage extends React.Component {
                   <div>
                     {' '}
                     {
-                      'Carbon dioxide (CO2) is an important heat-trapping (greenhouse) gas, which is released through human activities such as deforestation and burning fossil fuels, as well as natural processes such as respiration and volcanic eruptions.'
+                      'Carbon dioxide (CO2) is an important heat-trapping (greenhouse) gas, which is released through human activities such as deforestation and burning fossil fuels, as well as natural processes such as respiration and volcanic eruptions. On Earth, human activities are changing the natural greenhouse. Over the last century the burning of fossil fuels like coal and oil has increased the concentration of atmospheric carbon dioxide (CO2). This happens because the coal or oil burning process combines carbon with oxygen in the air to make CO2. To a lesser extent, the clearing of land for agriculture, industry, and other human activities has increased concentrations of greenhouse gases. '
                     }
+                    <a href='https://climate.nasa.gov/vital-signs/carbon-dioxide/' style={{textDecoration: 'none', color: 'grey'}}>Source</a>
                   </div>
                 </Typography>
               </ExpansionPanelDetails>
