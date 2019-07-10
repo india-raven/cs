@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-
 import { json as requestJson } from "d3-request";
 
 const defaultContainer = ({ children }) => (

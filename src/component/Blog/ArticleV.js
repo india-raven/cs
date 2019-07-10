@@ -18,17 +18,20 @@ const array = [
     {
         title: 'CLIMATE CHANGE DIGEST JULY 2019',
         introduction: 'Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please.',
-        date: 'Jul 2, 2019'
+        date: 'Jul 2, 2019',
+        id: 0
     },
     {
         title: 'CLIMATE CHANGE DIGEST JULY 2018',
         introduction: 'In short: because of you!',
-        date: 'Jan 1, 2018'
+        date: 'Jan 1, 2018',
+        id: 1
     },
     {
         title: 'BUY TESLA USING MY REFERAL LINK PLSSSSSSS AND SAVE PLANET',
         introduction: '$100 OFF',
-        date: 'Mar 8, 2017'
+        date: 'Mar 8, 2017',
+        id: 2
     }
 ]
 

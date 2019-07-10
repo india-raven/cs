@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../Blog/ArticleView.css'
 import RenderToLayer from 'material-ui/internal/RenderToLayer';
-
+import { Link } from 'react-router-dom'
 const ArticleInArticleView = ({data}) => {
     //render each article
     return(
@@ -14,8 +14,8 @@ const ArticleInArticleView = ({data}) => {
 </div>
 <br />
         <div className="postTitle">
-              <a className="postLink" href="/">{data.title}</a>
-
+              {/* <a className="postLink" href="/">{data.title}</a> */}
+              <Link  key={data.id} to={`/blog/${data.id}`} className="postLink">{data.title}</Link>
         </div>
         <div className="postExt">
              {data.introduction}

@@ -18,6 +18,7 @@ export default class Routes extends Component {
         <Route exact path="/" component={Map} />
         <Route path="/usa" component={NewPage} />
         <Route path='/blog' component={ArticleV} />
+        {/* <Route  path="/blog/:id(\d+)" component={SingleArticle} /> */}
         {/* <Route path="/blog" component={Blog} /> */}
         {/* <Route path="/about" component={About} /> */}
         <Redirect to="/" />
