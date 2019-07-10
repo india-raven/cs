@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import *  as d3 from 'd3';
 import Slice from './Slice'
 import gases from './gases';
+import ToolTipPie from './Tooltip';
 class Pie extends React.Component {
     constructor(props) {
       super(props);
@@ -40,7 +41,6 @@ class Pie extends React.Component {
         <g transform={`translate(${x}, ${y})`}>
           {/* Render a slice for each data point */}
           {pie(data_values).map(this.renderSlice)}
-
         </g>
       );
     }

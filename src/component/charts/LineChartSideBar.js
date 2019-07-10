@@ -76,9 +76,9 @@ class LineChartSideBar extends Component {
              
           <AxesL
           
-    scales={{ xScale, yScale }}
-    margins={margins}
-    svgDimensions={svgDimensions}
+          scales={{ xScale, yScale }}
+          margins={margins}
+          svgDimensions={svgDimensions}
   />
          <Line scales={{ xScale, yScale }}
    svgDimensions={svgDimensions}

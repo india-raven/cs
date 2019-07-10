@@ -23,7 +23,7 @@ class Chart extends Component {
     // console.log(this)
     const margins = { top: 10, right: 15, bottom: 0, left: 15 };
     const svgDimensions = {
-      width: Math.max(this.props.parentWidth, 600),
+      width: Math.max(this.props.parentWidth, 1000),
       height: 400,
     };
 

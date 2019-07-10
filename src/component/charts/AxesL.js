@@ -1,5 +1,5 @@
 import React from 'react'
-import Axis from './Axis'
+import Axis from './AxisL'
 
 export default ({ scales, margins, svgDimensions }) => {
     const { height, width } = svgDimensions

@@ -88,6 +88,7 @@ export default class NewPage extends React.Component {
                     {
                       'A temperature anomaly is the difference from an average, or baseline, temperature. The baseline temperature is typically computed by averaging 30 or more years of temperature data. A positive anomaly indicates the observed temperature was warmer than the baseline, while a negative anomaly indicates the observed temperature was cooler than the baseline. When calculating an average of absolute temperatures, things like station location or elevation will have an effect on the data (ex. higher elevations tend to be cooler than lower elevations and urban areas tend to be warmer than rural areas). However, when looking at anomalies, those factors are less critical. For example, a summer month over an area may be cooler than average, both at a mountain top and in a nearby valley, but the absolute temperatures will be quite different at the two locations. '
                     }
+
                     <a href='https://www.ncdc.noaa.gov/monitoring-references/dyk/anomalies-vs-temperature' style={{textDecoration: 'none', color: 'grey'}}>Source</a>
                   </div>
                 </Typography>
