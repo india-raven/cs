@@ -46,14 +46,13 @@ export default class AboutUs extends Component {
 										<Typography>
 											<div className="aboutSizing" align="left">
 												<p>
-													Our team believes that the visualization of climate
-													change is a pivotal tool in spreading awareness and
+													We believe in visualizing climate and its usefulness
+													in helping to spread awareness and
 													the need to act.
 												</p>
 												<p>
-													Using maps and charts, VisualClimate illustrates
-													changes for temperature, CO2, and drought levels.
-													We're using a century’s worth of US climate change
+													Utilizing maps and charts, VisualClimate illustrates
+													changes for temperature, CO2, and drought levels by using a century’s worth of US climate change
 													data. We also wanted to bring climate change job
 													opportunities to you! Select a state and see related
 													jobs in your area.
@@ -80,6 +79,7 @@ export default class AboutUs extends Component {
 								<ExpansionPanelDetails style={{ display: "block" }}>
 									<Typography>
 										<div className="aboutSizing" align="left">
+										<p><strong>Take a deeper look into our project repository:</strong> https://github.com/india-raven/cs</p>
 											<ul>
 												<li>
 													The backbone of this application uses React Mapbox GL
@@ -96,15 +96,13 @@ export default class AboutUs extends Component {
 													Atmospheric Administration.
 												</li>
 												<li>
-													We use Firebase to store our job data, which is
-													received from the Indeed Jobs API.
+													We use Firebase to store the data for our map (temperature, PDSI, and map coordinates).
 												</li>
 												<li>
 													Create React App serves as the scaffold for our entire
 													application and Material UI is used for styling.
 												</li>
 											</ul>
-											<p><strong>Take a deeper look into our project repository:</strong> https://github.com/india-raven/cs</p>
 										</div>
 									</Typography>
 								</ExpansionPanelDetails>
