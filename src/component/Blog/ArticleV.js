@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../Blog/ArticleView.css'
+import  ArticleInArticleView from './ArticleInArticleView'
 // import { connect } from 'react-redux'
 // import { 
 //     getArticle, 
@@ -13,6 +14,24 @@ import '../Blog/ArticleView.css'
 // let claps = 5
 // let title
 
+const array = [
+    {
+        title: 'CLIMATE CHANGE DIGEST JULY 2019',
+        introduction: 'Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please.',
+        date: 'Jul 2, 2019'
+    },
+    {
+        title: 'CLIMATE CHANGE DIGEST JULY 2018',
+        introduction: 'In short: because of you!',
+        date: 'Jan 1, 2018'
+    },
+    {
+        title: 'BUY TESLA USING MY REFERAL LINK PLSSSSSSS AND SAVE PLANET',
+        introduction: '$100 OFF',
+        date: 'Mar 8, 2017'
+    }
+]
+
 class ArticleView extends Component {
     // componentDidMount() {
     //     document.body.classNameNameName = 'posts show'
@@ -23,9 +42,7 @@ class ArticleView extends Component {
     // componentWillUnmount() {
     //     document.body.classNameNameName = ''
     // }
-    render() {
-     
-        
+    render() {   
         return (
             <div>
           <div className="wrapper" >
@@ -46,21 +63,10 @@ class ArticleView extends Component {
               <div className='wrapper'>
                   <div className='home'>
                       {/* NEED TO CREEATE COMPONENT TO RENDER EACH ARTICLE */}
-                       <div className='post postContent'>
-                           <div className='postDate'> 
-                           <time datetime="2019-07-02T00:15:31+00:00" itemprop="datePublished">Jul 2, 2019</time>
-                           </div>
-                           <div className="postTag">
-      
-    </div>
-    <br />
-                           <div className="postTitle">
-                                 <a className="postLink" href="/">CLIMATE CHANGE DIGEST JULY 2019</a>
-                           </div>
-                           <div className="postExt">
-                                Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please.
-                        </div>
-                       </div>
+                      {array.map(element => (
+                          <ArticleInArticleView data={element}/>
+                      )) }
+                    
                   </div>
               </div>
           </div> 
