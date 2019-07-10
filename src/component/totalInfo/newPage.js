@@ -18,7 +18,7 @@ export default class NewPage extends React.Component {
   render() {
     return (
       <div>
-        <h3 style={{ margin: '20px' }}>
+        <h3 style={{paddingLeft: '30px', margin: '20px', color: 'white', fontSize: '20px'}}>
           Click below for more data about climate change across the United
           States Of America{' '}
         </h3>
@@ -76,12 +76,13 @@ export default class NewPage extends React.Component {
                   </Typography>{' '}
                 </Typography>
               </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
+              <ExpansionPanelDetails style={{display: 'block'}}>
               <div className="chart">
                 <Chart />
               </div>
+
                 <Typography>
-                  <div align="left">
+                  <div  align="left">
                     {
                       'Greenhouse gases are components of the atmosphere that contribute to the greenhouse effect. Some greenhouse gases occur naturally in the atmosphere, while others result from human activities such as burning of fossil fuels such as coal. Greenhouse gases include water vapor, carbon dioxide, methane, nitrous oxide, and ozone. The major greenhouse gases are water vapor, which causes about 36-70% of the greenhouse effect on Earth (not including clouds); carbon dioxide, which causes 9-26%; methane, which causes 4-9%, and ozone, which causes 3-7%. It is not possible to state that a certain gas causes a certain percentage of the greenhouse effect, because the influences of the various gases are not additive. (The higher ends of the ranges quoted are for the gas alone; the lower ends, for the gas counting overlaps.) Other greenhouse gases include, but are not limited to, nitrous oxide, sulfur hexafluoride, hydrofluorocarbons, perfluorocarbons and chlorofluorocarbons.'
                     }
