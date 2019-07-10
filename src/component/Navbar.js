@@ -27,7 +27,7 @@ export default class ControlPanel extends PureComponent {
           <Button component={AdapterLink} to="/usa">
             National Stats
           </Button>
-          <Button>Blog</Button>
+          <Button component={AdapterLink} to='/blog'>Blog</Button>
           <Button>About</Button>
           <hr />
           <img src={logo} alt="VisualClimate logo" style={{ width: "30%" }} />
