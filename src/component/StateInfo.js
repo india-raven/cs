@@ -17,18 +17,8 @@ export default class StateInfo extends PureComponent {
   constructor() {
     super();
     this.state = {
-      show: false,
-      barChart: <Chart />, //barchart
-      // donutChart: <ChartLine />, //donut
-      bubbleChart: <ChartBubble />, //
-      currentChart: <LineChartSideBar />
+      show: false
     };
-    this.changeChart = this.changeChart.bind(this);
-  }
-  changeChart() {
-    this.setState({
-      currentChart: <ChartBubble />
-    });
   }
 
   showModal = () => {
