@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import JobBoard from "./component/JobBoard";
 import Slider from "./component/Slider";
+import Legend from "./component/Legend";
 
 import { json as requestJson } from "d3-request";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
@@ -41,16 +42,13 @@ export default class ControlPanel extends PureComponent {
           <hr />
           <ExpansionPanelDetails>
             <div>
+              <hr />
               <p id="control-panel-info">
                 Annual state averages in <b>{settings.year}</b>. Hover over
                 states for details!
               </p>
               <hr />
               <div key={"year"} className="input">
-                <JobBoard show={this.state.show} handleClose={this.hideModal} />
-                <button type="button" onClick={this.showModal}>
-                  See nearby jobs
-                </button>
                 <form>
                   <div className="form-content">
                     <p>Select data to map:</p>
@@ -111,8 +109,12 @@ export default class ControlPanel extends PureComponent {
                     </div>
                   </div>
                 </form>
-                <hr />
+                {/* <hr /> */}
                 <Slider settings={settings} onChange={this.props.onChange} />
+                <hr />
+                <div id="legend">
+                  <Legend selectedData={this.props.selectedData} />
+                </div>
                 <JobBoard show={this.state.show} handleClose={this.hideModal} />
               </div>
             </div>
