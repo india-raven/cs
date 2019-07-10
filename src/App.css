@@ -444,3 +444,7 @@ input {
   width: 600px;
   margin: 0 auto;
 }
+
+.aboutSizing {
+  font-size: 150%;
+}

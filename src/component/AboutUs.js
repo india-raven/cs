@@ -22,7 +22,8 @@ export default class AboutUs extends Component {
 							fontSize: "20px"
 						}}
 					>
-						Click below to learn more about our application and who we are as developers!{" "}
+						Click below to learn more about our application and who we are as
+						developers!{" "}
 					</h3>
 					<Box width="95%" justifyContent="center" margin={6} boxShadow={3}>
 						<div>
@@ -33,11 +34,11 @@ export default class AboutUs extends Component {
 									id="panel1a-header"
 								>
 									<Typography variant="h4" gutterBottom>
-										VisualClimate{" "}
+										Welcome to VisualClimate{" "}
 										<Typography variant="h5" color="textSecondary">
 											{" "}
 											Learn more about our mission!
-										</Typography>{" "}
+										</Typography>
 									</Typography>
 								</ExpansionPanelSummary>
 								<ExpansionPanelDetails>
@@ -45,17 +46,17 @@ export default class AboutUs extends Component {
 										<Typography>
 											<div className="aboutSizing" align="left">
 												<p>
-													Welcome! Our team believes that the visualization of
-													climate change is a pivotal tool in spreading
-													awareness and the need to act.
+													Our team believes that the visualization of climate
+													change is a pivotal tool in spreading awareness and
+													the need to act.
 												</p>
 												<p>
-													VisualClimate demonstrates changes on a map for
-													temperature, CO2, and drought levels throughout a
-													century’s worth of US climate change data. Along with
-													chart visualization, this application also allows the
-													user to seek nearby jobs opportunities that are
-													related to climate change.
+													Using maps and charts, VisualClimate illustrates
+													changes for temperature, CO2, and drought levels.
+													We're using a century’s worth of US climate change
+													data. We also wanted to bring climate change job
+													opportunities to you! Select a state and see related
+													jobs in your area.
 												</p>
 											</div>
 										</Typography>
@@ -69,11 +70,12 @@ export default class AboutUs extends Component {
 									id="panel2a-header"
 								>
 									<Typography variant="h4" gutterBottom>
-										Technologies{" "}
+										Fullstack Technologies{" "}
 										<Typography variant="h5" color="textSecondary">
 											{" "}
-											Marvel at the stack of technologies we used to create VisualClimate.
-										</Typography>{" "}
+											Marvel at what we used to create
+											VisualClimate.
+										</Typography>
 									</Typography>
 								</ExpansionPanelSummary>
 								<ExpansionPanelDetails style={{ display: "block" }}>
@@ -87,9 +89,12 @@ export default class AboutUs extends Component {
 												</li>
 												<li>
 													D3 supports the map with traditional chart
-													visualization. Our climate data is pulled from the
-													National Centers for Environmental Protection and
-													National Oceanic and Atmospheric Administration.
+													visualization.
+												</li>
+												<li>
+													Our climate data is pulled from the National Centers
+													for Environmental Protection and National Oceanic and
+													Atmospheric Administration.
 												</li>
 												<li>
 													We use Firebase to store our job data, which is
@@ -111,21 +116,18 @@ export default class AboutUs extends Component {
 									id="panel3a-header"
 								>
 									<Typography variant="h4" gutterBottom>
-										The Future{" "}
+										Looking Forward{" "}
 										<Typography variant="h5" color="textSecondary">
 											{" "}
 											What do we have planned for the future?
-										</Typography>{" "}
+										</Typography>
 									</Typography>
 								</ExpansionPanelSummary>
 								<ExpansionPanelDetails>
 									<Typography>
 										<div className="aboutSizing">
-											{" "}
 											<p>
-												We believe in this application and aim to continue
-												iterating towards its full potential. Here are some
-												ideas we'd like to create:
+												We aim to continue building toward VisualClimate's complete potential. Here are some ideas we'd like to develop:
 											</p>
 											<ul>
 												<li>Machine Learning to project future temperatures</li>
@@ -144,27 +146,21 @@ export default class AboutUs extends Component {
 									id="panel3a-header"
 								>
 									<Typography variant="h4" gutterBottom>
-										Team{" "}
+										Our Team{" "}
 										<Typography variant="h5" color="textSecondary">
 											{" "}
 											See the developers who brought this application to life!
-										</Typography>{" "}
+										</Typography>
 									</Typography>
 								</ExpansionPanelSummary>
 								<ExpansionPanelDetails>
 									<Typography>
 										<div className="aboutSizing">
-											{" "}
-											<p>
-												We believe in this application and aim to continue
-												iterating towards its full potential. Here are some
-												ideas we'd like to create:
-											</p>
 											<ul>
-												<li>Machine Learning future temperature projections</li>
-												<li>Volunteer Opportunities</li>
-												<li>Donation Feature for Climate Change Initiatives</li>
-												<li>Blog</li>
+												<li>Ruslan</li>
+												<li>Alyona</li>
+												<li>Dan</li>
+												<li>Xavier</li>
 											</ul>
 										</div>
 									</Typography>
