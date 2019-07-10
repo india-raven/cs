@@ -521,3 +521,17 @@ input {
   width: 600px;
   margin: 0 auto;
 }
+
+.aboutSizing {
+  font-size: 150%;
+}
+
+#team div {
+  flex-flow: flex;
+  /* width: auto; */
+  /* justify-content: space-between; */
+}
+
+#team div {
+  justify-content: space-evenly;
+}

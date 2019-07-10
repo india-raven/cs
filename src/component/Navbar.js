@@ -36,10 +36,9 @@ export default class ControlPanel extends PureComponent {
               National Stats
             </Button>
             <Button>Blog</Button>
-            <Button>About</Button>
+            <Button component={AdapterLink} to="/about">About</Button>
           </div>
           <hr style={{ margin: "1px" }} />
-
           <div style={{ display: "flex", justifyContent: "center", flex: 1 }}>
             <img
               src={logo}
