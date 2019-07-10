@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-
 import { json as requestJson } from "d3-request";
 
 const defaultContainer = ({ children }) => (
@@ -35,7 +34,7 @@ export default class ControlPanel extends PureComponent {
             <Button component={AdapterLink} to="/usa">
               National Stats
             </Button>
-            <Button>Blog</Button>
+                <Button component={AdapterLink} to='/blog'>Blog</Button>
             <Button component={AdapterLink} to="/about">About</Button>
           </div>
           <hr style={{ margin: "1px" }} />
