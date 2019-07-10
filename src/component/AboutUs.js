@@ -104,6 +104,7 @@ export default class AboutUs extends Component {
 													application and Material UI is used for styling.
 												</li>
 											</ul>
+											<p><strong>Take a deeper look into our project repository:</strong> https://github.com/india-raven/cs</p>
 										</div>
 									</Typography>
 								</ExpansionPanelDetails>
