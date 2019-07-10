@@ -159,40 +159,40 @@ export default class AboutUs extends Component {
 									<Typography>
 										<div id="team" className="aboutSizing">
 											<div>
-												<h2>Ruslan</h2>
+												<h2>RUSLAN ZYABBAROV</h2>
 												<a target="_blank" href="https://github.com/zyabb">
 													<img
 														alt="Ruslan"
 														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Rabbit-128.png"
 													/>
 												</a>
-												<p><strong>Bio:</strong> </p>
+												<p><strong>Bio:</strong> I love building things and working on a team to accomplish great things.</p>
 												<p><strong>Github Profile:</strong> https://github.com/zyabb</p>
 											</div>
 											<div>
-												<h2>Alyona</h2>
+												<h2>ALYONA RODINA</h2>
 												<a target="_blank" href="https://github.com/TalRodin">
 													<img
 														alt="Alyona"
 														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Panda-128.png"
 													/>
 												</a>
-												<p><strong>Bio:</strong> </p>
+												<p><strong>Bio:</strong> I excel in using my expertise in data science and mathematics to help the world make more informed decisions. </p>
 												<p><strong>Github Profile:</strong> https://github.com/zyabb</p>
 											</div>
 											<div>
-												<h2>Dan</h2>
+												<h2>DAN TRACY</h2>
 												<a target="_blank" href="https://github.com/TalRodin">
 													<img
 														alt="Dan"
 														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Penguin-128.png"
 													/>
 												</a>
-												<p><strong>Bio:</strong> </p>
+												<p><strong>Bio:</strong> Musician- and actor-turned-coder. I'm interested in working as part of a team to help build ideas, especially those that can turn our good planet into a great one. </p>
 												<p><strong>Github Profile:</strong> https://github.com/dbtracy</p>
 											</div>
 											<div>
-												<h2>Xavier</h2>
+												<h2>XAVIER OLIVARES</h2>
 												<a
 													target="_blank"
 													href="https://github.com/xavierolivares"
@@ -202,7 +202,7 @@ export default class AboutUs extends Component {
 														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Frog-128.png"
 													/>
 												</a>
-												<p><strong>Bio:</strong> </p>
+												<p><strong>Bio:</strong> After immersing myself in the world of eCommerce, I wanted to go from selling online to building the software that makes it all work. My dive into the technical end has been great and I'm enjoying the process.</p>
 												<p><strong>Github Profile:</strong> https://github.com/xavierolivares</p>
 											</div>
 										</div>
