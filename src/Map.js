@@ -203,18 +203,6 @@ class Map extends Component {
     this.setState({ show: false });
   };
 
-  showUSA = () => {
-    this.setState({ showUSAInfo: true });
-    console.log("setting showUSAInfo");
-    // this.onClick(event);
-  };
-
-  hideUSA = () => {
-    this.setState({ showUSAInfo: false });
-    console.log("closing showUSAInfo");
-    // this.onClick(event);
-  };
-
   handleSubmit = event => {
     this.setState(() => ({
       toPage: true
@@ -255,8 +243,6 @@ class Map extends Component {
           onClick={this.hideModal}
           stateData={this.state.stateData}
         />
-
-        <Button onClick={this.showUSA} />
 
         <ControlInfo
           show={this.state.showUSAInfo}
