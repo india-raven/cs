@@ -150,43 +150,61 @@ export default class AboutUs extends Component {
 										Our Team{" "}
 										<Typography variant="h5" color="textSecondary">
 											{" "}
-											Connect with the developers who brought this application to life!
+											Connect with the developers who brought this application
+											to life!
 										</Typography>
 									</Typography>
 								</ExpansionPanelSummary>
 								<ExpansionPanelDetails>
 									<Typography>
-										<div className="aboutSizing">
-											<a target="_blank" href="https://github.com/zyabb">
-												<img
-													alt="Ruslan"
-													src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Frog-128.png"
-												/>
-											</a>
-											<a target="_blank" href="https://github.com/TalRodin">
-												<img
-													alt="Alyona"
-													src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Panda-128.png"
-												/>
-											</a>
-											<a target="_blank" href="https://github.com/dbtracy">
-												<img
-													alt="Dan"
-													src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Penguin-128.png"
-												/>
-											</a>
-											<a target="_blank" href="https://github.com/xavierolivares">
-												<img
-													alt="Xavier"
-													src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Rabbit-128.png"
-												/>
-											</a>
-											<ul>
-												<li>Ruslan</li>
-												<li>Alyona</li>
-												<li>Dan</li>
-												<li>Xavier</li>
-											</ul>
+										<div id="team" className="aboutSizing">
+											<div>
+												<h2>Ruslan</h2>
+												<a target="_blank" href="https://github.com/zyabb">
+													<img
+														alt="Ruslan"
+														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Rabbit-128.png"
+													/>
+												</a>
+												<p><strong>Bio:</strong> </p>
+												<p><strong>Github Profile:</strong> https://github.com/zyabb</p>
+											</div>
+											<div>
+												<h2>Alyona</h2>
+												<a target="_blank" href="https://github.com/TalRodin">
+													<img
+														alt="Alyona"
+														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Panda-128.png"
+													/>
+												</a>
+												<p><strong>Bio:</strong> </p>
+												<p><strong>Github Profile:</strong> https://github.com/zyabb</p>
+											</div>
+											<div>
+												<h2>Dan</h2>
+												<a target="_blank" href="https://github.com/TalRodin">
+													<img
+														alt="Dan"
+														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Penguin-128.png"
+													/>
+												</a>
+												<p><strong>Bio:</strong> </p>
+												<p><strong>Github Profile:</strong> https://github.com/dbtracy</p>
+											</div>
+											<div>
+												<h2>Xavier</h2>
+												<a
+													target="_blank"
+													href="https://github.com/xavierolivares"
+												>
+													<img
+														alt="Xavier"
+														src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Frog-128.png"
+													/>
+												</a>
+												<p><strong>Bio:</strong> </p>
+												<p><strong>Github Profile:</strong> https://github.com/xavierolivares</p>
+											</div>
 										</div>
 									</Typography>
 								</ExpansionPanelDetails>
