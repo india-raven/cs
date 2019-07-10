@@ -314,8 +314,9 @@ input {
   height: 100vh;
   /* max-height: 100%; */
   /* background: #fff; */
-  background-image: url('https://images.wallpaperscraft.com/image/lake_mountain_water_134189_3840x2160.jpg');
-  background-repeat: repeat-x;
+  background: url('https://images.wallpaperscraft.com/image/lake_mountain_water_134189_3840x2160.jpg')
+    center no-repeat;
+  /* background-repeat: repeat-x; */
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
   /* padding: 12px 24px 12px 24px;
   margin: auto; */
@@ -443,4 +444,3 @@ input {
   width: 600px;
   margin: 0 auto;
 }
-
