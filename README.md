@@ -27,12 +27,12 @@ You must install the required dependencies for the application to run correctly:
 
 ### `npm install`
 
-In order for Firebase to load correctly, please create a .env.local file in the root folder. We included a template called .env.example in the root folder. You will need to rename it to .env.local, fill it with your firebase credentials, and then add .env.local to your .gitignore file.
+In order for Firebase to load correctly, please create a .env file in the root folder. We included a template called .env.example in the root folder. You will need to rename it to .env, fill it with your firebase credentials, and then add .env to your .gitignore file.
 
 **Notes:**
-* For the .env.local file to work with the create-react-app, notice that your variables require a REACT_APP prefix.
+* For the .env file to work with the create-react-app, notice that your variables require a REACT_APP prefix.
 
-* Remember to include your .env.local file in the .gitignore file
+* Remember to include your .env file in the .gitignore file
 
 * Firebase is loading geoJson data that renders state shapes and is an essential piece of the application. You can find our template here: [geoJson](https://storage.cloud.google.com/visualclimategeojson/us-temp.geojson)
 
