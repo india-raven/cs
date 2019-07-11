@@ -1,8 +1,7 @@
 import React from 'react'
 import './Tooltip.css'
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Tooltip from '@material-ui/core/Tooltip';
+
 export default ({hoveredBar, scales}) => {
     const { xScale, yScale } = scales
     const styles = {

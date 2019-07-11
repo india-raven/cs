@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Pie from './Pie';
 import * as d3 from 'd3';
-import Tooltip from './Tooltip';
+import ToolTipPie from './ToolTipPie';
 class ChartLine extends Component {
- 
+  
     render() {
    
       console.log(this.props.data)
@@ -24,7 +24,8 @@ class ChartLine extends Component {
        padAngle={.02}
             data={this.props.data} />
           </svg>
-         
+        
+    
           </div> 
         );
       }

@@ -11,6 +11,7 @@ class Pie extends React.Component {
       this.labels = this.props.data.map(function(v){
         return v.couse
       })
+     
     }
     renderSlice(value, i) {
         console.log(this)
@@ -25,7 +26,10 @@ class Pie extends React.Component {
           padAngle={padAngle}
           value={value}
           label={this.labels[i]}
-                 fill={this.colorScale[i]} />
+                 fill={this.colorScale[i]} 
+            //      onMouseOverCallback={datum => this.setState({ hoveredBar: datum })}
+            // onMouseOutCallback={datum => this.setState({ hoveredBar: null })}
+                 />
         );
       }
     render() {
@@ -38,10 +42,13 @@ class Pie extends React.Component {
       })
       console.log('data_values', data_values)
       return (
+      
         <g transform={`translate(${x}, ${y})`}>
           {/* Render a slice for each data point */}
           {pie(data_values).map(this.renderSlice)}
         </g>
+     
+   
       );
     }
   
