@@ -310,8 +310,8 @@ input {
 .knopochka {
   position: absolute;
   border-radius: 32px;
-  bottom: 0;
-  right: 0;
+  bottom: 15px;
+  left: 0;
   opacity: 1;
   /* max-width: 320px; */
   background: #fff;
