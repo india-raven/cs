@@ -16,6 +16,9 @@ class Slice extends React.Component {
     this.setState({ isHovered: false });
   }
   render() {
+    const tooltipStyle = {
+      display: this.state.isHovered ? 'block' : 'none'
+    }
     console.log(this.props);
     let {
       value,
@@ -48,6 +51,11 @@ class Slice extends React.Component {
         >
           {this.props.label}
         </text>
+        {(this.state.isHovered)?
+           <div>
+           <div style={tooltipStyle}>this is the tooltip!!</div>
+         </div>
+          :null}
       </g>
     );
   }
