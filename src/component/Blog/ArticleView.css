@@ -21,7 +21,7 @@
     -ms-transition: -ms-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
   }
-  
+
   #relay-mobile-button {
     outline: none !important;
     border: none !important;
@@ -46,7 +46,7 @@
     right: initial !important;
     top: initial !important;
   }
-  
+
   #relay-mobile-button div {
     width: 30px !important;
     height: 30px !important;
@@ -58,20 +58,20 @@
     justify-content: center !important;
     align-items: center !important;
   }
-  
+
   #relay-mobile-button .relay-img {
     width: 15px !important;
   }
-  
+
   #relay-mobile-button:active {
     color: #37db6b !important;
   }
-  
+
   #relay-desktop-button:focus {
     outline: none !important;
     border: none !important;
   }
-  
+
   #relay-desktop-button img {
     color: #37db6b !important;
     border: none !important;
@@ -80,17 +80,17 @@
     padding: 0 !important;
     background-color: transparent !important;
   }
-  
+
   .relay-img {
     width: 25px !important;
   }
-  
+
   #relay-desktop-button.minimized {
     transform: rotate(-45deg) !important;
     -ms-transform: rotate(-45deg) !important;
     -webkit-transform: rotate(-45deg) !important;
   }
-  
+
   #relay-mobile-button.minimized.unread::after {
     content: attr(data-unread) !important;
     background: #37db6b !important;
@@ -114,21 +114,21 @@
     transform: translateY(-100vh);
     visibility: visible;
   }
-  
+
   #relay-wrapper.mobile {
     transition: all 0.2s ease-out;
     height: 100vh !important;
     top: 100vh !important;
   }
-  
+
   #relay-wrapper.mobile.closed {
     visibility: hidden !important;
   }
-  
+
   #relay-wrapper {
     display: visible !important;
   }
-  
+
   .btn-adjust {
 	margin-top: 10px
 }

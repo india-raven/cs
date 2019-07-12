@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../Blog/ArticleView.css'
 import  ArticleInArticleView from './ArticleInArticleView'
+import { Link } from 'react-router-dom'
 // import { connect } from 'react-redux'
-// import { 
-//     getArticle, 
+// import {
+//     getArticle,
 //     clap,
 //     follow
 // } from './../redux/actions/actions'
@@ -41,16 +42,16 @@ class ArticleView extends Component {
     // }
     // componentWillMount() {
     //     this.props.getArticle(this.props.match.params.id)
-    // }    
+    // }
     // componentWillUnmount() {
     //     document.body.classNameNameName = ''
     // }
-    render() {   
+    render() {
         return (
-            <div>
-          <div className="wrapper" >
-            <center> <a href="/blog"><div className="site-title"> Climate Change :-(</div></a></center>
-          </div>    
+            <div className="no-navbar">
+          <div className="wrapper">
+            <center><Link to=''><div className="site-title" style={{marginTop: '150px'}}> Climate Change :-(</div></Link></center>
+          </div>
           <div className="wrapper site-description">
             <center>a  climate blog</center>
           </div>
@@ -69,24 +70,24 @@ class ArticleView extends Component {
                       {array.map(element => (
                           <ArticleInArticleView data={element}/>
                       )) }
-                    
+
                   </div>
               </div>
-          </div> 
-          </div>  
+          </div>
+          </div>
         )
     }
 }
 // {/* const mapStateToProps = state => {
 //     return {
 //         Article: state.articles.article,
-//         user: state.authUser.user    
+//         user: state.authUser.user
 //     }
 // }
 // ArticleView.propTypes = {
 //     params: PropTypes.object.isRequired
 // } */}
-// {/* export default connect(mapStateToProps, { 
+// {/* export default connect(mapStateToProps, {
 //     getArticle,
 //     clap,
 //     follow
