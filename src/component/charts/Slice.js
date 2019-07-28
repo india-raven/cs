@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
-import ToolTipPie from './ToolTipPie';
-import Tooltip from './Tooltip';
 class Slice extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +16,7 @@ class Slice extends React.Component {
     this.setState({ isHovered: false });
   }
   render() {
-
+    console.log(this.props);
     let {
       value,
       label,
@@ -31,7 +29,6 @@ class Slice extends React.Component {
     } = this.props;
     if (this.state.isHovered) {
       outerRadius *= 1.05;
-   
     }
     let arc = d3
       .arc()
@@ -39,10 +36,11 @@ class Slice extends React.Component {
       .outerRadius(outerRadius)
       .cornerRadius(cornerRadius)
       .padAngle(padAngle);
-      console.log(this.props)
     return (
-      <g onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} {...props}>
-        <path d={arc(this.props.value)} fill={fill} />
+      <g >
+        <path d={arc(this.props.value)} fill={fill} 
+              onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} {...props}
+        />
         <text
           transform={`translate(${arc.centroid(this.props.value)})`}
           dy=".35em"
@@ -52,10 +50,6 @@ class Slice extends React.Component {
         >
           {this.props.label}
         </text>
-        {/* {this.state.isHovered ? (
-      
-         ):null} */}
-    
       </g>
     );
   }

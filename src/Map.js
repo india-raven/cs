@@ -24,7 +24,7 @@ const MAPBOX_TOKEN =
 
 class Map extends Component {
   state = {
-    mapStyle: defaultMapStyle,
+    mapStyle:  defaultMapStyle,
     year: 2018,
     data: null,
     selectedData: "Temperature",

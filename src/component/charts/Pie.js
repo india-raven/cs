@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import *  as d3 from 'd3';
 import Slice from './Slice'
 import gases from './gases';
-import ToolTipPie from './Tooltip';
+import ToolTipPie from './ToolTipPie';
 class Pie extends React.Component {
     constructor(props) {
       super(props);
@@ -11,12 +11,12 @@ class Pie extends React.Component {
       this.labels = this.props.data.map(function(v){
         return v.couse
       })
-     
+   
     }
     renderSlice(value, i) {
         console.log(this)
 
-        let {innerRadius, outerRadius, cornerRadius, padAngle} = this.props;
+        let {innerRadius, outerRadius, cornerRadius, padAngle, data, x,y} = this.props;
         
         return (
           <Slice key={i}
@@ -25,10 +25,12 @@ class Pie extends React.Component {
           cornerRadius={cornerRadius}
           padAngle={padAngle}
           value={value}
+          data={data}
+          x={x}
+          y={y}
           label={this.labels[i]}
-                 fill={this.colorScale[i]} 
-            //      onMouseOverCallback={datum => this.setState({ hoveredBar: datum })}
-            // onMouseOutCallback={datum => this.setState({ hoveredBar: null })}
+          fill={this.colorScale[i]} 
+         
                  />
         );
       }
@@ -46,8 +48,11 @@ class Pie extends React.Component {
         <g transform={`translate(${x}, ${y})`}>
           {/* Render a slice for each data point */}
           {pie(data_values).map(this.renderSlice)}
+
+        
         </g>
-     
+
+    
    
       );
     }
