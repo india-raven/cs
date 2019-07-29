@@ -22,7 +22,7 @@ export default class Axis extends Component {
       .scale(this.props.scale)
       // .tickSize(-this.props.tickSize)
       .tickPadding([3])
-      .ticks([3]);
+      .ticks([4]);
     // .text()
     const axisb = d3Axis
       .axisBottom()

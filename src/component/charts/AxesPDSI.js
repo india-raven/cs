@@ -25,25 +25,25 @@ export default ({ scales, margins, svgDimensions }) => {
         <Axis {...xProps} />
         <Axis {...yProps} />
         <text
-        y='6'
-        dy='8em'
+        y='21'
+        dy='3em'
         transform ="rotate(-90)"
         fill="black"
         text-anchor="end"
         font-size="10px"
         >
-          {'parts-per-million (ppm)'}
+          {'Palmer drought severity index (PDSI)'}
         </text>
         <text
           y='4'
-          dy="36em"
-          dx='73em'
+          dy="24em"
+          dx='42em'
           transform ="rotate(0)"
           fill="black"
           text-anchor="start"
           font-size="10px"
         >
-          {'Year (1960-2015)'}
+          {'Year (1925-2018)'}
         </text>
       </g>
     )

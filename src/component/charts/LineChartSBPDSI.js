@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { scaleBand, scaleUtc, scaleLinear, scaleTime, scaleSequential} from 'd3-scale'
 import * as d3 from 'd3';
 // import data from './newJson'
-import AxesL from './AxesSideB'
+import AxesL from './AxesPDSI'
 import Line from './Line'
-class LineChartSideBar extends Component {
+class LineChartSBPDSI extends Component {
   constructor() {
     super()
     // this.state={
@@ -96,4 +96,4 @@ class LineChartSideBar extends Component {
       }
     
 }
-export default LineChartSideBar;
+export default LineChartSBPDSI;
