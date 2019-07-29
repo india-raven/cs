@@ -36,8 +36,8 @@ export default ({ scales, margins, svgDimensions }) => {
         </text>
         <text
           y='4'
-          dy="39em"
-          dx='77em'
+          dy="36em"
+          dx='73em'
           transform ="rotate(0)"
           fill="black"
           text-anchor="start"
