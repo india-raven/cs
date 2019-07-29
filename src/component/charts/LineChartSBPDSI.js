@@ -4,13 +4,13 @@ import * as d3 from 'd3';
 // import data from './newJson'
 import AxesL from './AxesPDSI'
 import Line from './Line'
-class LineChartSideBar extends Component {
+class LineChartSBPDSI extends Component {
   constructor() {
     super()
     // this.state={
     //   data:[]
     // }
-    this.xScale = scaleLinear()
+    this.xScale =scaleLinear()
     this.yScale = scaleLinear()
     // this.changeViewData=this.changeViewData.bind(this)
 }    
@@ -55,39 +55,38 @@ class LineChartSideBar extends Component {
       data = JSON.parse(data);
       data = this.convertObjToArr(data);
       console.log("=======>", data);
-        let margins = {top: 20, right: 5, bottom: 50, left: 40}
+        let margins = {top: 10, right: 5, bottom: 40, left: 25}
         const svgDimensions = { width: 500, height:300}
         const max = d3.max(data, d => Math.abs(d.y))
         const min= d3.min(data, d => Math.abs(d.y))
         // console.log(d3.extent(this.props.data, d => d.date))
+        console.log(max)
+        console.log(min)
         const xScale = this.xScale
                  .domain(d3.extent(data, d =>{return d.date}))
+                 
                  .range([margins.left, svgDimensions.width -margins.right])
         const yScale = this.yScale
-                 .domain([-5, d3.max(data, d => d.y)]).nice()
+                 .domain([min, d3.max(data, d => d.y)]).nice()
                  .range([svgDimensions.height - margins.bottom, margins.top])
+   
         return (
+          
           <svg  width={svgDimensions.width} height={svgDimensions.height}>
+             
           <AxesL
-    scales={{ xScale, yScale }}
-    margins={margins}
-    svgDimensions={svgDimensions}
+          
+          scales={{ xScale, yScale }}
+          margins={margins}
+          svgDimensions={svgDimensions}
   />
          <Line scales={{ xScale, yScale }}
    svgDimensions={svgDimensions}
    margins={margins}
    maxValue={max}
           minValue={min}
-           data={data} 
-         
-           />
-        <text 
-        text={'Love meter (%)'}
-        transform ={'rotate(-90)'}
-       
-        />
-            
-            
+           data={data} />
+        
            </svg>
            
         );
@@ -97,4 +96,4 @@ class LineChartSideBar extends Component {
       }
     
 }
-export default LineChartSideBar;
+export default LineChartSBPDSI;

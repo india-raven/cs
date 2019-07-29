@@ -6,6 +6,7 @@ import Chart from './charts/Chart';
 import ChartLine from './charts/ChartLine';
 import ChartBubble from './charts/ChartBubble';
 import LineChartSideBar from './charts/LineChartSideBar';
+import LineChartSBPDSI from './/charts/LineChartSBPDSI'
 import LinePDChart from './charts/LinePDChart';
 import JobBoard from './JobBoard';
 //modal wrapper for our popup
