@@ -8,6 +8,7 @@ import Bars from './Bar';
 import Tooltip from './Tooltip';
 import ResponsiveChart from './ResponsiveChart';
 import * as d3 from 'd3';
+
 class Chart extends Component {
   constructor() {
     super();

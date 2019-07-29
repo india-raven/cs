@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import * as d3Axis from 'd3-axis';
 import { select as d3Select } from 'd3-selection';
-
 import './Axis.css';
 
 export default class Axis extends Component {
   componentDidMount() {
     this.renderAxis();
   }
-
   componentDidUpdate() {
     this.renderAxis();
   }
-
   renderAxis() {
+    console.log('renderAxis',this)
     const axisType = `axis${this.props.orient}`;
     // console.log('axisType',axisType)
     // console.log('')
@@ -22,7 +20,7 @@ export default class Axis extends Component {
       .scale(this.props.scale)
       // .tickSize(-this.props.tickSize)
       .tickPadding([3])
-      .ticks([3]);
+      .ticks([4]);
     // .text()
     const axisb = d3Axis
       .axisBottom()
