@@ -18,19 +18,19 @@ import { Link } from 'react-router-dom'
 const array = [
     {
         title: 'CLIMATE CHANGE DIGEST JULY 2019',
-        introduction: 'Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please. Could be better. People suck. Stop using your car, ride a bike please.',
+        introduction: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsam nemo dolor nulla hic porro dolore, veniam nobis alias. Quos animi temporibus dolorem inventore. Nostrum eius iste sequi officia nulla.',
         date: 'Jul 2, 2019',
         id: 0
     },
     {
         title: 'CLIMATE CHANGE DIGEST JULY 2018',
-        introduction: 'In short: because of you!',
+        introduction: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsam nemo dolor nulla hic porro dolore, veniam nobis alias. Quos animi temporibus dolorem inventore. Nostrum eius iste sequi officia nulla.',
         date: 'Jan 1, 2018',
         id: 1
     },
     {
-        title: 'BUY TESLA USING MY REFERAL LINK PLSSSSSSS AND SAVE PLANET',
-        introduction: '$100 OFF',
+        title: 'HOW TESLA CAN HELP US?',
+        introduction: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsam nemo dolor nulla hic porro dolore, veniam nobis alias. Quos animi temporibus dolorem inventore. Nostrum eius iste sequi officia nulla.',
         date: 'Mar 8, 2017',
         id: 2
     }
