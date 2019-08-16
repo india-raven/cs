@@ -4,7 +4,6 @@ import ReactMapGL, {
   FlyToInterpolator
 } from "react-map-gl";
 import firebase from "firebase";
-
 import ControlPanel from "./control-panel";
 import { defaultMapStyle, dataLayer } from "./map-style.js";
 import { dataLayerPDSI } from "./map-style-pdsi.js";
@@ -13,7 +12,6 @@ import { fromJS } from "immutable";
 import { json as requestJson } from "d3-request";
 import Button from "./component/totalInfo/button.js";
 import ControlInfo from "./control-info";
-
 import JobBoard from "./component/JobBoard";
 import StateInfo from "./component/StateInfo";
 // import SearchAppBar from "./component/searchappbar";

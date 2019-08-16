@@ -17,13 +17,10 @@ export default class Bars extends Component {
   onMouseOver() {
     this.setState({ isHovered: true });
   }
-
   onMouseOut() {
     this.setState({ isHovered: false });
   }
-
   render() {
-    console.log('>>>>>>', this);
     const { scales, margins, data, svgDimensions, ...props } = this.props;
     const { xScale, yScale } = scales;
     const { height } = svgDimensions;
@@ -40,7 +37,6 @@ export default class Bars extends Component {
         onMouseOut={() => this.props.onMouseOutCallback(null)}
       />
     ));
-
     return (
       <g onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} {...props}>
         {bars}

@@ -10,15 +10,13 @@ export default class Bubble extends Component {
         .domain([this.props.minValue, this.props.maxValue])
         .range(['#d971bb', '#5142f5'])
         .interpolate(interpolateLab)
-  }
+      }
     render() {
-      console.log('>>>>>>',this)
       const { scales, margins, data, svgDimensions, ...props } = this.props
       const { xScale, yScale, zScale} = scales
       const { height } = svgDimensions
-     
-       const bubble = (
-         data.map(datum =>
+      const bubble = (
+        data.map(datum =>
            <circle
             key={datum.year}
             cx={xScale(datum.date)}  
@@ -27,10 +25,8 @@ export default class Bubble extends Component {
             r='2.5'
             fill={this.colorScale(datum.value)}
           />
-         )
-    )
-      
-      
+        )
+      )
       return (
         <g onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}

@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import JobBoard from "./component/JobBoard";
 import Slider from "./component/Slider";
 import Legend from "./component/Legend";
-
 import { json as requestJson } from "d3-request";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -12,24 +11,19 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 const defaultContainer = ({ children }) => (
   <div className="control-panel">{children}</div>
 );
-
 export default class ControlPanel extends PureComponent {
   state = {
     show: false
   };
-
   showModal = () => {
     this.setState({ show: true });
   };
-
   hideModal = () => {
     this.setState({ show: false });
   };
-
   render() {
     const Container = this.props.containerComponent || defaultContainer;
     const { settings } = this.props;
-
     return (
       <Container>
         <ExpansionPanel width={2}>
@@ -69,14 +63,8 @@ export default class ControlPanel extends PureComponent {
                                 //WE USE CONVENIENT D3 LIBRARY TO REQUEST JSON
                                 if (!error) {
                                   this.props.mapNewData(response); //IF THERE IS NO ERROR => INVOKE _LOADDATA AND PASS RESPONSE THERE
-                                } else {
-                                  console.log(
-                                    "----------------------------------------"
-                                  );
-                                  console.error(error);
-                                  console.log(
-                                    "----------------------------------------"
-                                  );
+                                } else {                                  
+                                  console.error(error);                                
                                 }
                               }
                             );
@@ -109,7 +97,6 @@ export default class ControlPanel extends PureComponent {
                     </div>
                   </div>
                 </form>
-                {/* <hr /> */}
                 <Slider settings={settings} onChange={this.props.onChange} />
                 <hr />
                 <div id="legend">

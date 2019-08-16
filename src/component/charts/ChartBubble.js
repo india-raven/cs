@@ -23,32 +23,23 @@ export default class ChartBubble extends React.Component{
                  .domain(d3.extent(data, d => d.value)).nice()
                  .range([svgDimensions.height - margins.bottom, margins.top])
             const zScale = this.zScale
-                 .domain([max,-max])
-            console.log(Bubble)
-           
-          return(
-              
+                 .domain([max,-max]) 
+          return(  
             <svg width={svgDimensions.width} height={svgDimensions.height}>
                 <AxesBubble
-          scales={{ xScale, yScale }}
-          margins={margins}
-          svgDimensions={svgDimensions}
-        />
-
-        <Bubble  
-          scales={{ xScale, yScale, zScale }}
-          margins={margins}
-          data={data}
-          maxValue={max}
-          minValue={min}
-          svgDimensions={svgDimensions}
-        //   onMouseOutCallback={datum => this.setState({hoveredBar: null})}
-        //   onMouseOverCallback={datum => this.setState({hoveredBar: datum})}
-          // onMouseMoveCallback={datum=>this.setState({hoveredBar:datum})}
-          
-        />
-              
+                  scales={{ xScale, yScale }}
+                  margins={margins}
+                  svgDimensions={svgDimensions}
+                />
+                <Bubble  
+                  scales={{ xScale, yScale, zScale }}
+                  margins={margins}
+                  data={data}
+                  maxValue={max}
+                  minValue={min}
+                  svgDimensions={svgDimensions}          
+                />   
             </svg>
           )
-    }
+        }
 }
