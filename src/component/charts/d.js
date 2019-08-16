@@ -1,5 +1,4 @@
-export default [
-    
+export default [  
    //   {  
    //      year:"199001",
    //      value:"2.07"
@@ -1412,7 +1411,5 @@ export default [
         year:"201905",
         value:"0.40"
      }
-        
-     
-  ]
+   ]
 

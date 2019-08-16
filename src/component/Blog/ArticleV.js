@@ -49,32 +49,30 @@ class ArticleView extends Component {
     render() {
         return (
             <div className="no-navbar">
-          <div className="wrapper">
-            <center><Link to=''><div className="site-title" style={{marginTop: '150px'}}> Climate Change :-(</div></Link></center>
-          </div>
-          <div className="wrapper site-description">
-            <center>a  climate blog</center>
-          </div>
-          {/* <div className="wrapper">
-             <div className="trigger site-navigation">
-             <a className="page-link" href="/">HOME</a>
-                <span className="exclamationMark">/</span><a className="page-link" href="/about/">About</a>
-                <span className="exclamationMark">/</span><a className="page-link" href="/portfolio/">Portfolio</a>
-                <span className="exclamationMark">/</span><a className="page-link" href="/contact/">Contact</a>
+                <div className="wrapper">
+                   <center><Link to=''><div className="site-title" style={{marginTop: '150px'}}> Climate Change :-(</div></Link></center>
+                </div>
+                <div className="wrapper site-description">
+                   <center>a  climate blog</center>
+                </div>
+            {/* <div className="wrapper">
+                <div className="trigger site-navigation">
+                <a className="page-link" href="/">HOME</a>
+                    <span className="exclamationMark">/</span><a className="page-link" href="/about/">About</a>
+                    <span className="exclamationMark">/</span><a className="page-link" href="/portfolio/">Portfolio</a>
+                    <span className="exclamationMark">/</span><a className="page-link" href="/contact/">Contact</a>
+                </div>
+            </div> */}
+                <div className='page-content'>
+                    <div className='wrapper'>
+                        <div className='home'>                       
+                           {array.map(element => (
+                               <ArticleInArticleView data={element}/>
+                            ))}
+                        </div>
+                    </div>
+               </div>
             </div>
-         </div> */}
-          <div className='page-content'>
-              <div className='wrapper'>
-                  <div className='home'>
-                      {/* NEED TO CREEATE COMPONENT TO RENDER EACH ARTICLE */}
-                      {array.map(element => (
-                          <ArticleInArticleView data={element}/>
-                      )) }
-
-                  </div>
-              </div>
-          </div>
-          </div>
         )
     }
 }

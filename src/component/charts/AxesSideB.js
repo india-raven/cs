@@ -18,9 +18,7 @@ export default ({ scales, margins, svgDimensions }) => {
       tickSize: width - margins.left - margins.right,
      
     }
-    // console.log(scales)
     return (
-
       <g>
         <Axis {...xProps} />
         <Axis {...yProps} />

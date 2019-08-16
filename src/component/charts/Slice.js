@@ -19,7 +19,6 @@ class Slice extends React.Component {
     const tooltipStyle = {
       display: this.state.isHovered ? 'block' : 'none'
     }
-    console.log(this.props);
     let {
       value,
       label,

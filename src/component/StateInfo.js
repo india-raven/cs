@@ -1,10 +1,10 @@
 import React, { PureComponent } from "react";
 import { Button } from "@material-ui/core";
 
-import ChartApp from "./charts/ChartApp";
-import Chart from "./charts/Chart";
-import ChartLine from "./charts/ChartLine";
-import ChartBubble from "./charts/ChartBubble";
+// import ChartApp from "./charts/ChartApp";
+// import Chart from "./charts/Chart";
+// import ChartLine from "./charts/ChartLine";
+// import ChartBubble from "./charts/ChartBubble";
 import LineChartSideBar from "./charts/LineChartSideBar";
 import LinePDChart from "./charts/LinePDChart";
 import JobBoard from "./JobBoard";

@@ -8,28 +8,24 @@ export default class Axis extends Component {
   componentDidMount() {
     this.renderAxis();
   }
-
   componentDidUpdate() {
     this.renderAxis();
   }
-
   renderAxis() {
     const axisType = `axis${this.props.orient}`;
-    // console.log('axisType',axisType)
-    // console.log('')
     const axisl = d3Axis
       .axisLeft()
       .scale(this.props.scale)
       // .tickSize(-this.props.tickSize)
       .tickPadding([3])
       .ticks([4]);
-    // .text()
+      // .text()
     const axisb = d3Axis
       .axisBottom()
       .scale(this.props.scale)
       .ticks([3]);
     d3Select(this.axisElement).call(axisl);
-    // d3Select(this.axisElement).call(axisb)
+      // d3Select(this.axisElement).call(axisb)
   }
 
   render() {

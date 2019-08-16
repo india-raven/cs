@@ -18,7 +18,6 @@ export default ({ scales, margins, svgDimensions }) => {
       tickSize: width - margins.left - margins.right,
      
     }
-    // console.log(scales)
     return (
 
       <g>
@@ -46,5 +45,5 @@ export default ({ scales, margins, svgDimensions }) => {
           {'Year (1960-2015)'}
         </text>
       </g>
-    )
-  }
+  )
+}
